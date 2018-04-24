@@ -12,7 +12,7 @@
                 Data Form
             </div>
             <div class="card-block">
-                <form action="{{ url('/users/'.$data->id) }}" method="post">
+                <form action="{{ url('/backend/users/'.$data->id) }}" method="post">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
 
@@ -22,78 +22,49 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="no_card">No Card</label>
-                                            <input type="text" class="form-control" name="no_card" id="no_card" placeholder="No Card" value="{{ $data->no_card }}" required>
+                                            <label for="fullname">Nama Lengkap</label>
+                                            <input type="text" class="form-control" name="fullname" value="{{ $data->fullname }}" id="fullname" placeholder="Nama Lengkap" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="username">Nama User</label>
-                                            <input type="text" class="form-control" name="username" id="username" placeholder="Nama User" value="{{ $data->username }}" required>
+                                            <label for="email">Alamat Email</label>
+                                            <input type="email" class="form-control" name="email" id="email" value="{{ $data->email }}" placeholder="Alamat Email" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="fullname">Fullname</label>
-                                            <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Fullname" value="{{ $data->fullname }}" required>
+                                            <label for="password">Kata Sandi <small>(optional)</small></label>
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Kata Sandi" >
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="{{ $data->email }}" required>
+                                            <label for="asal_pt">Asal Perguruan Tinggi</label>
+                                            <input type="text" class="form-control" name="asal_pt" id="asal_pt" value="{{ $data->asal_pt }}" placeholder="Asal Perguruan Tinggi" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="password">Change Password <small>(optional)</small></label>
-                                            <input type="password" class="form-control" name="password" id="password" placeholder="Change Password">
+                                            <label for="nama_tim">Nama Tim</label>
+                                            <input type="text" class="form-control" name="nama_tim" value="{{ $data->nama_tim }}" id="nama_tim" placeholder="Nama Tim" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="job">Job</label>
-                                            <input type="text" class="form-control" name="job" id="job" placeholder="Job" value="{{ $data->job }}" required>
+                                            <label for="alamat">Alamat Rumah</label>
+                                            <textarea class="form-control" name="alamat" id="alamat" rows="3" placeholder="Alamat Rumah" required>{{ $data->alamat }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="position">Position</label>
-                                            <input type="text" class="form-control" name="position" id="position" placeholder="Position" value="{{ $data->position }}" required>
+                                            <label for="no_telp">No. HP</label>
+                                            <input type="text" class="form-control" name="no_telp" id="no_telp" value="{{ $data->no_telp }}" placeholder="No. HP" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="address">Address</label>
-                                            <textarea class="form-control" name="address" id="address" rows="3" placeholder="Address" required>{{ $data->address }}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="phone">Phone</label>
-                                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone" value="{{ $data->phone }}" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="birth_place">Birth Place</label>
-                                            <input type="text" class="form-control" name="birth_place" id="birth_place" placeholder="Birth Place" value="{{ $data->birth_place }}" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="birth_day">Birth Date</label>
-                                            <div class="input-group date">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-calendar"></i>
-                                                </div>
-                                                <input type="text" class="form-control pull-right datepicker" name="birth_day" id="birth_day" placeholder="Birth Date" value="{{ date('Y-m-d', strtotime($data->birth_day)) }}" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="role">Status</label>
+                                            <label for="role">Role</label>
                                             <select class="form-control" name="role" id="select_role" required>
                                                 @if ($data->role == 'admin')
                                                 <option value="admin" selected>Admin</option>
@@ -105,16 +76,6 @@
                                                 @else
                                                 <option value="member">Member</option>
                                                 @endif
-                                                @if ($data->role == 'Front Office')
-                                                <option value="Front Office" selected>Front Office</option>
-                                                @else
-                                                <option value="Front Office">Front Office</option>
-                                                @endif
-                                                @if ($data->role == 'Back Office')
-                                                <option value="Back Office" selected>Back Office</option>
-                                                @else
-                                                <option value="Back Office">Back Office</option>
-                                                @endif
                                             </select>
                                         </div>
                                     </div>
@@ -122,25 +83,8 @@
                             </div>
                         </div>
                     </div>
-                    @if($data->role == 'Kasi' or $data->role == 'Back Office')
-                    <div class="col-md-12" id="option_licenses">
-                        <div class="form-group">
-                            <div id="checkall">
-                                <h4>Hak Akses Pelayanan</h4>
-                                @foreach($licenses as $item)
-                                <input type="checkbox" name="licenses_id[]" class="cek" id="cek_{{ $item->id }}" value="{{ $item->id }}" checked> <label for="cek_{{ $item->id }}">{{ $item->title }}</label> <br>
-                                @endforeach
-                                @foreach($licenses2 as $item)
-                                <input type="checkbox" name="licenses_id[]" class="cek" id="cek_{{ $item->id }}" value="{{ $item->id }}"> <label for="cek_{{ $item->id }}">{{ $item->title }}</label> <br>
-                                @endforeach
-                                <hr>
-                                <input type="checkbox" id="ceksemua"> <label for="ceksemua">Pilih Semua</label>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
                     <div class="box-footer text-center">
-                        <a href="{{ url('/users') }}" class="btn btn-warning">Cancel</a>
+                        <a href="{{ url('/backend/users') }}" class="btn btn-warning">Cancel</a>
                         <button type="submit" name="submit" class="btn btn-success">Save</button>
                     </div>
                 </form>

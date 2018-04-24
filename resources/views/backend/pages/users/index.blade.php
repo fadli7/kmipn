@@ -12,7 +12,7 @@
                 Data Table
             </div>
             <div class="card-block">
-                <a href="{{ url('/users/create') }}" class="btn btn-success pull-right">Create New</a>
+                <a href="{{ url('/backend/users/create') }}" class="btn btn-success pull-right">Create New</a>
                 <div class="clearfix"></div>
                 <br>
                 <table id="table" class="table table-bordered table-hover">
@@ -36,10 +36,10 @@
                             <td>{{ $item->phone }}</td>
                             <td>{{ $item->role }}</td>
                             <td width="153">
-                                <form action="{{ url('users/'.$item->id) }}" method="post">
+                                <form action="{{ url('/backend/users/'.$item->id) }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <a href="{{ url('users/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
+                                    <a href="{{ url('/backend/users/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</button>
                                 </form>
                             </td>

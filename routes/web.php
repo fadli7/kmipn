@@ -31,7 +31,7 @@ Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 //Backend Routes
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['prefix' => '/', 'namespace' => '\Backend', 'middleware' => ['auth', 'role:admin' ]], function() {
+Route::group(['prefix' => '/backend', 'namespace' => '\Backend', 'middleware' => ['auth', 'role:admin' ]], function() {
     Route::get('/', array('as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index'));
-
+    Route::resource('users', 'UsersController');
 });
