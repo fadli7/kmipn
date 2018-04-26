@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('no_telp', 20)->nullable();
             $table->enum('role', array('admin', 'member'))->default('member');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

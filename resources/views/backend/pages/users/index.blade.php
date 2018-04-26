@@ -8,9 +8,6 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="card">
-            <div class="card-heading card-default">
-                Data Table
-            </div>
             <div class="card-block">
                 <a href="{{ url('/backend/users/create') }}" class="btn btn-success pull-right">Create New</a>
                 <div class="clearfix"></div>
@@ -33,7 +30,7 @@
                             <td>{{ $index }}</td>
                             <td>{{ $item->fullname }}</td>
                             <td>{{ $item->email }}</td>
-                            <td>{{ $item->phone }}</td>
+                            <td>{{ $item->no_telp }}</td>
                             <td>{{ $item->role }}</td>
                             <td width="153">
                                 <form action="{{ url('/backend/users/'.$item->id) }}" method="post">
@@ -74,7 +71,11 @@ $(document).ready(function(){
         "searching": true,
         "ordering": false,
         "info": true,
-        "autoWidth": false
+        "autoWidth": false,
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
     });
 });
 </script>
