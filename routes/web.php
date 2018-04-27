@@ -31,7 +31,18 @@ Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 //Backend Routes
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::group(['prefix' => '/backend', 'namespace' => '\Backend', 'middleware' => ['auth', 'role:admin' ]], function() {
     Route::get('/', array('as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index'));
     Route::resource('users', 'UsersController');
+
+    Route::get('/pendaftaran/{id}/edit', ['as' => 'pendaftaran.edit', 'uses' => 'PendaftaranController@edit']);
+    Route::resource('pendaftaran', 'PendaftaranController', [ 'only' => [
+        'update','destroy'
+      ]]);
+
+    Route::get('/pendaftaran/daftar/', ['as' => 'pendaftaran.daftar', 'uses' => 'PendaftaranController@daftar']);
+    Route::get('/pendaftaran/tahap_seleksi/', ['as' => 'pendaftaran.tahap_seleksi', 'uses' => 'PendaftaranController@tahap_seleksi']);
+    Route::get('/pendaftaran/lolos/', ['as' => 'pendaftaran.lolos', 'uses' => 'PendaftaranController@lolos']);
+    Route::get('/pendaftaran/tidak_lolos/', ['as' => 'pendaftaran.tidak_lolos', 'uses' => 'PendaftaranController@tidak_lolos']);
 });

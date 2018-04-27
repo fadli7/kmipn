@@ -25,9 +25,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/backend/pendaftaran') }}">
-                        <i class="fa fa-address-book"></i> <span class="toggle-none">Pendaftaran</span>
-                    </a>
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="true"><i class="fa fa-envelope-o"></i> <span class="toggle-none">Pendaftar<span class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="true">
+                        <li class="nav-item"><a class="nav-link" href="{{ url('backend/pendaftaran/daftar') }}">Daftar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('backend/pendaftaran/tahap_seleksi') }}">Tahap Seleksi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('backend/pendaftaran/lolos') }}">Lolos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('backend/pendaftaran/tidak_lolos') }}">Tidak Lolos</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/backend/file') }}">

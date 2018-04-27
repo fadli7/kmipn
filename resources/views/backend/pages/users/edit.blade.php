@@ -40,6 +40,12 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label for="jurusan">Jurusan</label>
+                                            <input type="text" class="form-control" name="jurusan" value="{{ $data->jurusan }}" id="jurusan" placeholder="Jurusan" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label for="asal_pt">Asal Perguruan Tinggi</label>
                                             <input type="text" class="form-control" name="asal_pt" id="asal_pt" value="{{ $data->asal_pt }}" placeholder="Asal Perguruan Tinggi" required>
                                         </div>
@@ -54,6 +60,32 @@
                                         <div class="form-group">
                                             <label for="alamat">Alamat Rumah</label>
                                             <textarea class="form-control" name="alamat" id="alamat" rows="3" placeholder="Alamat Rumah" required>{{ $data->alamat }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Tempat/Tgl Lahir</label>
+                                            <div class="form-inline">
+                                                <input type="text" class="form-control col-md-4" name="tempat_lahir" value="{{ $data->tempat_lahir }}" id="tempat_lahir" placeholder="Tempat Lahir" required>/
+                                                <input type="date" class="form-control col-md-4" name="tgl_lahir" value="{{ $data->tgl_lahir }}" id="tgl_lahir" placeholder="Tgl Lahir" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Jenis Kelamin</label>
+                                            <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
+                                                @if ($data->jenis_kelamin == 'Laki-laki')
+                                                <option value="Laki-laki" selected>Laki-laki</option>
+                                                @else
+                                                <option value="Laki-laki">Laki-laki</option>
+                                                @endif
+                                                @if ($data->jenis_kelamin == 'Perempuan')
+                                                <option value="Perempuan" selected>Perempuan</option>
+                                                @else
+                                                <option value="Perempuan">Perempuan</option>
+                                                @endif
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">

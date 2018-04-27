@@ -18,8 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('fullname');
             $table->string('email');
             $table->string('password');
+            $table->enum('jenis_kelamin', array('Laki-laki', 'Perempuan'))->nullable();
             $table->string('asal_pt')->nullable();
             $table->string('nama_tim')->nullable();
+            $table->text('jurusan')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tgl_lahir')->nullable();
             $table->text('alamat')->nullable();
             $table->string('no_telp', 20)->nullable();
             $table->enum('role', array('admin', 'member'))->default('member');

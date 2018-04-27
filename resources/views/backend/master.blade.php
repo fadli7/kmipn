@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/datepicker/datepicker3.css') }}">
     <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/daterangepicker/daterangepicker.css') }}">
+      <link rel="stylesheet" href="{{ url('/vendor/jquery-steps/demo/css/jquery.steps.css') }}" type="text/css">
 
     <!-- Summernote -->
     <link href="{{ url('fixed-admin/lib/summernote/summernote.css') }}" rel="stylesheet">
@@ -110,6 +111,9 @@
 
     <!--Chart Script-->
     <script src="{{ url('fixed-admin/lib/chartJs/Chart.min.js') }}"></script>
+    
+      <script type="text/javascript" src="{{ url('/vendor/jquery-steps/build/jquery.steps.js') }}"></script>
+      <script type="text/javascript" src="{{ url('/vendor/jquery-steps/build/jquery.validate.min.js') }}"></script>
 
     <!--VetorMap Script-->
     <script src="{{ url('fixed-admin/lib/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>

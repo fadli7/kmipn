@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
+    use SoftDeletes;
     use Notifiable;
 
     /**
@@ -15,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fullname', 'email', 'password','asal_pt','nama_tim','alamat','no_telp','role'
+        'fullname', 'email', 'password','jenis_kelamin', 'asal_pt','nama_tim','alamat','no_telp', 'jurusan', 'tempat_lahir','tgl_lahir','role'
     ];
 
     /**
@@ -26,4 +28,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $dates = ['deleted_at'];
+
+    public function pendaftaran()
+    {
+        return $this->hasMany('App\Pendaftaran', 'users_id');
+    }
 }
