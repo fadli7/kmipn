@@ -33,11 +33,6 @@
                         <li class="nav-item"><a class="nav-link" href="{{ url('backend/pendaftaran/tidak_lolos') }}">Tidak Lolos</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/backend/file') }}">
-                        <i class="fa fa-file"></i> <span class="toggle-none">File</span>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
