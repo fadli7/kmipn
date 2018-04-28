@@ -44,18 +44,6 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="asal_pt">Asal Perguruan Tinggi</label>
-                                            <input type="text" class="form-control" name="asal_pt" id="asal_pt" placeholder="Asal Perguruan Tinggi" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="nama_tim">Nama Tim</label>
-                                            <input type="text" class="form-control" name="nama_tim" id="nama_tim" placeholder="Nama Tim" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
                                             <label for="alamat">Alamat Rumah</label>
                                             <textarea class="form-control" name="alamat" id="alamat" rows="3" placeholder="Alamat Rumah" required></textarea>
                                         </div>

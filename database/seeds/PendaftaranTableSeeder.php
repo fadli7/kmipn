@@ -38,7 +38,6 @@ class PendaftaranTableSeeder extends Seeder
             'alamat4' => 'Surabaya',
             'no_telp4' => '0895337348558',
             'file_proposal'=> 'operasi linux word.docx',
-            'kategori' => 'Cipta Inovasi',
             'status' => 'Tahap Seleksi',
             'created_at' => new DateTime,
             'updated_at' => new DateTime,

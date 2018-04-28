@@ -55,7 +55,6 @@ class CreatePendaftaranTable extends Migration
             $table->string('no_telp5', 20)->nullable();
 
             $table->text('file_proposal')->nullable();
-            $table->enum('kategori', array('Cipta Inovasi', 'Bisnis TIK', 'Game Development', 'E-Goverment','IoT','Desain Animasi','Keamanan Jaringan','Hackathon'))->nullable();
             $table->enum('status', array('Daftar', 'Tahap Seleksi', 'Lolos', 'Tidak Lolos'))->default('Daftar');
             $table->softDeletes();
             $table->timestamps();

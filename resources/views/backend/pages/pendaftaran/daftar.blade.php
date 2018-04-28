@@ -32,7 +32,7 @@
                             <td>{{ $item->users->fullname }}</td>
                             <td>{{ $item->users->asal_pt }}</td>
                             <td>{{ $item->file_proposal }}</td>
-                            <td>{{ $item->kategori }}</td>
+                            <td>{{ $item->users->kategori }}</td>
                             <td>{{ $item->status }}</td>
                             <td width="153">
                                 <form action="{{ url('/backend/pendaftaran/'.$item->id) }}" method="post">

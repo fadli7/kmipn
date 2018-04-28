@@ -33,6 +33,7 @@ class UsersTableSeeder extends Seeder
             'tgl_lahir' => new DateTime,
             'asal_pt' => 'PENS',
             'no_telp' => '0895337348558',
+            'kategori' => 'Bisnis TIK',
             'role' => 'member',
             'created_at' => new DateTime,
             'updated_at' => new DateTime,

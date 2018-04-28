@@ -61,9 +61,10 @@ class PendaftaranController extends Controller
           'tgl_lahir' => $req['tgl_lahir'],
           'jenis_kelamin' => $req['jenis_kelamin'],
           'no_telp' => $req['no_telp'],
+          'kategori' => $req['kategori'],
         ));
 
-        $req2 = $request->except('_method','asal_pt','nama_tim','fullname','jurusan','email','alamat','tempat_lahir','tgl_lahir','jenis_kelamin','no_telp','_token','submit');
+        $req2 = $request->except('_method','asal_pt','nama_tim','fullname','jurusan','email','alamat','tempat_lahir','tgl_lahir','jenis_kelamin','kategori','no_telp','_token','submit');
 
         $result2 = Pendaftaran::where('id', $id)->update($req2);
 

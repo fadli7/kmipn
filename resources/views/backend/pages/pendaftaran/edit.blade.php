@@ -336,42 +336,42 @@
                                 <div class="form-group">
                                     <label for="kategori">Kategori Lomba</label>
                                     <select class="form-control" name="kategori" id="" required>
-                                        @if ($data->kategori == 'Cipta Inovasi')
+                                        @if ($data->users->kategori == 'Cipta Inovasi')
                                             <option value="Cipta Inovasi" selected>Cipta Inovasi</option>
                                         @else
                                             <option value="Cipta Inovasi">Cipta Inovasi</option>
                                         @endif
-                                        @if ($data->kategori == 'Bisnis TIK')
+                                        @if ($data->users->kategori == 'Bisnis TIK')
                                             <option value="Bisnis TIK" selected>Bisnis TIK</option>
                                         @else
                                             <option value="Bisnis TIK">Bisnis TIK</option>
                                         @endif
-                                        @if ($data->kategori == 'Game Development')
+                                        @if ($data->users->kategori == 'Game Development')
                                             <option value="Game Development" selected>Game Development</option>
                                         @else
                                             <option value="Game Development">Game Development</option>
                                         @endif
-                                        @if ($data->kategori == 'E-Goverment')
+                                        @if ($data->users->kategori == 'E-Goverment')
                                             <option value="E-Goverment" selected>E-Goverment</option>
                                         @else
                                             <option value="E-Goverment">E-Goverment</option>
                                         @endif
-                                        @if ($data->kategori == 'IoT')
+                                        @if ($data->users->kategori == 'IoT')
                                             <option value="IoT" selected>IoT</option>
                                         @else
                                             <option value="IoT">IoT</option>
                                         @endif
-                                        @if ($data->kategori == 'Desain Animasi')
+                                        @if ($data->users->kategori == 'Desain Animasi')
                                             <option value="Desain Animasi" selected>Desain Animasi</option>
                                         @else
                                             <option value="Desain Animasi">Desain Animasi</option>
                                         @endif
-                                        @if ($data->kategori == 'Keamanan Jaringan')
+                                        @if ($data->users->kategori == 'Keamanan Jaringan')
                                             <option value="Keamanan Jaringan" selected>Keamanan Jaringan</option>
                                         @else
                                             <option value="Keamanan Jaringan">Keamanan Jaringan</option>
                                         @endif
-                                        @if ($data->kategori == 'Hackathon')
+                                        @if ($data->users->kategori == 'Hackathon')
                                             <option value="Hackathon" selected>Hackathon</option>
                                         @else
                                             <option value="Hackathon">Hackathon</option>

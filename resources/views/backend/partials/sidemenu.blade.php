@@ -14,7 +14,7 @@
                 <li class="nav-heading"><span>Main</span></li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('') }}">
+                    <a class="nav-link" href="{{ url('/backend') }}">
                         <i class="fa fa-home"></i> <span class="toggle-none">Dashboard</span>
                     </a>
                 </li>

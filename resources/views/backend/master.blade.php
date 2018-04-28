@@ -130,7 +130,8 @@
     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
     <script src="{{ url('fixed-admin/lib/toast/jquery.toast.min.js') }}"></script>
-
+    
+    <script src="{{ url('fixed-admin/js/dashboard.js') }}"></script>
     <script type="text/javascript">
     $(document).ready(function(){
         $(".summernote").summernote({
