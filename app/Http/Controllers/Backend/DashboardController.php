@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
 
 	public function index() {
-		$data['ck'] = User::where('kategori','Cipta Karsa')->count();
+		$data['ck'] = User::where('kategori','Cipta Inovasi')->count();
 		$data['tik'] = User::where('kategori','Bisnis TIK')->count();
 		$data['game'] = User::where('kategori','Game Development')->count();
 		$data['gov'] = User::where('kategori','E-Goverment')->count();
