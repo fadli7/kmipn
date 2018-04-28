@@ -123,20 +123,4 @@
                     </div>
                 </div>
             </div>
-			
-            <div class="row">
-                <div class="col-md-12">
-                  <div class="card">
-                        <div class="card-heading card-default">
-                            Page Visitors
-							<p class="text-muted">Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <div class="card-block">
-                            <div>
-                                <canvas id="linechart"  height="100"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 @endsection
