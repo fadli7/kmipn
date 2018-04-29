@@ -19,6 +19,7 @@ class CreatePendaftaranTable extends Migration
             $table->foreign('users_id')->references('id')->on('users');
             //Anggota Kelompok2
             $table->string('fullname2')->nullable();
+            $table->string('no_mahasiswa2')->nullable();
             $table->string('email2')->nullable();
             $table->enum('jenis_kelamin2', array('Laki-laki', 'Perempuan'))->nullable();
             $table->text('jurusan2')->nullable();
@@ -28,6 +29,7 @@ class CreatePendaftaranTable extends Migration
             $table->string('no_telp2', 20)->nullable();
             //Anggota Kelompok3
             $table->string('fullname3')->nullable();
+            $table->string('no_mahasiswa3')->nullable();
             $table->string('email3')->nullable();
             $table->enum('jenis_kelamin3', array('Laki-laki', 'Perempuan'))->nullable();
             $table->text('jurusan3')->nullable();
@@ -37,6 +39,7 @@ class CreatePendaftaranTable extends Migration
             $table->string('no_telp3', 20)->nullable();
             //Anggota Kelompok4
             $table->string('fullname4')->nullable();
+            $table->string('no_mahasiswa4')->nullable();
             $table->string('email4')->nullable();
             $table->enum('jenis_kelamin4', array('Laki-laki', 'Perempuan'))->nullable();
             $table->text('jurusan4')->nullable();
@@ -46,6 +49,7 @@ class CreatePendaftaranTable extends Migration
             $table->string('no_telp4', 20)->nullable();
             //Anggota Kelompok5
             $table->string('fullname5')->nullable();
+            $table->string('no_mahasiswa5')->nullable();
             $table->string('email5')->nullable();
             $table->enum('jenis_kelamin5', array('Laki-laki', 'Perempuan'))->nullable();
             $table->text('jurusan5')->nullable();

@@ -16,9 +16,10 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Fullname</th>
+                            <th>No Mahasiswa</th>
+                            <th>Nama</th>
                             <th>Email</th>
-                            <th>Phone</th>
+                            <th>No. Telp</th>
                             <th>Role</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -28,6 +29,7 @@
                         @foreach($data as $item)
                         <tr>
                             <td>{{ $index }}</td>
+                            <td>{{ $item->no_mahasiswa }}</td>
                             <td>{{ $item->fullname }}</td>
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->no_telp }}</td>
@@ -47,9 +49,10 @@
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Fullname</th>
+                            <th>No Mahasiswa</th>
+                            <th>Nama</th>
                             <th>Email</th>
-                            <th>Phone</th>
+                            <th>No. Telp</th>
                             <th>Role</th>
                             <th>&nbsp;</th>
                         </tr>

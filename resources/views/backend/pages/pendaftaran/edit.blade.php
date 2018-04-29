@@ -14,7 +14,7 @@
                 <input type="hidden" name="_method" value="PUT">
                     <input type="hidden" name="users_id" value="{{ $data->users_id }}">
                     <div>
-                        <h3>Identitas Ketua & Tim</h3>
+                        <h3>Identitas Tim</h3>
                         <section>
                             <div class="col-md-8">
                                 <div class="form-group">
@@ -28,10 +28,19 @@
                                     <input type="text" class="form-control" name="nama_tim" value="{{ $data->users->nama_tim }}" id="nama_tim" placeholder="Nama Tim" required>
                                 </div>
                             </div>
+                        </section>
+                        <h3>Identitas Ketua</h3>
+                        <section>
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="fullname">Nama Lengkap</label>
                                     <input type="text" class="form-control" name="fullname" value="{{ $data->users->fullname }}" id="fullname" placeholder="Nama Lengkap" required>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="no_mahasiswa">Nomor Mahasiswa</label>
+                                    <input type="number" class="form-control" name="no_mahasiswa" id="no_mahasiswa" value="{{ $data->users->no_mahasiswa }}" placeholder="Nomor Mahasiswa" required>
                                 </div>
                             </div>
                             <div class="col-md-8">
@@ -97,6 +106,12 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
+                                    <label for="no_mahasiswa2">Nomor Mahasiswa</label>
+                                    <input type="number" class="form-control" name="no_mahasiswa2" id="no_mahasiswa2" value="{{ $data->no_mahasiswa2 }}" placeholder="Nomor Mahasiswa" required>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
                                     <label for="jurusan2">Jurusan</label>
                                     <input type="text" class="form-control" name="jurusan2" value="{{ $data->jurusan2 }}" id="jurusan2" placeholder="Jurusan" required>
                                 </div>
@@ -154,6 +169,12 @@
                                 <div class="form-group">
                                     <label for="fullname3">Nama Lengkap</label>
                                     <input type="text" class="form-control" name="fullname3" value="{{ $data->fullname3 }}" id="fullname3" placeholder="Nama Lengkap" required>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="no_mahasiswa3">Nomor Mahasiswa</label>
+                                    <input type="number" class="form-control" name="no_mahasiswa3" id="no_mahasiswa3" value="{{ $data->no_mahasiswa3 }}" placeholder="Nomor Mahasiswa" required>
                                 </div>
                             </div>
                             <div class="col-md-8">
@@ -219,6 +240,12 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
+                                    <label for="no_mahasiswa4">Nomor Mahasiswa</label>
+                                    <input type="number" class="form-control" name="no_mahasiswa4" id="no_mahasiswa4" value="{{ $data->no_mahasiswa4 }}" placeholder="Nomor Mahasiswa" required>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
                                     <label for="jurusan4">Jurusan</label>
                                     <input type="text" class="form-control" name="jurusan4" value="{{ $data->jurusan4 }}" id="jurusan4" placeholder="Jurusan" required>
                                 </div>
@@ -276,6 +303,12 @@
                                 <div class="form-group">
                                     <label for="fullname5">Nama Lengkap</label>
                                     <input type="text" class="form-control" name="fullname5" value="{{ $data->fullname5 }}" id="fullname5" placeholder="Nama Lengkap" required>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="no_mahasiswa5">Nomor Mahasiswa</label>
+                                    <input type="number" class="form-control" name="no_mahasiswa5" id="no_mahasiswa5" value="{{ $data->no_mahasiswa5 }}" placeholder="Nomor Mahasiswa" required>
                                 </div>
                             </div>
                             <div class="col-md-8">

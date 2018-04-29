@@ -26,6 +26,12 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label for="no_mahasiswa">Nomor Mahasiswa</label>
+                                            <input type="number" class="form-control" name="no_mahasiswa" id="no_mahasiswa" placeholder="Nomor Mahasiswa" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label for="email">Alamat Email</label>
                                             <input type="email" class="form-control" name="email" id="email" placeholder="Alamat Email" required>
                                         </div>
@@ -69,7 +75,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="no_telp">No. HP</label>
-                                            <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="No. HP" required>
+                                            <input type="number" class="form-control" name="no_telp" id="no_telp" placeholder="No. HP" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12" >

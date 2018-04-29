@@ -26,6 +26,7 @@ class UsersTableSeeder extends Seeder
             'password' => \Hash::make('sandiaman'),
             'nama_tim' => 'TIM',
             'asal_pt' => 'PENS',
+            'no_mahasiswa' => 2103171036,
             'jenis_kelamin' => 'Laki-laki',
             'jurusan' => 'IT',
             'alamat' => 'Surabaya',

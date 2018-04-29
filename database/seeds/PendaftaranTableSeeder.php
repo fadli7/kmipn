@@ -14,6 +14,7 @@ class PendaftaranTableSeeder extends Seeder
         $result = DB::table('pendaftaran')->insert([
             'users_id' => 2,
             'fullname2' => 'Anggota2',
+            'no_mahasiswa2' => 2103171036,
             'email2' => 'member2@kmipn.com',
             'jenis_kelamin2' => 'Laki-laki',
             'jurusan2' => 'IT',
@@ -22,6 +23,7 @@ class PendaftaranTableSeeder extends Seeder
             'alamat2' => 'Surabaya',
             'no_telp2' => '0895337348558',
             'fullname3' => 'Anggota3',
+            'no_mahasiswa3' => 2103171036,
             'email3' => 'member3@kmipn.com',
             'jenis_kelamin3' => 'Laki-laki',
             'jurusan3' => 'IT',
@@ -30,6 +32,7 @@ class PendaftaranTableSeeder extends Seeder
             'alamat3' => 'Surabaya',
             'no_telp3' => '0895337348558',
             'fullname4' => 'Anggota4',
+            'no_mahasiswa4' => 2103171036,
             'email4' => 'member4@kmipn.com',
             'jenis_kelamin4' => 'Laki-laki',
             'jurusan4' => 'IT',

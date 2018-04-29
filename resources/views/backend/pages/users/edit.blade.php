@@ -28,6 +28,12 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label for="no_mahasiswa">Nomor Mahasiswa</label>
+                                            <input type="number" class="form-control" name="no_mahasiswa" id="no_mahasiswa" value="{{ $data->no_mahasiswa }}" placeholder="Nomor Mahasiswa" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label for="email">Alamat Email</label>
                                             <input type="email" class="form-control" name="email" id="email" value="{{ $data->email }}" placeholder="Alamat Email" required>
                                         </div>

@@ -33,11 +33,6 @@ class PendaftaranController extends Controller
        return view('backend.pages.pendaftaran.tidak_lolos', $data);
      }
 
-    public function show($id)
-    {
-      
-    }
-
     public function edit($id)
     {
       $data['data'] = Pendaftaran::find($id);
@@ -48,12 +43,12 @@ class PendaftaranController extends Controller
     public function update($id, Request $request)
     {
         $req = $request->except('_method','_token','submit');
-        $req['tgl_lahir'] = date('Y-m-d', strtotime($req['tgl_lahir']));
 
         $result1 = User::where('id', $req['users_id'])->update(array(
           'asal_pt' => $req['asal_pt'],
           'nama_tim' => $req['nama_tim'],
           'fullname' => $req['fullname'],
+          'no_mahasiswa' => $req['no_mahasiswa'],
           'jurusan' => $req['jurusan'],
           'email' => $req['email'],
           'alamat' => $req['alamat'],
@@ -64,7 +59,7 @@ class PendaftaranController extends Controller
           'kategori' => $req['kategori'],
         ));
 
-        $req2 = $request->except('_method','asal_pt','nama_tim','fullname','jurusan','email','alamat','tempat_lahir','tgl_lahir','jenis_kelamin','kategori','no_telp','_token','submit');
+        $req2 = $request->except('_method','asal_pt','nama_tim','fullname','no_mahasiswa','jurusan','email','alamat','tempat_lahir','tgl_lahir','jenis_kelamin','kategori','no_telp','_token','submit');
 
         $result2 = Pendaftaran::where('id', $id)->update($req2);
 
