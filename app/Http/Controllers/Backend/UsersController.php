@@ -25,8 +25,6 @@ class UsersController extends Controller
 
         $req['password'] = \Hash::make($req['password']);
 
-        $req['tgl_lahir'] = date('Y-m-d', strtotime($req['tgl_lahir']));
-
         $result = User::create($req);
 
         return redirect('backend/users')->withInput()->with('message', array(
@@ -48,8 +46,6 @@ class UsersController extends Controller
       	$req = $request->except('_method', '_token', 'submit');
 
         $req['password'] = \Hash::make($req['password']);
-
-        $req['tgl_lahir'] = date('Y-m-d', strtotime($req['tgl_lahir']));
 
         $result = User::where('id', $id)->update($req);
 

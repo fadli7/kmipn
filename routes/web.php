@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Frontend\PagesController@index');
+Route::get('login', 'Frontend\PagesController@viewLogin');
+Route::get('/register', 'Frontend\PagesController@viewRegister');
 
-Auth::routes();
+//Auth::routes();
 
 // Login Routes...
 Route::get('/auth/login', ['as' => 'login.get', 'uses' => 'Auth\LoginController@showLoginForm']);
