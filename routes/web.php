@@ -35,6 +35,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => '/backend', 'namespace' => '\Backend', 'middleware' => ['auth', 'role:admin' ]], function() {
     Route::get('/', array('as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index'));
     Route::resource('users', 'UsersController');
+    Route::resource('admin', 'AdminController');
+    Route::resource('lomba', 'LombaController');
 
     Route::get('/pendaftaran/{id}/edit', ['as' => 'pendaftaran.edit', 'uses' => 'PendaftaranController@edit']);
     Route::resource('pendaftaran', 'PendaftaranController', [ 'only' => [

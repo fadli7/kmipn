@@ -8,19 +8,19 @@ use App\User;
 
 class UsersController extends Controller
 {
-    public function index() {
-	   $data['data'] = User::orderBy('id', 'DESC')->get();
+  public function index() {
+	   $data['data'] = User::where('role','member')->orderBy('id', 'DESC')->get();
 
       return view('backend.pages.users.index', $data);
-	}
+  }
 
 	public function create()
-    {
+  {
       return view('backend.pages.users.create');
-    }
+  }
 
-    public function store(Request $request)
-    {
+  public function store(Request $request)
+  {
       	$req = $request->all();
 
         $req['password'] = \Hash::make($req['password']);
@@ -34,7 +34,7 @@ class UsersController extends Controller
           'type' => 'success',
           'msg' => 'Saved Success.',
         ));
-    }
+  }
 
     public function edit($id)
     {

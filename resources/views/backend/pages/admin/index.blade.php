@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="page-header">
-    <h2>Member</h2>
+    <h2>Admin</h2>
 </div>
 
 <div class="row">

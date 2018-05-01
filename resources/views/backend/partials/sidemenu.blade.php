@@ -20,8 +20,15 @@
                 </li>
                 <li class="nav-heading"><span>Master Data</span></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/backend/users') }}">
-                        <i class="fa fa-users"></i> <span class="toggle-none">Users</span>
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="true"><i class="fa fa-users"></i> <span class="toggle-none">Users<span class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="true">
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/backend/admin') }}">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/backend/users') }}">Member</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/backend/lomba') }}">
+                        <i class="fa fa-shield"></i> <span class="toggle-none">Lomba</span>
                     </a>
                 </li>
                 <li class="nav-item">
