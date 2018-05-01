@@ -12,7 +12,7 @@
                 Data Form
             </div>
             <div class="card-block">
-                <form action="{{ url('/backend/users') }}" method="post">
+                <form action="{{ url('/users') }}" method="post">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="row">
@@ -22,12 +22,6 @@
                                         <div class="form-group">
                                             <label for="fullname">Nama Lengkap</label>
                                             <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Nama Lengkap" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="no_mahasiswa">Nomor Mahasiswa</label>
-                                            <input type="number" class="form-control" name="no_mahasiswa" id="no_mahasiswa" placeholder="Nomor Mahasiswa" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -44,8 +38,14 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="jurusan">Jurusan</label>
-                                            <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan" required>
+                                            <label for="asal_pt">Asal Perguruan Tinggi</label>
+                                            <input type="text" class="form-control" name="asal_pt" id="asal_pt" placeholder="Asal Perguruan Tinggi" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="nama_tim">Nama Tim</label>
+                                            <input type="text" class="form-control" name="nama_tim" id="nama_tim" placeholder="No. HP" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -56,26 +56,8 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Tempat/Tgl Lahir</label>
-                                            <div class="form-inline">
-                                                <input type="text" class="form-control col-md-4" name="tempat_lahir"  id="tempat_lahir" placeholder="Tempat Lahir" required>/
-                                                <input type="date" class="form-control col-md-4" name="tgl_lahir" id="tgl_lahir" placeholder="Tgl Lahir" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="">Jenis Kelamin</label>
-                                            <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
-                                                <option value="Laki-laki">Laki-laki</option>
-                                                <option value="Perempuan">Perempuan</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
                                             <label for="no_telp">No. HP</label>
-                                            <input type="number" class="form-control" name="no_telp" id="no_telp" placeholder="No. HP" required>
+                                            <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="Nama Tim" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12" >

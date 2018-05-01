@@ -8,6 +8,9 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="card">
+            <div class="card-heading card-default">
+                Data Table
+            </div>
             <div class="card-block">
                 <a href="{{ url('/backend/users/create') }}" class="btn btn-success pull-right">Create New</a>
                 <div class="clearfix"></div>
@@ -16,10 +19,9 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>No Mahasiswa</th>
-                            <th>Nama</th>
+                            <th>Fullname</th>
                             <th>Email</th>
-                            <th>No. Telp</th>
+                            <th>Phone</th>
                             <th>Role</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -29,10 +31,9 @@
                         @foreach($data as $item)
                         <tr>
                             <td>{{ $index }}</td>
-                            <td>{{ $item->no_mahasiswa }}</td>
                             <td>{{ $item->fullname }}</td>
                             <td>{{ $item->email }}</td>
-                            <td>{{ $item->no_telp }}</td>
+                            <td>{{ $item->phone }}</td>
                             <td>{{ $item->role }}</td>
                             <td width="153">
                                 <form action="{{ url('/backend/users/'.$item->id) }}" method="post">
@@ -49,10 +50,9 @@
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>No Mahasiswa</th>
-                            <th>Nama</th>
+                            <th>Fullname</th>
                             <th>Email</th>
-                            <th>No. Telp</th>
+                            <th>Phone</th>
                             <th>Role</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -74,11 +74,7 @@ $(document).ready(function(){
         "searching": true,
         "ordering": false,
         "info": true,
-        "autoWidth": false,
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
+        "autoWidth": false
     });
 });
 </script>
