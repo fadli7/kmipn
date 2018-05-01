@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/datepicker/datepicker3.css') }}">
     <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/daterangepicker/daterangepicker.css') }}">
-
+    <link rel="stylesheet" href="{{ url('/vendor/jquery-steps/demo/css/jquery.steps.css') }}" type="text/css">
     <!-- Summernote -->
     <link href="{{ url('fixed-admin/lib/summernote/summernote.css') }}" rel="stylesheet">
 
@@ -110,6 +110,8 @@
 
     <!--Chart Script-->
     <script src="{{ url('fixed-admin/lib/chartJs/Chart.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/vendor/jquery-steps/build/jquery.steps.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/vendor/jquery-steps/build/jquery.validate.min.js') }}"></script>
 
     <!--VetorMap Script-->
     <script src="{{ url('fixed-admin/lib/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
@@ -118,6 +120,13 @@
     <!-- Datatables -->
     <script src="{{ url('fixed-admin/lib/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('fixed-admin/lib/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
     <script src="{{ url('fixed-admin/lib/toast/jquery.toast.min.js') }}"></script>
 
     <script type="text/javascript">
@@ -156,42 +165,7 @@
             startView: 'decade',
         });
 
-        $('.upload').click(function(){
-            $('.user-photo input[type="file"]').click();
-            return false;
-        });
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#preview-image').attr('src', e.target.result);
-                    $('#photo').val(e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $("#image").change(function(){
-            if (window.File && window.FileReader && window.FileList && window.Blob) {
-                //get the file size and file type from file input field
-                var fsize = $(this)[0].files[0].size;
-
-                if(fsize > 1048576) { //do something if file size more than 1 MB (1048576)
-                    alert("Ukuran file terlalu besar");
-                    $(this).val('');
-                }else {
-                    $("#preview-image").css('opacity','1');
-                    readURL(this);
-                }
-            }else{
-                alert("Silahkan upgrade browser untuk untuk mendapatkan fitur validasi file max size");
-                $("#preview-image").css('opacity','1');
-                readURL(this);
-            }
-        });
+        
     });
     </script>
     @show

@@ -36,4 +36,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function logout()
+    {
+        $this->guard()->logout();
+
+        return redirect('/')->with('message', array(
+          'title' => 'Yay!',
+          'type' => 'success',
+          'msg' => 'You\'re log out.',
+        ));
+    }
 }

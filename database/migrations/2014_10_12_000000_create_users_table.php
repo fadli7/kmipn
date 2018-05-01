@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('tempat_lahir')->nullable();
             $table->date('tgl_lahir')->nullable();
             $table->text('alamat')->nullable();
-            $table->string('no_telp', 20)->nullable();
+            $table->string('no_telp')->nullable();
             $table->enum('kategori', array('Cipta Inovasi', 'Bisnis TIK', 'Game Development', 'E-Goverment','IoT','Desain Animasi','Keamanan Jaringan','Hackathon'))->nullable();
             $table->enum('role', array('admin', 'member'))->default('member');
             $table->rememberToken();

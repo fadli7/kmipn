@@ -27,7 +27,7 @@ class UsersController extends Controller
 
         $result = User::create($req);
 
-        return redirect('backend/users')->withInput()->with('message', array(
+        return redirect('backend/admin')->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
@@ -49,7 +49,7 @@ class UsersController extends Controller
 
         $result = User::where('id', $id)->update($req);
 
-        return redirect('backend/users')->withInput()->with('message', array(
+        return redirect('backend/admin')->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
@@ -61,7 +61,7 @@ class UsersController extends Controller
       $result = User::find($id);
       $result->delete();
 
-      return redirect('backend/users')->withInput()->with('message', array(
+      return redirect('backend/admin')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Deleted data.',

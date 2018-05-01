@@ -13,7 +13,7 @@
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="kategori">Kategori Lomba</label>
                                     <select class="form-control" name="kategori" id="" required>
@@ -26,18 +26,6 @@
                                         <option value="Keamanan Jaringan">Keamanan Jaringan</option>
                                         <option value="Hackathon">Hackathon</option>
                                     </select>
-                                </div>
-                            </div><br>
-                            <div class="col-md-5">
-                                <div class="user-photo">
-                                <input type="file" name="image" accept="image/*" id="image" style="opacity:0">
-                                <input type="hidden" name="photo" id="photo">
-                                <div class="text-center">Logo</div>
-                                <div class="upload">
-                                    <div class="upload-content">
-                                    <img src="{{ url('/img/default.jpg') }}" id="preview-image" width="" class="img-responsive">
-                                    </div>
-                                </div>
                                 </div>
                             </div><br>
                             <div class="col-md-8">

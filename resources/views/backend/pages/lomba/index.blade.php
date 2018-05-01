@@ -16,7 +16,6 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Logo</th>
                             <th>Kategori</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -25,7 +24,6 @@
                         @foreach($data as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td><img src="{{ url('logo/'.$item->photo) }}" width="150"></td>
                             <td>{{ $item->kategori }}</td>
                             <td width="153">
                                 <form action="{{ url('/backend/lomba/'.$item->id) }}" method="post">
@@ -41,7 +39,6 @@
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Logo</th>
                             <th>Kategori</th>
                             <th>&nbsp;</th>
                         </tr>

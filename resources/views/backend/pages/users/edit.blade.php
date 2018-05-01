@@ -21,6 +21,12 @@
                             <div class="col-md-8">
                                 <div class="row">
                                     <div class="col-md-12">
+                                         <div class="form-group">
+                                            <label for="no_mahasiswa">Nomor Mahasiswa</label>
+                                            <input type="number" class="form-control" name="no_mahasiswa" id="no_mahasiswa" value="{{ $data->no_mahasiswa }}" placeholder="Nomor Mahasiswa" required>
+                                        </div>
+                                   </div>
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="fullname">Nama Lengkap</label>
                                             <input type="text" class="form-control" name="fullname" value="{{ $data->fullname }}" id="fullname" placeholder="Nama Lengkap" required>
@@ -45,10 +51,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="nama_tim">Nama Tim</label>
-                                            <input type="text" class="form-control" name="nama_tim" value="{{ $data->nama_tim }}" id="nama_tim" placeholder="Nama Tim" required>
-                                        </div>
+                                         <div class="form-group">
+                                            <label for="jurusan">Jurusan</label>
+                                            <input type="text" class="form-control" name="jurusan" value="{{ $data->jurusan }}" id="jurusan" placeholder="Jurusan" required>
+                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -59,7 +65,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="no_telp">No. HP</label>
-                                            <input type="text" class="form-control" name="no_telp" id="no_telp" value="{{ $data->no_telp }}" placeholder="No. HP" required>
+                                            <input type="number" class="form-control" name="no_telp" id="no_telp" value="{{ $data->no_telp }}" placeholder="No. HP" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">

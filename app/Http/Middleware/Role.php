@@ -16,7 +16,7 @@ class Role
     public function handle($request, Closure $next, $role)
     {
         if (auth()->user()->role == 'member') {
-            return redirect('/backend/dashboard')->with('message', array(
+            return redirect('/')->with('message', array(
               'title' => 'Yay!',
               'type' => 'success',
               'msg' => 'Login success.',

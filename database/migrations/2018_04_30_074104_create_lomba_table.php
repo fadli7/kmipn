@@ -16,7 +16,6 @@ class CreateLombaTable extends Migration
         Schema::create('lomba', function (Blueprint $table) {
             $table->increments('id');
             $table->enum('kategori', array('Cipta Inovasi', 'Bisnis TIK', 'Game Development', 'E-Goverment','IoT','Desain Animasi','Keamanan Jaringan','Hackathon'))->nullable();
-            $table->text('photo');
             $table->text('pengumuman');
             $table->text('deskripsi');
             $table->text('peraturan');

@@ -67,40 +67,19 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
-                                        <div class="user-photo">
-                                            <input type="file" name="image" accept="image/*" id="image" style="opacity:0">
-                                            <input type="hidden" name="photo" id="photo">
-                                            <div class="text-center">Logo</div>
-                                                <div class="upload">
-                                                    <div class="upload-content">
-                                                    @if (empty($data->photo))
-                                                        <img src="{{ url('img/default.jpg') }}" id="preview-image">
-                                                    @else
-                                                        @if (file_exists(public_path('logo/'.$data->photo)))
-                                                        <img src="{{ url('logo/'.$data->photo) }}" id="preview-image" class="img-responsive">
-                                                        @else
-                                                        <img src="{{ url('img/default.jpg') }}" id="preview-image" class="img-responsive">
-                                                        @endif
-                                                    @endif
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><br>
-                                    <div class="col-md-8">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="pengumuman">Pengumuman</label>
                                             <textarea class="form-control summernote" name="pengumuman" id="pengumuman" rows="3" placeholder="pengumuman">{{ $data->pengumuman }}</textarea>
                                         </div>
                                     </div><br>
-                                    <div class="col-md-8">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="deskripsi">Deskripsi Lomba</label>
                                             <textarea class="form-control summernote" name="deskripsi" id="deskripsi" rows="3" placeholder="deskripsi">{{ $data->deskripsi }}</textarea>
                                         </div>
                                     </div><br>
-                                    <div class="col-md-8">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="peraturan">Peraturan Lomba</label>
                                             <textarea class="form-control summernote" name="peraturan" id="peraturan" rows="3" placeholder="peraturan">{{ $data->peraturan }}</textarea>
@@ -120,39 +99,3 @@
     </div>
 </div>
 @stop
-@section('js')
-@parent
-
-<script type="text/javascript">
-$(document).ready(function(){
-
-    var htmlItemList = $('table.table tbody tr').html();
-
-    $('body').on('click', '.plus-detail', function(){
-        var rowHTML = '<tr>' + htmlItemList + '</tr>';
-
-        $('table.table tbody .plus-detail').removeClass('plus-detail').removeClass('btn-primary').addClass('remove-detail').addClass('btn-danger').html('<i class="fa fa-minus"></i>');
-        $('table.table tbody').append(rowHTML);
-        $('table.table tbody tr:last-child').find('span.select2').remove();
-        $('.select2').select2();
-    });
-
-    $('body').on('click', '.remove-detail', function(){
-        $(this).parent('td').parent('tr').remove();
-    });
-
-    $('#ceksemua').click(function(){
-        if ($('.cek').attr('checked')) {
-          $('.cek').attr('checked', false);
-        }else {
-          $('.cek').attr('checked', true);
-        }
-    });
-    if($('.cek').length == $('.cek:checked').length){
-        $('#ceksemua').attr('checked',true);
-    }else{
-        $('#ceksemua').attr('checked',false);
-    }
-});
-</script>
-@endsection

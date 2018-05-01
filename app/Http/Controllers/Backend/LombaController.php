@@ -5,9 +5,6 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Lomba;
-use Image;
-use File;
-use Illuminate\Support\Facades\Storage;
 
 class LombaController extends Controller
 {
@@ -25,21 +22,6 @@ class LombaController extends Controller
   public function store(Request $request)
   {
         $req = $request->all();
-        
-        if ($request->hasFile('image')) {
-          if ($request->file('image')->isValid()) {
-              $destinationPath = 'logo/'; // upload path
-              $extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
-              $fileName = rand(11111,99999).'.'.$extension; // renaming image
-              $request->file('image')->move($destinationPath, $fileName); // uploading file to given path
-              Image::make($destinationPath.$fileName)->resize(500, null, function($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-              })->save($destinationPath.$fileName);
-              $req['photo'] = $fileName;
-              unset($req['image']);
-          }
-        }
 
         $result = Lomba::create($req);
 
@@ -59,33 +41,9 @@ class LombaController extends Controller
 
     public function update($id, Request $request)
     {
-        $req = $request->except('_method', '_token', 'submit');
-        
-        if ($request->hasFile('image')) {
-          if ($request->file('image')->isValid()) {
-            $destinationPath = 'logo/'; // upload path
-            $extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
-            $fileName = rand(11111,99999).'.'.$extension; // renaming image
-            $request->file('image')->move($destinationPath, $fileName); // uploading file to given path
-            Image::make($destinationPath.$fileName)->resize(500, null, function($constraint) {
-              $constraint->aspectRatio();
-              $constraint->upsize();
-            })->save($destinationPath.$fileName);
-            $req['photo'] = $fileName;
-            unset($req['image']);
-  
-            $result = Lomba::find($id);
-            if (!empty($result->photo)) {
-              File::delete('logo/'.$result->photo);
-            }
-          }else {
-            unset($req['photo']);
-          }
-        }else {
-          unset($req['photo']);
-        }
+        $req = $request->except('files','_method', '_token', 'submit');
 
-        $result = User::where('id', $id)->update($req);
+        $result = Lomba::where('id', $id)->update($req);
 
         return redirect('backend/lomba')->withInput()->with('message', array(
           'title' => 'Yay!',

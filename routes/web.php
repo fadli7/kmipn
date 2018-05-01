@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', 'Frontend\PagesController@index');
+Route::get('/', 'Frontend\PagesController@index')->name('home');
 Route::get('login', 'Frontend\PagesController@viewLogin');
 Route::get('/register', 'Frontend\PagesController@viewRegister');
+Route::get('/forgot', 'Frontend\PagesController@forgot');
 
 //Auth::routes();
 
@@ -30,7 +31,7 @@ Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
 //Backend Routes
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => '/backend', 'namespace' => '\Backend', 'middleware' => ['auth', 'role:admin' ]], function() {
     Route::get('/', array('as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index'));

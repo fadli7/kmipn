@@ -15,7 +15,6 @@ class Lomba extends Model
      */
     protected $fillable = [
         'kategori',
-        'photo',
         'pengumuman',
         'deskripsi',
         'peraturan',

@@ -1,6 +1,6 @@
 @extends('frontend.layouts')
 @section('title')
-  Login | KMIPN 2018
+  Forgot Password | KMIPN 2018
 @endsection
 @section('content')
   <div class="container-fluid bg-container">
@@ -10,11 +10,11 @@
               <center>
                 <i class="fa fa-user"></i>
                 <br>
-                KMIPN | USER LOGIN
+                KMIPN | FORGOT PASSWORD
               </center>
             </div>
             <div class="panel-body">
-              <form role="form" action="{{ url('auth/login') }}" method="post">
+              <form role="form" action="{{ url('auth/forgot') }}" method="post">
               @csrf
                 <div class="form-group">
                   <label for="email">Email address</label>
@@ -25,21 +25,8 @@
                     </span>
                   @endif
                 </div>
-                <div class="form-group">
-                  <label for="pwd">Password</label>
-                  <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="pwd">
-                  @if ($errors->has('password'))
-                    <span class="invalid-feedback">
-                      <strong>{{ $errors->first('password') }}</strong>
-                    </span>
-                  @endif
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox"> Remember me</label> |
-                  <a href="{{ url('forgot') }}">Lupa kata sandi?</a>
-                </div>
                 <br>
-                <button type="submit" class="form-control btn btn-default">Sign In</button>
+                <button type="submit" class="form-control btn btn-default">Submit</button>
               </form>
             </div>
         </div>
