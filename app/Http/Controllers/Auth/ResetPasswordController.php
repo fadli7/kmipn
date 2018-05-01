@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use App\User;
+use DateTime;
+use Auth;
+use DB;
 
 class ResetPasswordController extends Controller
 {
@@ -25,7 +31,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -35,5 +41,63 @@ class ResetPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function reset() {
+
+        $validator = Validator::make(request()->all(), [
+            'email' => 'required',
+            'token' => 'required',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('message', array(
+                'title' => 'Oops!',
+                'type' => 'danger',
+                'msg' => 'Validation failed.',
+            ));
+        }
+
+        $checkCode = DB::table('password_resets')->where([
+            'email' => request('email'),
+            'token' => request('token')
+        ])->first();
+
+
+        if ($checkCode) {
+
+            $user = User::where('email', request('email'))->first();
+
+            if ($user) {
+
+                User::where('id', $user->id)->update(['password' => bcrypt(request('password'))]);
+
+                DB::table('password_resets')->where('email', $user->email)->delete();
+
+                return redirect()->to('/')->with('message', array(
+                    'title' => 'Yay!',
+                    'type' => 'success',
+                    'msg' => 'Your password has been reset.',
+                ));
+
+            } else {
+                return redirect()->back()->with('message', array(
+                    'title' => 'Oops!',
+                    'type' => 'danger',
+                    'msg' => 'The email address doesn\'t match with any account.',
+                ));
+
+            }
+
+
+        } else {
+            return redirect()->back()->with('message', array(
+                'title' => 'Oops!',
+                'type' => 'danger',
+                'msg' => 'The reset code doesn\'t match with email address.',
+            ));
+
+        }
     }
 }

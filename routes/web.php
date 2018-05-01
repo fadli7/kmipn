@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'Frontend\PagesController@index')->name('home');
-Route::get('login', 'Frontend\PagesController@viewLogin');
-Route::get('/register', 'Frontend\PagesController@viewRegister');
+Route::get('/', ['as' => 'view.home', 'uses' => 'Frontend\PagesController@index'])->name('home');
+Route::get('/login', ['as' => 'view.login', 'uses' => 'Frontend\PagesController@viewLogin']);
+Route::get('/register', ['as' => 'view.register', 'uses' => 'Frontend\PagesController@viewRegister']);
 Route::get('/forgot', 'Frontend\PagesController@forgot');
 
 //Auth::routes();

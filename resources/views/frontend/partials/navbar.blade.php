@@ -10,7 +10,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{url('/')}}">beranda</a></li>
+        @if (Request::route()->getName() == 'view.home')
+          <li class="active"><a href="{{url('/')}}">beranda</a></li>
+        @else
+          <li class=""><a href="{{url('/')}}">beranda</a></li>
+        @endif
         <li><a href="#">kategori lomba</a></li>
         <li><a href="#">tentang kmipn</a></li>
         <li><a href="#">informasi</a></li>
@@ -20,8 +24,16 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @guest
-          <li><a href="{{url('login')}}">Login</a></li>
-          <li><a href="{{url('register')}}">Register</a></li>
+          @if (Request::route()->getName() == 'view.login')
+            <li class="active"><a href="{{url('login')}}">Login</a></li>
+          @else
+            <li><a href="{{url('login')}}">Login</a></li>
+          @endif
+          @if (Request::route()->getName() == 'view.register')
+            <li class="active"><a href="{{url('register')}}">Register</a></li>
+          @else
+            <li><a href="{{url('register')}}">Register</a></li>
+          @endif
         @else
           <li><a href="{{url('auth/logout')}}">Logout</a></li>
         @endguest
