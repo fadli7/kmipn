@@ -2,16 +2,14 @@
 
 @section('content')
 <div class="page-header">
-    <h2>Member</h2>
+    <h2>Admin</h2>
 </div>
 
 <div class="row">
     <div class="col-sm-12">
         <div class="card">
-            <div class="card-heading card-default">
-                Data Table
-            </div>
             <div class="card-block">
+                <a href="{{ url('/backend/users/create') }}" class="btn btn-success pull-right">Create New</a>
                 <div class="clearfix"></div>
                 <br>
                 <table id="table" class="table table-bordered table-hover">

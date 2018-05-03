@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFileTable extends Migration
+class CreateLombaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateFileTable extends Migration
      */
     public function up()
     {
-        Schema::create('file', function (Blueprint $table) {
+        Schema::create('lomba', function (Blueprint $table) {
             $table->increments('id');
+            $table->enum('kategori', array('Cipta Inovasi', 'Bisnis TIK', 'Game Development', 'E-Goverment','IoT','Desain Animasi','Keamanan Jaringan','Hackathon'))->nullable();
+            $table->text('pengumuman');
+            $table->text('deskripsi');
+            $table->text('peraturan');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateFileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('file');
+        Schema::dropIfExists('lomba');
     }
 }

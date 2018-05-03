@@ -14,36 +14,41 @@
               </center>
             </div>
             <div class="panel-body">
-              <form role="form">
+              <form role="form" action="{{ url('auth/register') }}" method="post">
+              @csrf
                 <div class="form-group">
                   <label>Kategori Lomba</label>
-                  <select class="form-control" name="kategori">
+                  <select class="form-control" name="kategori" required>
                     <option disabled selected>Pilih Bidang Lomba</option>
-                    <option value="">Cipta Inovasi</option>
-                    <option value="">Bisnis TIK</option>
-                    <option value="">Game Development</option>
-                    <option value="">E-Goverment</option>
-                    <option value="">IoT ( Internet of Things )</option>
-                    <option value="">Desain Animasi</option>
-                    <option value="">Keamanan Jaringan</option>
-                    <option value="">Hackathon</option>
+                    <option value="Cipta Inovasi">Cipta Inovasi</option>
+                    <option value="Bisnis TIK">Bisnis TIK</option>
+                    <option value="Game Development">Game Development</option>
+                    <option value="E-Goverment">E-Goverment</option>
+                    <option value="IoT">IoT ( Internet of Things )</option>
+                    <option value="Desain Animasi">Desain Animasi</option>
+                    <option value="Keamanan Jaringan">Keamanan Jaringan</option>
+                    <option value="Hackathon">Hackathon</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label>Nama TIM</label>
-                  <input type="text" name="team_name" required class="form-control">
+                  <input type="text" name="nama_tim" required class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="">Asal Politeknik</label>
-                  <input type="text" name="poltek" required class="form-control">
+                  <input type="text" name="asal_pt" required class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="">Jurusan</label>
                   <input type="text" name="jurusan" required class="form-control">
                 </div>
                 <div class="form-group">
+                  <label for="">Nomor Mahasiswa</label>
+                  <input type="text" name="no_mahasiswa" required class="form-control">
+                </div>
+                <div class="form-group">
                   <label for="">Nama Ketua</label>
-                  <input type="text" name="kname" required class="form-control">
+                  <input type="text" name="fullname" required class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="">E-mail</label>
@@ -57,20 +62,20 @@
                   <label for="">No. Telepon</label>
                   <div class="input-group">
                     <span class="input-group-addon">+62</span>
-                    <input type="telp" name="telp" required class="form-control">
+                    <input type="telp" name="no_telp" required class="form-control">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="">Jenis Kelamin</label>
                   <div class="checkbox">
-                    <label><input type="radio" name="jk" value="pria"> Pria</label>
-                    <label><input type="radio" name="jk" value="wanita"> Wanita</label>
+                    <label><input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki</label>
+                    <label><input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan</label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-md-7">
                     <label for="">Tempat Lahir</label>
-                    <input type="text" name="tempat" required class="form-control">
+                    <input type="text" name="tempat_lahir" required class="form-control">
                   </div>
                   <div class="form-group col-md-5">
                     <label for="">Tanggal Lahir</label>
@@ -79,7 +84,7 @@
                 </div>
                 <div class="form-group">
                   <label for="">Alamat</label>
-                  <textarea name="alamat" rows="4" class="form-control"></textarea>
+                  <textarea name="alamat" rows="4" class="form-control" required></textarea>
                 </div>
                 <br>
                 <button type="submit" class="form-control btn btn-default">Submit</button>

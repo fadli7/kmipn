@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+
     public function index(){
       return view('frontend.pages.dashboard');
     }
@@ -17,5 +18,9 @@ class PagesController extends Controller
 
     public function viewRegister(){
       return view('frontend.pages.register');
+    }
+
+    public function forgot(){
+      return view('frontend.pages.forgot');
     }
 }

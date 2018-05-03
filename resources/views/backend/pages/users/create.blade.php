@@ -12,12 +12,18 @@
                 Data Form
             </div>
             <div class="card-block">
-                <form action="{{ url('/users') }}" method="post">
+                <form action="{{ url('backend/users/') }}" method="post">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="row">
+                                    <div class="col-md-12">
+                                         <div class="form-group">
+                                            <label for="no_mahasiswa">Nomor Mahasiswa</label>
+                                            <input type="number" class="form-control" name="no_mahasiswa" id="no_mahasiswa" placeholder="Nomor Mahasiswa" required>
+                                        </div>
+                                   </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="fullname">Nama Lengkap</label>
@@ -43,11 +49,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="nama_tim">Nama Tim</label>
-                                            <input type="text" class="form-control" name="nama_tim" id="nama_tim" placeholder="No. HP" required>
-                                        </div>
-                                    </div>
+                                         <div class="form-group">
+                                            <label for="jurusan">Jurusan</label>
+                                            <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan" required>
+                                         </div>
+                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="alamat">Alamat Rumah</label>
@@ -57,7 +63,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="no_telp">No. HP</label>
-                                            <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="Nama Tim" required>
+                                            <input type="number" class="form-control" name="no_telp" id="no_telp" placeholder="No. HP" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12" >

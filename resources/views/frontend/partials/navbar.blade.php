@@ -10,17 +10,31 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="{{url('/')}}">beranda</a></li>
+        @if (Request::route()->getName() == 'view.home')
+          <li class="active"><a href="{{url('/')}}">beranda</a></li>
+        @else
+          <li class=""><a href="{{url('/')}}">beranda</a></li>
+        @endif
         <li><a href="{{url('/#kmipn-category')}}">kategori lomba</a></li>
         <li><a href="{{url('/#kmipn-about')}}">tentang kmipn</a></li>
         <li><a href="{{url('/#kmipn-info')}}">informasi</a></li>
         <li><a href="{{url('/#kmipn-galery')}}">galeri</a></li>
         <li><a href="#">jadwal</a></li>
         <li><a href="#">faq</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{url('login')}}">Login</a></li>
-        <li><a href="{{url('register')}}">Register</a></li>
+        @guest
+          @if (Request::route()->getName() == 'view.login')
+            <li class="active"><a href="{{url('login')}}">Login</a></li>
+          @else
+            <li><a href="{{url('login')}}">Login</a></li>
+          @endif
+          @if (Request::route()->getName() == 'view.register')
+            <li class="active"><a href="{{url('register')}}">Register</a></li>
+          @else
+            <li><a href="{{url('register')}}">Register</a></li>
+          @endif
+        @else
+          <li><a href="{{url('auth/logout')}}">Logout</a></li>
+        @endguest
       </ul>
     </div>
   </div>

@@ -4211,3 +4211,14 @@ figure {
 .top-bar.primary-top-bar {
   background: #016ddc;
 }
+
+.wizard > .steps .done a, .wizard > .steps .done a:hover, .wizard > .steps .done a:active{
+  padding:10px;
+}
+.wizard > .steps .current a, .wizard > .steps .current a:hover, .wizard > .steps .current a:active{
+  padding:10px;
+  background: #2184be;
+}
+.wizard > .content{
+  max-height: 100% !important;
+}

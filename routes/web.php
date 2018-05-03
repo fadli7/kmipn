@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', 'Frontend\PagesController@index');
-Route::get('login', 'Frontend\PagesController@viewLogin');
-Route::get('/register', 'Frontend\PagesController@viewRegister');
+Route::get('/', ['as' => 'view.home', 'uses' => 'Frontend\PagesController@index'])->name('home');
+Route::get('/login', ['as' => 'view.login', 'uses' => 'Frontend\PagesController@viewLogin']);
+Route::get('/register', ['as' => 'view.register', 'uses' => 'Frontend\PagesController@viewRegister']);
+Route::get('/forgot', 'Frontend\PagesController@forgot');
 
 //Auth::routes();
 
@@ -30,11 +31,13 @@ Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
 //Backend Routes
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => '/backend', 'namespace' => '\Backend', 'middleware' => ['auth', 'role:admin' ]], function() {
     Route::get('/', array('as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index'));
     Route::resource('users', 'UsersController');
+    Route::resource('admin', 'AdminController');
+    Route::resource('lomba', 'LombaController');
 
     Route::get('/pendaftaran/{id}/edit', ['as' => 'pendaftaran.edit', 'uses' => 'PendaftaranController@edit']);
     Route::resource('pendaftaran', 'PendaftaranController', [ 'only' => [

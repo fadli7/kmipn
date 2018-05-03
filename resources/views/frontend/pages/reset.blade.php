@@ -1,6 +1,6 @@
 @extends('frontend.layouts')
 @section('title')
-  Login | KMIPN 2018
+  Reset | KMIPN 2018
 @endsection
 @section('content')
   <div class="container-fluid bg-container">
@@ -10,12 +10,13 @@
               <center>
                 <i class="fa fa-user"></i>
                 <br>
-                KMIPN | USER LOGIN
+                KMIPN | Reset Password
               </center>
             </div>
             <div class="panel-body">
-              <form role="form" action="{{ url('auth/login') }}" method="post">
+              <form role="form" action="{{ url('password/reset') }}" method="post">
               @csrf
+              <input type="hidden" name="token" value="{{ $token }}">
                 <div class="form-group">
                   <label for="email">Email address</label>
                   <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="email">
@@ -34,12 +35,8 @@
                     </span>
                   @endif
                 </div>
-                <div class="checkbox">
-                  <label><input type="checkbox"> Remember me</label> |
-                  <a href="{{ url('forgot') }}">Lupa kata sandi?</a>
-                </div>
                 <br>
-                <button type="submit" class="form-control btn btn-default">Sign In</button>
+                <button type="submit" class="form-control btn btn-default">Submit</button>
               </form>
             </div>
         </div>
