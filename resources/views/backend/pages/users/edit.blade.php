@@ -99,39 +99,3 @@
     </div>
 </div>
 @stop
-@section('js')
-@parent
-
-<script type="text/javascript">
-$(document).ready(function(){
-
-    var htmlItemList = $('table.table tbody tr').html();
-
-    $('body').on('click', '.plus-detail', function(){
-        var rowHTML = '<tr>' + htmlItemList + '</tr>';
-
-        $('table.table tbody .plus-detail').removeClass('plus-detail').removeClass('btn-primary').addClass('remove-detail').addClass('btn-danger').html('<i class="fa fa-minus"></i>');
-        $('table.table tbody').append(rowHTML);
-        $('table.table tbody tr:last-child').find('span.select2').remove();
-        $('.select2').select2();
-    });
-
-    $('body').on('click', '.remove-detail', function(){
-        $(this).parent('td').parent('tr').remove();
-    });
-
-    $('#ceksemua').click(function(){
-        if ($('.cek').attr('checked')) {
-          $('.cek').attr('checked', false);
-        }else {
-          $('.cek').attr('checked', true);
-        }
-    });
-    if($('.cek').length == $('.cek:checked').length){
-        $('#ceksemua').attr('checked',true);
-    }else{
-        $('#ceksemua').attr('checked',false);
-    }
-});
-</script>
-@endsection

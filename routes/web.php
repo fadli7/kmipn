@@ -38,6 +38,8 @@ Route::group(['prefix' => '/backend', 'namespace' => '\Backend', 'middleware' =>
     Route::resource('users', 'UsersController');
     Route::resource('admin', 'AdminController');
     Route::resource('lomba', 'LombaController');
+    Route::resource('artikel', 'ArtikelController');
+    Route::resource('galeri', 'GaleriController');
 
     Route::get('/pendaftaran/{id}/edit', ['as' => 'pendaftaran.edit', 'uses' => 'PendaftaranController@edit']);
     Route::resource('pendaftaran', 'PendaftaranController', [ 'only' => [

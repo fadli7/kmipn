@@ -13,7 +13,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //Schema::defaultStringLength(191); //Solved by increasing StringLength
+
+         //Counter::hit();
+         //$data['visitors'] = Counter::count();
+         //$bulan = date('Y-m');
+         //$tgl = date('d');
+         //$data['month'] = Counter::where('date', 'LIKE', '%'.$bulan.'%')->count();
+         //$data['day'] = Counter::where('date', 'LIKE', '%'.$tgl.'%')->count();
+         //view()->share('visitors', $data['visitors']);
+         //view()->share('month', $data['month']);
+         //view()->share('day', $data['day']);
     }
 
     /**

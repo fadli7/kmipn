@@ -40,6 +40,16 @@
                         <i class="fa fa-shield"></i> <span class="toggle-none">Lomba</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/backend/artikel') }}">
+                        <i class="fa fa-book"></i> <span class="toggle-none">Artikel</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/backend/galeri') }}">
+                        <i class="fa fa-image"></i> <span class="toggle-none">Galeri</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
