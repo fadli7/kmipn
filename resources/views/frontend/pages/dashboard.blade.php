@@ -67,7 +67,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
         <p>Kompetisi Mahasiswa Bidang Informatika Politeknik Nasional 2018</p>
       </div>
       <div class="section-body">
-        <div class="col-sm-4 col-xs-6">
+        <div class="col-sm-4 col-xs-12">
           <div class="category">
             <img src="{{url('img/lamp.svg')}}" alt="Cipta Inovasi">
             <div class="category-title">
@@ -75,7 +75,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <div class="col-sm-4 col-xs-6">
+        <div class="col-sm-4 col-xs-12">
           <div class="category">
             <img src="{{url('img/briefcase.svg')}}" alt="Cipta Inovasi">
             <div class="category-title">
@@ -83,7 +83,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <div class="col-sm-4 col-xs-6">
+        <div class="col-sm-4 col-xs-12">
           <div class="category">
             <img src="{{url('img/console.svg')}}" alt="Cipta Inovasi">
             <div class="category-title">
@@ -91,7 +91,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <div class="col-sm-4 col-xs-6">
+        <div class="col-sm-4 col-xs-12">
           <div class="category">
             <img src="{{url('img/city-hall.svg')}}" alt="Cipta Inovasi">
             <div class="category-title">
@@ -99,7 +99,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <div class="col-sm-4 col-xs-6">
+        <div class="col-sm-4 col-xs-12">
           <div class="category">
             <img src="{{url('img/cpu.svg')}}" alt="Cipta Inovasi">
             <div class="category-title">
@@ -107,7 +107,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <div class="col-sm-4 col-xs-6">
+        <div class="col-sm-4 col-xs-12">
           <div class="category">
             <img src="{{url('img/video-player.svg')}}" alt="Cipta Inovasi">
             <div class="category-title">
@@ -115,7 +115,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <div class="col-sm-offset-2 col-sm-4 col-xs-6">
+        <div class="col-sm-offset-2 col-sm-4 col-xs-12">
           <div class="category">
             <img src="{{url('img/shield.svg')}}" alt="Cipta Inovasi">
             <div class="category-title">
@@ -123,7 +123,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <div class="col-sm-4 col-xs-6">
+        <div class="col-sm-4 col-xs-12">
           <div class="category">
             <img src="{{url('img/programmer.svg')}}" alt="Cipta Inovasi">
             <div class="category-title">

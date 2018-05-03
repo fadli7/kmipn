@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" data-spy="affix" data-offset-top="510">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -10,11 +10,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{url('/')}}">beranda</a></li>
-        <li><a href="#">kategori lomba</a></li>
-        <li><a href="#">tentang kmipn</a></li>
-        <li><a href="#">informasi</a></li>
-        <li><a href="#">galeri</a></li>
+        <li><a href="{{url('/')}}">beranda</a></li>
+        <li><a href="{{url('/#kmipn-category')}}">kategori lomba</a></li>
+        <li><a href="{{url('/#kmipn-about')}}">tentang kmipn</a></li>
+        <li><a href="{{url('/#kmipn-info')}}">informasi</a></li>
+        <li><a href="{{url('/#kmipn-galery')}}">galeri</a></li>
         <li><a href="#">jadwal</a></li>
         <li><a href="#">faq</a></li>
       </ul>

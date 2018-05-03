@@ -12,11 +12,12 @@
     <script src="{{url('vendor/locationpicker/locationpicker.jquery.min.js')}}" charset="utf-8"></script>
 
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
     @include('frontend.partials.navbar')
     @yield('content')
     @include('frontend.partials.footer')
     <script src="{{url('vendor/slick/slick.min.js')}}" charset="utf-8"></script>
     <script src="{{url('vendor/bootstrap/js/bootstrap.min.js')}}" charset="utf-8"></script>
+    <!-- <script src="{{url('js/sticky-navbar.js')}}" charset="utf-8"></script> -->
   </body>
 </html>

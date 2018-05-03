@@ -1,3 +1,11 @@
+body{
+  position: relative;
+}
+
+.navbar-fixed-top{
+  transition: 0.2s;
+}
+
 .navbar{
   border-radius: 0;
   height: 80px;
@@ -6,6 +14,12 @@
   z-index: 2;
   margin-bottom: 0;
   border-bottom: 2px solid #f2c808;
+  width: 100%;
+  top:0;
+}
+
+.navbar-default .navbar-collapse{
+  background-color: #103967;
 }
 
 .navbar > .container-fluid{
@@ -196,7 +210,8 @@ clip-path: polygon(0 0, 100% 0, 100% 49%, 50% 100%, 0% 50%);
 
 /*=======================================================================================*/
 .section-content{
-  margin-bottom: 50px;
+  min-height: 500px;
+  padding-top: 70px;
 }
 
 .section-header{
