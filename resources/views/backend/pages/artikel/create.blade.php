@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="user-photo">
-                                            <input type="file" name="image" accept="image/*" id="image">
+                                            <input type="file" name="image" accept="image/*" id="image" style="opacity:0">
                                             <input type="hidden" name="photo" id="photo">
                                             <div class="text-center">Cover Photo (Max File Size: 1MB)</div>
                                             <div class="upload">

@@ -15,7 +15,7 @@ class ArtikelController extends Controller
 
     public function index()
     {
-      $data['data'] = Artikel::orderBy('date', 'desc')->get();
+      $data['data'] = Artikel::orderBy('id', 'desc')->get();
 
       return view('backend.pages.artikel.index', $data);
     }
@@ -56,7 +56,7 @@ class ArtikelController extends Controller
 
     public function edit($id)
     {
-      $data['data'] = Blog::find($id);
+      $data['data'] = Artikel::find($id);
 
       return view('backend.pages.artikel.edit', $data);
     }

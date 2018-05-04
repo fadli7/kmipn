@@ -15,7 +15,7 @@ class GaleriController extends Controller
 
     public function index()
     {
-      $data['data'] = Galeri::orderBy('date', 'desc')->get();
+      $data['data'] = Galeri::orderBy('id', 'desc')->get();
 
       return view('backend.pages.galeri.index', $data);
     }

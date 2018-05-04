@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="user-photo">
-                                            <input type="file" name="image" accept="image/*" id="image">
+                                            <input type="file" name="image" accept="image/*" id="image" style="opacity:0">
                                             <input type="hidden" name="photo" id="photo">
                                             <div class="text-center"> Photo (Max File Size: 1MB)</div>
                                             <div class="upload">
@@ -32,11 +32,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div><br>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div><br>
                     <div class="box-footer text-center">
                         <a href="{{ url('/backend/galeri') }}" class="btn btn-warning">Cancel</a>
                         <button type="submit" name="submit" class="btn btn-success">Save</button>

@@ -12,7 +12,7 @@
                 Data Form
             </div>
             <div class="card-block">
-                <form action="{{ url('/backend/users/'.$data->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('/backend/artikel/'.$data->id) }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
 
@@ -26,9 +26,9 @@
                                             <input type="text" class="form-control" name="title" id="title" value="{{ $data->title }}" placeholder="Title" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <div class="user-photo">
-                                            <input type="file" name="image" accept="image/*" id="image">
+                                            <input type="file" name="image" accept="image/*" id="image" style="opacity:0">
                                             <input type="hidden" name="photo" id="photo">
                                             <div class="text-center">Cover Photo (Max File Size: 1MB)</div>
                                             <div class="upload">
@@ -36,8 +36,8 @@
                                                 @if (empty($data->photo))
                                                     <img src="{{ url('img/default.jpg') }}" id="preview-image">
                                                 @else
-                                                    @if (file_exists(public_path('uploads/artikel/'.$data->photo)))
-                                                    <img src="{{ url('uploads/artikel/'.$data->photo) }}" id="preview-image">
+                                                    @if (file_exists(public_path('artikel/'.$data->photo)))
+                                                    <img src="{{ url('artikel/'.$data->photo) }}" id="preview-image">
                                                     @else
                                                     <img src="{{ url('img/default.jpg') }}" id="preview-image">
                                                     @endif
@@ -49,7 +49,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="content">Content</label>
-                                            <textarea class="form-control summernote" name="content" id="content" rows="3" placeholder="Content" required>value="{{ $data->content }}"</textarea>
+                                            <textarea class="form-control summernote" name="content" id="content" rows="3" placeholder="Content" required>{{ $data->content }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="box-footer text-center">
-                        <a href="{{ url('/backend/users') }}" class="btn btn-warning">Cancel</a>
+                        <a href="{{ url('/backend/artikel') }}" class="btn btn-warning">Cancel</a>
                         <button type="submit" name="submit" class="btn btn-success">Save</button>
                     </div>
                 </form>

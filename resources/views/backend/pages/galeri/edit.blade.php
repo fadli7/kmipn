@@ -23,9 +23,9 @@
                                             <input type="text" class="form-control" name="title" id="title" value="{{ $data->title }}" placeholder="Title" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <div class="user-photo">
-                                            <input type="file" name="image" accept="image/*" id="image">
+                                            <input type="file" name="image" accept="image/*" id="image" style="opacity:0">
                                             <input type="hidden" name="photo" id="photo">
                                             <div class="text-center"> Photo (Max File Size: 1MB)</div>
                                             <div class="upload">
@@ -33,8 +33,8 @@
                                                 @if (empty($data->photo))
                                                     <img src="{{ url('img/default.jpg') }}" id="preview-image">
                                                 @else
-                                                    @if (file_exists(public_path('uploads/galeri/'.$data->photo)))
-                                                    <img src="{{ url('uploads/galeri/'.$data->photo) }}" id="preview-image">
+                                                    @if (file_exists(public_path('galeri/'.$data->photo)))
+                                                    <img src="{{ url('galeri/'.$data->photo) }}" id="preview-image">
                                                     @else
                                                     <img src="{{ url('img/default.jpg') }}" id="preview-image">
                                                     @endif
@@ -42,11 +42,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div><br>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div><br>
                     <div class="box-footer text-center">
                         <a href="{{ url('/backend/galeri') }}" class="btn btn-warning">Cancel</a>
                         <button type="submit" name="submit" class="btn btn-success">Save</button>
