@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
-    use SoftDeletes;
     use Notifiable;
+
+    protected $guard = 'admins';
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fullname','no_mahasiswa', 'email', 'password','jenis_kelamin','alamat','no_telp', 'jurusan', 'tempat_lahir','tgl_lahir','tim_id','role'
+        'fullname', 'email', 'password',
     ];
 
     /**
@@ -28,11 +28,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    protected $dates = ['deleted_at'];
-
-    public function tim()
-    {
-        return $this->hasMany('App\Tim', 'users_id');
-    }
 }

@@ -15,7 +15,7 @@ class Role
      */
     public function handle($request, Closure $next, $role)
     {
-        if (auth()->user()->role == 'member') {
+        if (auth()->user()->role == 'Ketua') {
             return redirect('/')->with('message', array(
               'title' => 'Yay!',
               'type' => 'success',

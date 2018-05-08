@@ -19,16 +19,14 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->enum('jenis_kelamin', array('Laki-laki', 'Perempuan'))->nullable();
-            $table->string('asal_pt')->nullable();
-            $table->string('nama_tim')->nullable();
             $table->text('jurusan')->nullable();
             $table->string('no_mahasiswa')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->date('tgl_lahir')->nullable();
             $table->text('alamat')->nullable();
             $table->string('no_telp')->nullable();
-            $table->enum('kategori', array('Cipta Inovasi', 'Bisnis TIK', 'Game Development', 'E-Goverment','IoT','Desain Animasi','Keamanan Jaringan','Hackathon'))->nullable();
-            $table->enum('role', array('admin', 'member'))->default('member');
+            $table->string('tim_id')->nullable();
+            $table->enum('role', array('Ketua', 'Anggota'));
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

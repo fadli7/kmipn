@@ -5,37 +5,46 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
-use App\Pendaftaran;
+use App\Tim;
+use App\Lomba;
 
 class PendaftaranController extends Controller
 {
     public function daftar() {
-	   $data['data'] = Pendaftaran::whereNull('file_proposal')->where('status','Daftar')->orderBy('id', 'DESC')->get();
+	    $data['data'] = Tim::whereHas('users', function ($query) {
+        $query->where('role', '=', 'Ketua');
+      })->whereNull('file_proposal')->where('status','Daftar')->orderBy('id', 'DESC')->get();
 
       return view('backend.pages.pendaftaran.daftar', $data);
     }
     
     public function tahap_seleksi() {
-        $data['data'] = Pendaftaran::where('status','Tahap Seleksi')->orderBy('id', 'DESC')->get();
+        $data['data'] = Tim::whereHas('users', function ($query) {
+          $query->where('role', '=', 'Ketua');
+        })->where('status','Tahap Seleksi')->orderBy('id', 'DESC')->get();
  
        return view('backend.pages.pendaftaran.tahap_seleksi', $data);
      }
 
      public function lolos() {
-        $data['data'] = Pendaftaran::where('status','Lolos')->orderBy('id', 'DESC')->get();
+        $data['data'] = Tim::whereHas('users', function ($query) {
+          $query->where('role', '=', 'Ketua');
+        })->where('status','Lolos')->orderBy('id', 'DESC')->get();
  
        return view('backend.pages.pendaftaran.lolos', $data);
      }
 
      public function tidak_lolos() {
-        $data['data'] = Pendaftaran::where('status','Tidak Lolos')->orderBy('id', 'DESC')->get();
+        $data['data'] = Tim::whereHas('users', function ($query) {
+          $query->where('role', '=', 'Ketua');
+        })->where('status','Tidak Lolos')->orderBy('id', 'DESC')->get();
  
        return view('backend.pages.pendaftaran.tidak_lolos', $data);
      }
 
     public function edit($id)
     {
-      $data['data'] = Pendaftaran::find($id);
+      $data['data'] = Tim::find($id);
 
       return view('backend.pages.pendaftaran.edit', $data);
     }
