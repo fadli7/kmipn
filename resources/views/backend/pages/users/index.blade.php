@@ -27,10 +27,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $index = 1; ?>
                         @foreach($data as $item)
                         <tr>
-                            <td>{{ $index }}</td>
+                            <td>{{ $item->id }}</td>
                             <td>{{ $item->no_mahasiswa }}</td>
                             <td>{{ $item->fullname }}</td>
                             <td>{{ $item->email }}</td>
@@ -40,12 +39,11 @@
                                 <form action="{{ url('/backend/users/'.$item->id) }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <a href="{{ url('/backend/users/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
+                                    <!--<a href="{{ url('/backend/users/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>-->
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</button>
                                 </form>
                             </td>
                         </tr>
-                        <?php $index++; ?>
                         @endforeach
                     </tbody>
                     <tfoot>

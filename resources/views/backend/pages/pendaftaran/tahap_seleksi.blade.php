@@ -28,17 +28,17 @@
                         @foreach($data as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->users->nama_tim }}</td>
+                            <td>{{ $item->nama_tim }}</td>
                             <td>{{ $item->users->fullname }}</td>
-                            <td>{{ $item->users->asal_pt }}</td>
+                            <td>{{ $item->asal_pt }}</td>
                             <td>{{ $item->file_proposal }}</td>
-                            <td>{{ $item->users->kategori }}</td>
+                            <td>{{ $item->lomba->kategori }}</td>
                             <td>{{ $item->status }}</td>
                             <td width="153">
-                                <form action="{{ url('/backend/pendaftaran/'.$item->id) }}" method="post">
+                                <form action="{{ url('/ecodeeepis/pendaftaran/'.$item->id) }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <a href="{{ url('/backend/pendaftaran/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Detail</a>
+                                    <a href="{{ url('/ecodeeepis/pendaftaran/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Detail</a>
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</button>
                                 </form>
                             </td>

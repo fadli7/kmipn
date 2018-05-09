@@ -8,6 +8,11 @@ use App\Lomba;
 
 class LombaController extends Controller
 {
+  public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
   public function index() {
     $data['data'] = Lomba::orderBy('id', 'DESC')->get();
 
@@ -25,7 +30,7 @@ class LombaController extends Controller
 
         $result = Lomba::create($req);
 
-        return redirect('backend/lomba')->withInput()->with('message', array(
+        return redirect('ecodeeepis/lomba')->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
@@ -45,7 +50,7 @@ class LombaController extends Controller
 
         $result = Lomba::where('id', $id)->update($req);
 
-        return redirect('backend/lomba')->withInput()->with('message', array(
+        return redirect('ecodeeepis/lomba')->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
@@ -57,7 +62,7 @@ class LombaController extends Controller
       $result = Lomba::find($id);
       $result->delete();
 
-      return redirect('backend/lomba')->withInput()->with('message', array(
+      return redirect('ecodeeepis/lomba')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Deleted data.',

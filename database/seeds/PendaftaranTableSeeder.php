@@ -18,7 +18,7 @@ class PendaftaranTableSeeder extends Seeder
             'asal_pt' => 'PENS',
             'total_anggota' => 0,
             'file_proposal'=> 'operasi linux word.docx',
-            'status' => 'Daftar',
+            'status' => 'Tahap Seleksi',
             'created_at' => new DateTime,
             'updated_at' => new DateTime,
         ]);

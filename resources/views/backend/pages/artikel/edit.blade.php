@@ -12,7 +12,7 @@
                 Data Form
             </div>
             <div class="card-block">
-                <form action="{{ url('/backend/artikel/'.$data->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('/ecodeeepis/artikel/'.$data->id) }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
 
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="box-footer text-center">
-                        <a href="{{ url('/backend/artikel') }}" class="btn btn-warning">Cancel</a>
+                        <a href="{{ url('/ecodeeepis/artikel') }}" class="btn btn-warning">Cancel</a>
                         <button type="submit" name="submit" class="btn btn-success">Save</button>
                     </div>
                 </form>

@@ -9,7 +9,7 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
-                <a href="{{ url('/backend/lomba/create') }}" class="btn btn-success pull-right">Create New</a>
+                <a href="{{ url('/ecodeeepis/lomba/create') }}" class="btn btn-success pull-right">Create New</a>
                 <div class="clearfix"></div>
                 <br>
                 <table id="table" class="table table-bordered table-hover">
@@ -26,10 +26,10 @@
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->kategori }}</td>
                             <td width="153">
-                                <form action="{{ url('/backend/lomba/'.$item->id) }}" method="post">
+                                <form action="{{ url('/ecodeeepis/lomba/'.$item->id) }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <a href="{{ url('/backend/lomba/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
+                                    <a href="{{ url('/ecodeeepis/lomba/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</button>
                                 </form>
                             </td>

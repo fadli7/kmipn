@@ -10,6 +10,11 @@ use App\Lomba;
 
 class PendaftaranController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth:admin');
+  }
+
     public function daftar() {
 	    $data['data'] = Tim::whereHas('users', function ($query) {
         $query->where('role', '=', 'Ketua');
@@ -45,6 +50,12 @@ class PendaftaranController extends Controller
     public function edit($id)
     {
       $data['data'] = Tim::find($id);
+      $data['user_count'] = User::where('tim_id',$id)->count();
+
+      $data['anggota2'] = User::where('tim_id',$id)->where('anggota_ke',2)->first();
+      $data['anggota3'] = User::where('tim_id',$id)->where('anggota_ke',3)->first();
+      $data['anggota4'] = User::where('tim_id',$id)->where('anggota_ke',4)->first();
+      $data['anggota5'] = User::where('tim_id',$id)->where('anggota_ke',5)->first();
 
       return view('backend.pages.pendaftaran.edit', $data);
     }
@@ -53,24 +64,10 @@ class PendaftaranController extends Controller
     {
         $req = $request->except('_method','_token','submit');
 
-        $result1 = User::where('id', $req['users_id'])->update(array(
-          'asal_pt' => $req['asal_pt'],
-          'nama_tim' => $req['nama_tim'],
-          'fullname' => $req['fullname'],
-          'no_mahasiswa' => $req['no_mahasiswa'],
-          'jurusan' => $req['jurusan'],
-          'email' => $req['email'],
-          'alamat' => $req['alamat'],
-          'tempat_lahir' => $req['tempat_lahir'],
-          'tgl_lahir' => $req['tgl_lahir'],
-          'jenis_kelamin' => $req['jenis_kelamin'],
-          'no_telp' => $req['no_telp'],
-          'kategori' => $req['kategori'],
+        
+        $result2 = Tim::where('id', $id)->update(array(
+          'status'=> $req['status']
         ));
-
-        $req2 = $request->except('_method','asal_pt','nama_tim','fullname','no_mahasiswa','jurusan','email','alamat','tempat_lahir','tgl_lahir','jenis_kelamin','kategori','no_telp','_token','submit');
-
-        $result2 = Pendaftaran::where('id', $id)->update($req2);
 
         return redirect()->back()->withInput()->with('message', array(
           'title' => 'Yay!',
@@ -81,7 +78,7 @@ class PendaftaranController extends Controller
 
     public function destroy($id)
     {
-      $result = Pendaftaran::find($id);
+      $result = Tim::find($id);
       $result->delete();
 
       return redirect()->back()->withInput()->with('message', array(

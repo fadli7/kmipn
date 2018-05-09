@@ -25,6 +25,7 @@ class UsersTableSeeder extends Seeder
             'tgl_lahir' => new DateTime,
             'no_telp' => '0895337348558',
             'role' => 'Ketua',
+            'anggota_ke' => 1,
             'created_at' => new DateTime,
             'updated_at' => new DateTime,
         ]);
@@ -42,6 +43,7 @@ class UsersTableSeeder extends Seeder
             'tgl_lahir' => new DateTime,
             'no_telp' => '0895337348558',
             'role' => 'Anggota',
+            'anggota_ke' => 2,
             'created_at' => new DateTime,
             'updated_at' => new DateTime,
         ]);
@@ -59,6 +61,7 @@ class UsersTableSeeder extends Seeder
             'tgl_lahir' => new DateTime,
             'no_telp' => '0895337348558',
             'role' => 'Anggota',
+            'anggota_ke' => 3,
             'created_at' => new DateTime,
             'updated_at' => new DateTime,
         ]);

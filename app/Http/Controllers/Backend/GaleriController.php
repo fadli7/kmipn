@@ -12,6 +12,10 @@ use File;
 
 class GaleriController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth:admin');
+  }
 
     public function index()
     {
@@ -46,7 +50,7 @@ class GaleriController extends Controller
 
       $result = Galeri::create($req);
 
-      return redirect('backend/galeri')->withInput()->with('message', array(
+      return redirect('ecodeeepis/galeri')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Saved Success.',
@@ -90,7 +94,7 @@ class GaleriController extends Controller
 
       $result = Galeri::where('id', $id)->update($req);
 
-      return redirect('backend/galeri')->withInput()->with('message', array(
+      return redirect('ecodeeepis/galeri')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Saved Success.',
@@ -105,7 +109,7 @@ class GaleriController extends Controller
       }
       $result->delete();
 
-      return redirect('backend/galeri')->withInput()->with('message', array(
+      return redirect('ecodeeepis/galeri')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Deleted data.',

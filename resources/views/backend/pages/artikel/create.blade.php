@@ -9,7 +9,7 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
-                <form action="{{ url('backend/artikel/') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('ecodeeepis/artikel/') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="row">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="box-footer text-center">
-                        <a href="{{ url('/backend/artikel') }}" class="btn btn-warning">Cancel</a>
+                        <a href="{{ url('/ecodeeepis/artikel') }}" class="btn btn-warning">Cancel</a>
                         <button type="submit" name="submit" class="btn btn-success">Save</button>
                     </div>
                 </form>

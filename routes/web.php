@@ -21,25 +21,25 @@ Route::get('/forgot', 'Frontend\PagesController@forgot');
 Route::prefix('ecodeeepis')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('ecodeeepis.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('ecodeeepis.login.submit');
-    Route::get('/', 'AdminController@index')->name('ecodeeepis.dashboard');
+    Route::get('/', 'AdminController@admin')->name('ecodeeepis.dashboard');
     Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\AdminLoginController@logout']);
 
     //Route::get('/', array('as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index'));
-    Route::resource('users', 'UsersController');
-    Route::resource('admin', 'AdminController');
-    Route::resource('lomba', 'LombaController');
-    Route::resource('artikel', 'ArtikelController');
-    Route::resource('galeri', 'GaleriController');
+    Route::resource('users', 'Backend\UsersController');
+    Route::resource('admin', 'Backend\AdminController');
+    Route::resource('lomba', 'Backend\LombaController');
+    Route::resource('artikel', 'Backend\ArtikelController');
+    Route::resource('galeri', 'Backend\GaleriController');
 
-    Route::get('/pendaftaran/{id}/edit', ['as' => 'pendaftaran.edit', 'uses' => 'PendaftaranController@edit']);
-    Route::resource('pendaftaran', 'PendaftaranController', [ 'only' => [
+    Route::get('/pendaftaran/{id}/edit', ['as' => 'pendaftaran.edit', 'uses' => 'Backend\PendaftaranController@edit']);
+    Route::resource('pendaftaran', 'Backend\PendaftaranController', [ 'only' => [
         'update','destroy'
       ]]);
 
-    Route::get('/pendaftaran/daftar/', ['as' => 'pendaftaran.daftar', 'uses' => 'PendaftaranController@daftar']);
-    Route::get('/pendaftaran/tahap_seleksi/', ['as' => 'pendaftaran.tahap_seleksi', 'uses' => 'PendaftaranController@tahap_seleksi']);
-    Route::get('/pendaftaran/lolos/', ['as' => 'pendaftaran.lolos', 'uses' => 'PendaftaranController@lolos']);
-    Route::get('/pendaftaran/tidak_lolos/', ['as' => 'pendaftaran.tidak_lolos', 'uses' => 'PendaftaranController@tidak_lolos']);
+    Route::get('/pendaftaran/daftar/', ['as' => 'pendaftaran.daftar', 'uses' => 'Backend\PendaftaranController@daftar']);
+    Route::get('/pendaftaran/tahap_seleksi/', ['as' => 'pendaftaran.tahap_seleksi', 'uses' => 'Backend\PendaftaranController@tahap_seleksi']);
+    Route::get('/pendaftaran/lolos/', ['as' => 'pendaftaran.lolos', 'uses' => 'Backend\PendaftaranController@lolos']);
+    Route::get('/pendaftaran/tidak_lolos/', ['as' => 'pendaftaran.tidak_lolos', 'uses' => 'Backend\PendaftaranController@tidak_lolos']);
 });
 
 // Login Routes...

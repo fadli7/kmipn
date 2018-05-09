@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->text('alamat')->nullable();
             $table->string('no_telp')->nullable();
             $table->string('tim_id')->nullable();
+            $table->string('anggota_ke')->nullable();
             $table->enum('role', array('Ketua', 'Anggota'));
             $table->rememberToken();
             $table->softDeletes();

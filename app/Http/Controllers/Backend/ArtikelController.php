@@ -12,6 +12,10 @@ use File;
 
 class ArtikelController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth:admin');
+  }
 
     public function index()
     {
@@ -47,7 +51,7 @@ class ArtikelController extends Controller
 
       $result = Artikel::create($req);
 
-      return redirect('backend/artikel')->withInput()->with('message', array(
+      return redirect('ecodeeepis/artikel')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Saved Success.',
@@ -93,7 +97,7 @@ class ArtikelController extends Controller
 
       $result = Artikel::where('id', $id)->update($req);
 
-      return redirect('backend/artikel')->withInput()->with('message', array(
+      return redirect('ecodeeepis/artikel')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Saved Success.',
@@ -108,7 +112,7 @@ class ArtikelController extends Controller
       }
       $result->delete();
 
-      return redirect('backend/artikel')->withInput()->with('message', array(
+      return redirect('ecodeeepis/artikel')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Deleted data.',

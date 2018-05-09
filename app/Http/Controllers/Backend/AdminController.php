@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tim;
+use App\Admin;
 class AdminController extends Controller
 {
     /**
@@ -18,7 +19,7 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function admin()
     {
       $data['ck'] = Tim::whereHas('lomba', function ($query) {
         $query->where('kategori', '=', 'Cipta Inovasi');
@@ -45,5 +46,65 @@ class AdminController extends Controller
         $query->where('kategori','Hackathon');
       })->count();
       return view('backend.pages.dashboard.index',$data);
+    }
+
+    public function index() {
+      $data['data'] = Admin::orderBy('id', 'DESC')->get();
+ 
+       return view('backend.pages.admin.index', $data);
+   }
+
+   public function create()
+  {
+      return view('backend.pages.admin.create');
+  }
+
+  public function store(Request $request)
+  {
+      	$req = $request->all();
+
+        $req['password'] = \Hash::make($req['password']);
+
+        $result = Admin::create($req);
+
+        return redirect('ecodeeepis/admin')->withInput()->with('message', array(
+          'title' => 'Yay!',
+          'type' => 'success',
+          'msg' => 'Saved Success.',
+        ));
+  }
+
+    public function edit($id)
+    {
+      $data['data'] = Admin::find($id);
+
+      return view('backend.pages.admin.edit', $data);
+    }
+
+    public function update($id, Request $request)
+    {
+      	$req = $request->except('_method', '_token', 'submit');
+
+        $req['password'] = \Hash::make($req['password']);
+
+        $result = Admin::where('id', $id)->update($req);
+
+        return redirect('ecodeeepis/admin')->withInput()->with('message', array(
+          'title' => 'Yay!',
+          'type' => 'success',
+          'msg' => 'Saved Success.',
+        ));
+    }
+
+    public function destroy($id)
+    {
+      $result = Admin::find($id);
+      $result->delete();
+
+      return redirect('ecodeeepis/admin')->withInput()->with('message', array(
+        'title' => 'Yay!',
+        'type' => 'success',
+        'msg' => 'Deleted data.',
+      ));
     }
 }
