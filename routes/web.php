@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', ['as' => 'view.home', 'uses' => 'Frontend\PagesController@index'])->name('home');
+Route::get('/', ['as' => 'home', 'uses' => 'Frontend\PagesController@index'])->name('home');
 Route::get('/login', ['as' => 'login', 'uses' => 'Frontend\PagesController@viewLogin']);
 Route::get('/register', ['as' => 'view.register', 'uses' => 'Frontend\PagesController@viewRegister']);
 Route::get('/forgot', 'Frontend\PagesController@forgot');
@@ -57,5 +57,5 @@ Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/', ['as' => 'view.home', 'uses' => 'Frontend\PagesController@index'])->name('home');
+    //Route::get('/', ['as' => 'view.home', 'uses' => 'Frontend\PagesController@index'])->name('home');
 });
