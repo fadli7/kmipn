@@ -2,24 +2,29 @@ body{
   position: relative;
 }
 
-.navbar-fixed-top{
-  transition: 0.2s;
-}
 
 .navbar{
   border-radius: 0;
-  height: 80px;
+  height: 83px;
   background-color:#103967;
-  border:none;
   z-index: 2;
   margin-bottom: 0;
-  border-bottom: 2px solid #f2c808;
+  border:none;
   width: 100%;
   top:0;
+  border-bottom: 3px solid #f2c808;
 }
 
 .navbar-default .navbar-collapse{
   background-color: #103967;
+}
+
+.navbar-collapse.in{
+  overflow-y: -webkit-paged-y;
+}
+
+.navbar-collapse.in  > .navbar-nav > li > a {
+  line-height: 20px;
 }
 
 .navbar > .container-fluid{
@@ -57,6 +62,10 @@ body{
 
 /*===========================================================================================*/
 
+.input-group .form-control{
+  z-index: 0;
+}
+
 .bg-container{
   background-image: url('../img/sfdg.svg');
   width: 100%;
@@ -64,14 +73,18 @@ body{
   min-height: 500px;
 }
 
+.default-container{
+  min-height: 500px;
+}
 
-.panel-login{
+
+.panel-custom{
   margin-top: 10vh;
   border-color: #ddd;
   z-index: 999;
 }
 
-.panel-login > .login-heading {
+.panel-custom > .custom-heading {
   background-color: #ddd;
   color: #103967;
   font-weight: 600;
@@ -80,20 +93,20 @@ body{
 clip-path: polygon(0 0, 100% 0, 100% 49%, 50% 100%, 0% 50%);
 }
 
-.login-heading i{
+.custom-heading i{
   font-size: 30px;
 }
 
-.login-heading{
+.custom-heading{
   background: red;
 }
 
-.panel-login button{
+.panel-custom button{
   background-color: #ddd;
   color:#103967;
 }
 
-.panel-login button:hover{
+.panel-custom button:hover{
   background-color: #103967;
   color: #f2c808;
   transition: 0.3s ease-in;

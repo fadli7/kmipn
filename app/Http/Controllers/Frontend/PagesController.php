@@ -23,4 +23,8 @@ class PagesController extends Controller
     public function forgot(){
       return view('frontend.pages.forgot');
     }
+
+    public function viewProfile(){
+      return view('frontend.pages.profile.dashboard');
+    }
 }

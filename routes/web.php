@@ -15,6 +15,7 @@ Route::get('/', ['as' => 'view.home', 'uses' => 'Frontend\PagesController@index'
 Route::get('/login', ['as' => 'view.login', 'uses' => 'Frontend\PagesController@viewLogin']);
 Route::get('/register', ['as' => 'view.register', 'uses' => 'Frontend\PagesController@viewRegister']);
 Route::get('/forgot', 'Frontend\PagesController@forgot');
+Route::get('/profile/dashboard', ['as' => 'view.profile', 'uses' => 'Frontend\PagesController@viewProfile']);
 
 //Auth::routes();
 

@@ -5,8 +5,8 @@
 @section('content')
   <div class="container-fluid bg-container">
     <div class="col-sm-offset-4 col-sm-4 col-xs-12">
-        <div class="panel panel-default panel-login">
-            <div class="panel-heading login-heading">
+        <div class="panel panel-default panel-custom">
+            <div class="panel-heading custom-heading">
               <center>
                 <i class="fa fa-user"></i>
                 <br>
