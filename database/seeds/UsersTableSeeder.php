@@ -11,31 +11,57 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $result = DB::table('users')->insert([
-            'fullname' => 'admin',
-            'email' => 'admin@kmipn.com',
-            'password' => \Hash::make('sandiaman'),
-            'role' => 'admin',
-            'created_at' => new DateTime,
-            'updated_at' => new DateTime,
-        ]);
 
         $result = DB::table('users')->insert([
-            'fullname' => 'member',
-            'email' => 'member@kmipn.com',
+            'fullname' => 'ketua',
+            'email' => 'ketua@kmipn.com',
             'password' => \Hash::make('sandiaman'),
-            'nama_tim' => 'TIM',
-            'asal_pt' => 'PENS',
+            'tim_id' => 1,
             'no_mahasiswa' => 2103171036,
             'jenis_kelamin' => 'Laki-laki',
             'jurusan' => 'IT',
             'alamat' => 'Surabaya',
             'tempat_lahir' => 'Surabaya',
             'tgl_lahir' => new DateTime,
-            'asal_pt' => 'PENS',
             'no_telp' => '0895337348558',
-            'kategori' => 'Bisnis TIK',
-            'role' => 'member',
+            'role' => 'Ketua',
+            'anggota_ke' => 1,
+            'created_at' => new DateTime,
+            'updated_at' => new DateTime,
+        ]);
+
+        $result = DB::table('users')->insert([
+            'fullname' => 'anggota1',
+            'email' => 'anggota1@kmipn.com',
+            'password' => \Hash::make('sandiaman'),
+            'tim_id' => 1,
+            'no_mahasiswa' => 2103171036,
+            'jenis_kelamin' => 'Laki-laki',
+            'jurusan' => 'IT',
+            'alamat' => 'Surabaya',
+            'tempat_lahir' => 'Surabaya',
+            'tgl_lahir' => new DateTime,
+            'no_telp' => '0895337348558',
+            'role' => 'Anggota',
+            'anggota_ke' => 2,
+            'created_at' => new DateTime,
+            'updated_at' => new DateTime,
+        ]);
+
+        $result = DB::table('users')->insert([
+            'fullname' => 'Anggota2',
+            'email' => 'Anggota2@kmipn.com',
+            'password' => \Hash::make('sandiaman'),
+            'tim_id' => 1,
+            'no_mahasiswa' => 2103171036,
+            'jenis_kelamin' => 'Laki-laki',
+            'jurusan' => 'IT',
+            'alamat' => 'Surabaya',
+            'tempat_lahir' => 'Surabaya',
+            'tgl_lahir' => new DateTime,
+            'no_telp' => '0895337348558',
+            'role' => 'Anggota',
+            'anggota_ke' => 3,
             'created_at' => new DateTime,
             'updated_at' => new DateTime,
         ]);

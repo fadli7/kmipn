@@ -8,16 +8,21 @@ use App\User;
 
 class UsersController extends Controller
 {
+  public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
   public function index() {
-	   $data['data'] = User::where('role','member')->orderBy('id', 'DESC')->get();
+	   $data['data'] = User::orderBy('id', 'DESC')->get();
 
       return view('backend.pages.users.index', $data);
   }
 
-	public function create()
-  {
-      return view('backend.pages.users.create');
-  }
+	//public function create()
+  //{
+  //    return view('backend.pages.users.create');
+  //}
 
   public function store(Request $request)
   {
@@ -27,7 +32,7 @@ class UsersController extends Controller
 
         $result = User::create($req);
 
-        return redirect('backend/admin')->withInput()->with('message', array(
+        return redirect('ecodeeepis/admin')->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
@@ -49,7 +54,7 @@ class UsersController extends Controller
 
         $result = User::where('id', $id)->update($req);
 
-        return redirect('backend/admin')->withInput()->with('message', array(
+        return redirect('ecodeeepis/admin')->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
@@ -61,7 +66,7 @@ class UsersController extends Controller
       $result = User::find($id);
       $result->delete();
 
-      return redirect('backend/admin')->withInput()->with('message', array(
+      return redirect('ecodeeepis/users')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Deleted data.',

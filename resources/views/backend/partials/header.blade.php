@@ -21,7 +21,7 @@
             <div class="col">
                 <ul class="list-inline top-right-nav">
                     <li class="dropdown">
-                        <a class="d-none-m" href="{{ url('/auth/logout') }}"><i class="icon-logout"></i>&nbsp;&nbsp;&nbsp;<span>Logout</span></a>
+                        <a class="d-none-m" href="{{ url('/ecodeeepis/logout') }}"><i class="icon-logout"></i>&nbsp;&nbsp;&nbsp;<span>Logout</span></a>
                     </li>
                 </ul>
             </div>

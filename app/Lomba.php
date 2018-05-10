@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Lomba extends Model
 {
+    use SoftDeletes;
     
     protected $table = 'lomba';
     /**
@@ -19,4 +21,11 @@ class Lomba extends Model
         'deskripsi',
         'peraturan',
     ];
+
+    protected $dates = ['deleted_at'];
+
+    public function tim()
+    {
+        return $this->hasMany('App\Tim', 'kategori_id');
+    }
 }

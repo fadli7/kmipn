@@ -19,6 +19,7 @@ class CreateLombaTable extends Migration
             $table->text('pengumuman');
             $table->text('deskripsi');
             $table->text('peraturan');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

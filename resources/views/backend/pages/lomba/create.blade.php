@@ -9,7 +9,7 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
-                <form action="{{ url('/backend/lomba') }}" method="post">
+                <form action="{{ url('/ecodeeepis/lomba') }}" method="post">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="row">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="box-footer text-center">
-                        <a href="{{ url('/backend/lomba') }}" class="btn btn-warning">Cancel</a>
+                        <a href="{{ url('/ecodeeepis/lomba') }}" class="btn btn-warning">Cancel</a>
                         <button type="submit" name="submit" class="btn btn-success">Save</button>
                     </div>
                 </form>

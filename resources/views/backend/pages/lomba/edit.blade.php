@@ -12,7 +12,7 @@
                 Data Form
             </div>
             <div class="card-block">
-                <form action="{{ url('/backend/lomba/'.$data->id) }}" method="post">
+                <form action="{{ url('/ecodeeepis/lomba/'.$data->id) }}" method="post">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
 
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div class="box-footer text-center">
-                        <a href="{{ url('/backend/lomba') }}" class="btn btn-warning">Cancel</a>
+                        <a href="{{ url('/ecodeeepis/lomba') }}" class="btn btn-warning">Cancel</a>
                         <button type="submit" name="submit" class="btn btn-success">Save</button>
                     </div>
                 </form>
