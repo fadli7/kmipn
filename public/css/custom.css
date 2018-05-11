@@ -2,6 +2,13 @@ body{
   position: relative;
 }
 
+.centered{
+  text-align: center;
+}
+
+.lh-30{
+  line-height: 30px;
+}
 
 .navbar{
   border-radius: 0;
@@ -52,8 +59,13 @@ body{
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a{
   background-color: #f2c808;
-  color:#222;
+  color:#103967;
   transition: 0.3s ease-in;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+  background-color: #f2c808;
+  color:#103967;
 }
 
 .navbar-toggle{
