@@ -16,7 +16,7 @@
 
   </head>
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    @include('frontend.partials.navbar')
+    @include('frontend.partials.pnavbar')
     @yield('content')
     @include('frontend.partials.footer')
     <script src="{{url('vendor/slick/slick.min.js')}}" charset="utf-8"></script>

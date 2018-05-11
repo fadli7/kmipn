@@ -15,10 +15,6 @@
         @else
           <li class=""><a href="{{url('/#')}}">beranda</a></li>
         @endif
-        <li><a href="{{url('/#kmipn-category')}}">kategori lomba</a></li>
-        <li><a href="{{url('/#kmipn-about')}}">tentang kmipn</a></li>
-        <li><a href="{{url('/#kmipn-info')}}">informasi</a></li>
-        <li><a href="{{url('/#kmipn-galery')}}">galeri</a></li>
         <li><a href="{{url('/jadwal-pelaksanaan')}}">jadwal</a></li>
         <li><a href="{{url('/faq')}}">faq</a></li>
         @guest
