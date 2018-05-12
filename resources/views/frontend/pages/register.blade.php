@@ -18,16 +18,11 @@
               @csrf
                 <div class="form-group">
                   <label>Kategori Lomba</label>
-                  <select class="form-control" name="kategori" required>
+                  <select class="form-control" name="kategori_id" required>
                     <option disabled selected>Pilih Bidang Lomba</option>
-                    <option value="Cipta Inovasi">Cipta Inovasi</option>
-                    <option value="Bisnis TIK">Bisnis TIK</option>
-                    <option value="Game Development">Game Development</option>
-                    <option value="E-Goverment">E-Goverment</option>
-                    <option value="IoT">IoT ( Internet of Things )</option>
-                    <option value="Desain Animasi">Desain Animasi</option>
-                    <option value="Keamanan Jaringan">Keamanan Jaringan</option>
-                    <option value="Hackathon">Hackathon</option>
+                    @foreach($lomba as $item)
+                      <option value="{{ $item->id }}">{{ $item->kategori }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="form-group">
@@ -43,7 +38,7 @@
                   <input type="text" name="jurusan" required class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="">Nomor Mahasiswa</label>
+                  <label for="">NIM Ketua</label>
                   <input type="text" name="no_mahasiswa" required class="form-control">
                 </div>
                 <div class="form-group">

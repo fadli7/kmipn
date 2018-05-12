@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use App\Pendaftaran;
+use App\Lomba;
+use App\Tim;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -71,9 +72,6 @@ class RegisterController extends Controller
             'fullname' => $data['fullname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'kategori' => $data['kategori'],
-            'nama_tim' => $data['nama_tim'],
-            'asal_pt' => $data['asal_pt'],
             'jurusan' => $data['jurusan'],
             'no_mahasiswa' => $data['no_mahasiswa'],
             'no_telp' => $data['no_telp'],
@@ -81,11 +79,12 @@ class RegisterController extends Controller
             'tempat_lahir' => $data['tempat_lahir'],
             'tgl_lahir' => $data['tgl_lahir'],
             'alamat' => $data['alamat'],
+            'role' => 'Ketua'
         ]);
     }
 
     public function register(Request $request) {
-        $input = $request->all();
+        $input = $request->except('kategori_id','nama_tim','asal_pt');
         $validator = $this->validator($input);
         $userMail = User::where('email',$input['email'])->count();
   
@@ -121,9 +120,32 @@ class RegisterController extends Controller
             $mail->send();
 
             $userMail2 = User::where('email',$input['email'])->first();
-            Pendaftaran::create([
-                'users_id' => $userMail2->id
-            ]);
+            $input2 = $request->only('kategori_id','nama_tim','asal_pt');
+            $tim = Lomba::where('id',$input2['kategori_id'])->first();
+
+            if($tim->kategori == "Hackathon"){
+                $datatim = Tim::create([
+                    'users_id' => $userMail2->id,
+                    'kategori_id' => $input2['kategori_id'],
+                    'asal_pt' => $input2['asal_pt'],
+                    'nama_tim' => $input2['nama_tim'],
+                    'total_anggota' => 4
+                ]);
+                User::where('id',$userMail2->id)->update(array(
+                    'tim_id' => $datatim->id
+                ));
+            }else{
+                $datatim = Tim::create([
+                    'users_id' => $userMail2->id,
+                    'kategori_id' => $input2['kategori_id'],
+                    'asal_pt' => $input2['asal_pt'],
+                    'nama_tim' => $input2['nama_tim'],
+                    'total_anggota' => 2
+                ]);
+                User::where('id',$userMail2->id)->update(array(
+                    'tim_id' => $datatim->id
+                ));
+            }
   
             return redirect()->to('/')->with('message', array(
               'title' => 'Yay!',

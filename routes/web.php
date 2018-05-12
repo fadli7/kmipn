@@ -65,4 +65,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/profile/submit_edit_anggota/{id}', ['as' => 'view.submit_edit_anggota', 'uses' => 'Frontend\PagesController@submit_edit_anggota']);
     Route::post('/profile/submit_add_anggota/', ['as' => 'view.submit_add_anggota', 'uses' => 'Frontend\PagesController@submit_add_anggota']);
     Route::get('/profile/submit_delete_anggota/{id}', ['as' => 'view.submit_delete_anggota', 'uses' => 'Frontend\PagesController@submit_delete_anggota']);
+
+    Route::post('/profile/submit_edit_tim/{id}', ['as' => 'view.submit_edit_tim', 'uses' => 'Frontend\PagesController@submit_edit_tim']);
 });

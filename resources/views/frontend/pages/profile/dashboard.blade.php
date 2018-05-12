@@ -31,6 +31,8 @@
                     <i class="label label-success">Tidak Lolos</i>
                   @endif
                 <br>
+                Kategori Lomba : {{ $tim->lomba->kategori }}
+                <br>
                 <br>
                 <a href="{{url('profile/info-tim')}}" class="btn btn-primary">Lihat/Ubah Informasi Tim </a>
               </p>
@@ -80,12 +82,16 @@
             </table>
           </div>
           <div id="proposal" class="tab-pane fade">
-            <p class="centered">
-              nama_proposal.docx
-              <br>
-              <br>
-              <a href="#" class="btn btn-primary">Lihat Proposal</a>
-            </p>
+            @if($nullProposal)
+              <button class="col-md-12 btn btn-danger">Anda Belum Upload Proposal</button>
+            @else
+              <p class="centered">
+              {{ $tim->file_proposal }}
+                <br>
+                <br>
+                <a href="{{ url('proposal/'.$tim->file_proposal) }}" class="btn btn-primary">Lihat Proposal</a>
+              </p>
+            @endif
           </div>
         </div>
       </div>

@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Tim;
+use App\Lomba;
+use File;
 
 class PagesController extends Controller
 {
@@ -18,7 +20,8 @@ class PagesController extends Controller
     }
 
     public function viewRegister(){
-      return view('frontend.pages.register');
+      $data['lomba'] = Lomba::get();
+      return view('frontend.pages.register',$data);
     }
 
     public function forgot(){
@@ -28,6 +31,7 @@ class PagesController extends Controller
     public function viewProfile(){
       $data['tim'] = Tim::where('users_id',\Auth::user()->id)->first();
       $data['anggota'] = User::where('tim_id',$data['tim']->id)->get();
+      $data['nullProposal'] = Tim::where('users_id',\Auth::user()->id)->whereNull('file_proposal')->first();
       return view('frontend.pages.profile.dashboard',$data);
     }
 
@@ -120,5 +124,40 @@ class PagesController extends Controller
           'msg' => 'Deleted data.',
         ));
       }
+    }
+
+    public function submit_edit_tim($id, Request $request)
+    {
+        $req = $request->except('_method', '_token', 'submit');
+        
+        if ($request->hasFile('file_proposal')) {
+          if ($request->file('file_proposal')->isValid()) {
+            $file = $request->file('file_proposal');
+            $destinationPath = 'proposal/'; // upload path
+          //$extension = $file->getClientOriginalExtension(); // getting image extension
+            $fileName = $file->getClientOriginalName(); // renaming image
+            $file->move($destinationPath, $fileName); // uploading file to given path
+            $req['file_proposal'] = $fileName;
+
+            $result1 = Tim::find($id);
+            if (!empty($result1->file_proposal)) {
+              File::delete('proposal/'.$result1->file_proposal);
+            }
+          }else {
+            unset($req['file_proposal']);
+          }
+        }else {
+          unset($req['file_proposal']);
+        }
+
+        
+
+        $result = Tim::where('id', $id)->update($req);
+
+        return redirect('/profile/dashboard/')->withInput()->with('message', array(
+          'title' => 'Yay!',
+          'type' => 'success',
+          'msg' => 'Saved Success.',
+        ));
     }
 }
