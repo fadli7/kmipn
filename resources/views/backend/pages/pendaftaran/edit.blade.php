@@ -50,122 +50,45 @@
                     </table>
 
                     @if($user_count > 1)
-                        @if($anggota2)
-                            <h3>Data Anggota 2</h3>
+                            <h3>Data Anggota</h3>
                             <table class="table table-bordered">
-                                <tr>
-                                    <td>No Mahasiswa</td>
-                                    <td>{{ $anggota2->no_mahasiswa }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td>{{ $anggota2->fullname }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>{{ $anggota2->email }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>{{ $anggota2->jenis_kelamin }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Jurusan</td>
-                                    <td>{{ $anggota2->jurusan }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat/Tgl Lahir</td>
-                                    <td>{{ $anggota2->tempat_lahir }}/ {{ date('d-m-Y',strtotime($anggota2->tgl_lahir)) }}</td>
-                                </tr>
+                                <?php $index = 2; ?>
+                                @foreach($anggota as $data)
+                                    <tr>
+                                        <td>No Mahasiswa</td>
+                                        <td>{{ $data->no_mahasiswa }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nama</td>
+                                        <td>{{ $data->fullname }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>{{ $data->email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenis Kelamin</td>
+                                        <td>{{ $data->jenis_kelamin }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jurusan</td>
+                                        <td>{{ $data->jurusan }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tempat/Tgl Lahir</td>
+                                        <td>{{ $data->tempat_lahir }}/ {{ date('d-m-Y',strtotime($data->tgl_lahir)) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anggota Ke</td>
+                                        <td>{{ $index }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <?php $index++; ?>
+                                @endforeach
                             </table>
-                        @endif
-                        @if($anggota3)
-                            <h3>Data Anggota 3</h3>
-                            <table class="table table-bordered">
-                                <tr>
-                                    <td>No Mahasiswa</td>
-                                    <td>{{ $anggota3->no_mahasiswa }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td>{{ $anggota3->fullname }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>{{ $anggota3->email }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>{{ $anggota3->jenis_kelamin }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Jurusan</td>
-                                    <td>{{ $anggota3->jurusan }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat/Tgl Lahir</td>
-                                    <td>{{ $anggota3->tempat_lahir }}/ {{ date('d-m-Y',strtotime($anggota3->tgl_lahir)) }}</td>
-                                </tr>
-                            </table>
-                        @endif
-                        @if($anggota4)
-                            <h3>Data Anggota 4</h3>
-                            <table class="table table-bordered">
-                                <tr>
-                                    <td>No Mahasiswa</td>
-                                    <td>{{ $anggota4->no_mahasiswa }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td>{{ $anggota4->fullname }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>{{ $anggota4->email }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>{{ $anggota4->jenis_kelamin }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Jurusan</td>
-                                    <td>{{ $anggota4->jurusan }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat/Tgl Lahir</td>
-                                    <td>{{ $anggota4->tempat_lahir }}/ {{ date('d-m-Y',strtotime($anggota4->tgl_lahir)) }}</td>
-                                </tr>
-                            </table>
-                        @endif
-                        @if($anggota5)
-                            <h3>Data Anggota 5</h3>
-                            <table class="table table-bordered">
-                                <tr>
-                                    <td>No Mahasiswa</td>
-                                    <td>{{ $anggota5->no_mahasiswa }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td>{{ $anggota5->fullname }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>{{ $anggota5->email }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>{{ $anggota5->jenis_kelamin }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Jurusan</td>
-                                    <td>{{ $anggota5->jurusan }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat/Tgl Lahir</td>
-                                    <td>{{ $anggota5->tempat_lahir }}/ {{ date('d-m-Y',strtotime($anggota5->tgl_lahir)) }}</td>
-                                </tr>
-                            </table>
-                        @endif
                     @endif
                     <h3>Lain-lain</h3>
                             <table class="table table-bordered">

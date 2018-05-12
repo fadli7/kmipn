@@ -12,19 +12,28 @@
         <form class="form-vertical" method="post">
           <div class="form-group">
             <label>Nama Tim</label>
-            <input type="text" name="nama_tim" value="" class="form-control" required>
+            <input type="text" name="nama_tim" value="{{ $tim->nama_tim }}" class="form-control" required>
           </div>
           <div class="form-group">
             <label>Asal Politeknik</label>
-            <input type="text" name="asal_pt" value="" class="form-control" required>
+            <input type="text" name="asal_pt" value="{{ $tim->asal_pt }}" class="form-control" required>
           </div>
           <div class="form-group">
             <label>File Proposal</label>
-            <input type="file" name="proposal" value="" class="form-control" required>
+            <input type="file" name="proposal" class="form-control" required>
+            <a href="{{ url('proposal/'.$tim->file_proposal) }}">{{ $tim->file_proposal }}</a>
           </div>
           <div class="form-group">
-            <label>Status</label>
-            <p class="label label-warning">Belum diverifikasi</p>
+            Status Lomba : 
+                  @if($tim->status == "Daftar")
+                    <i class="label label-info">Daftar</i>
+                  @elseif($tim->status == "Tahap Seleksi")
+                    <i class="label label-warning">Tahap Seleksi</i>
+                  @elseif($tim->status == "Lolos")
+                    <i class="label label-success">Lolos</i>
+                  @elseif($tim->status == "Tidak Lolos")
+                    <i class="label label-success">Tidak Lolos</i>
+                  @endif
           </div>
         </form>
       </div>

@@ -16,11 +16,20 @@
           <div id="dashboard" class="tab-pane fade in active">
               <h3 class="centered">Logo KMIPN</h3>
               <p class="centered lh-30">
-                Selamat datang Ketua
+                Selamat datang {{ Auth::user()->fullname }}
                 <br>
                 Anda mendaftar sebagai : <b>Ketua Tim</b>
                 <br>
-                Status Verifikasi : <i class="label label-success">Sudah Diverifikasi</i>
+                  Status Lomba : 
+                  @if($tim->status == "Daftar")
+                    <i class="label label-info">Daftar</i>
+                  @elseif($tim->status == "Tahap Seleksi")
+                    <i class="label label-warning">Tahap Seleksi</i>
+                  @elseif($tim->status == "Lolos")
+                    <i class="label label-success">Lolos</i>
+                  @elseif($tim->status == "Tidak Lolos")
+                    <i class="label label-success">Tidak Lolos</i>
+                  @endif
                 <br>
                 <br>
                 <a href="{{url('profile/info-tim')}}" class="btn btn-primary">Lihat/Ubah Informasi Tim </a>
@@ -33,9 +42,12 @@
               </ul>
           </div>
           <div id="anggota" class="tab-pane fade">
-            <a href="{{url('profile/tambah-anggota')}}" class="pull-right btn btn-success">
-              <i class="fa fa-plus"></i> Tambah Anggota
-            </a>
+            @if($tim->total_anggota == '0')
+            @else
+              <a href="{{url('profile/tambah-anggota')}}" class="pull-right btn btn-success">
+                <i class="fa fa-plus"></i> Tambah Anggota
+              </a>
+            @endif
             <br>
             <br>
             <br>
@@ -44,9 +56,27 @@
                 <th>NIM</th>
                 <th>Nama</th>
                 <th>E-mail</th>
-                <th>Jurusan</th>
                 <th>No. Telepon</th>
+                <th>Sebagai</th>
               </thead>
+              <tbody>
+              @foreach($anggota as $item)
+                <tr>
+                  <td>{{ $item->no_mahasiswa }}</td>
+                  <td>{{ $item->fullname }}</td>
+                  <td>{{ $item->email }}</td>
+                  <td>{{ $item->no_telp }}</td>
+                  <td>{{ $item->role }}</td>
+                  <td width="153">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <a href="{{ url('/profile/edit_anggota/'.$item->id) }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
+                      @if($item->role == 'Anggota')  
+                        <a href="{{ url('/profile/submit_delete_anggota/'.$item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</a>
+                      @endif
+                  </td>
+                </tr>
+              @endforeach
+              </tbody>
             </table>
           </div>
           <div id="proposal" class="tab-pane fade">

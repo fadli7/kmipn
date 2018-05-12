@@ -9,22 +9,19 @@
         <h4>Tambah Anggota Baru</h4>
       </div>
       <div class="panel-body">
-        <form class="form-vertical" method="post">
+        <form class="form-vertical" action="{{ url('/profile/submit_add_anggota/') }}" method="post">
+        {{ csrf_field() }}
           <div class="form-group">
             <label>NIM</label>
-            <input type="text" name="nim" class="form-control" required placeholder="Nomor Induk Mahasiswa">
+            <input type="text" name="no_mahasiswa" class="form-control" required placeholder="Nomor Induk Mahasiswa">
           </div>
           <div class="form-group">
             <label>Nama Mahasiswa</label>
-            <input type="text" name="nama" class="form-control" required placeholder="Nama Lengkap">
+            <input type="text" name="fullname" class="form-control" required placeholder="Nama Lengkap">
           </div>
           <div class="form-group">
             <label for="">E-mail</label>
             <input type="email" name="email" class="form-control" required placeholder="Email Aktif">
-          </div>
-          <div class="form-group">
-            <label for="">Password</label>
-            <input type="password" name="password" class="form-control" required placeholder="8-16 karakter" minlength="8" maxlength="16">
           </div>
           <div class="form-group">
             <label for="">Jurusan</label>
@@ -43,8 +40,10 @@
           <div class="form-group">
             <label for="">Jenis Kelamin</label>
             <div class="checkbox">
-              <label><input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki</label>
-              <label><input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan</label>
+            <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+            </select>
             </div>
           </div>
           <div class="form-group">

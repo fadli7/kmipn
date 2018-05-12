@@ -25,7 +25,6 @@ class UsersTableSeeder extends Seeder
             'tgl_lahir' => new DateTime,
             'no_telp' => '0895337348558',
             'role' => 'Ketua',
-            'anggota_ke' => 1,
             'created_at' => new DateTime,
             'updated_at' => new DateTime,
         ]);
@@ -33,7 +32,6 @@ class UsersTableSeeder extends Seeder
         $result = DB::table('users')->insert([
             'fullname' => 'anggota1',
             'email' => 'anggota1@kmipn.com',
-            'password' => \Hash::make('sandiaman'),
             'tim_id' => 1,
             'no_mahasiswa' => 2103171036,
             'jenis_kelamin' => 'Laki-laki',
@@ -43,7 +41,6 @@ class UsersTableSeeder extends Seeder
             'tgl_lahir' => new DateTime,
             'no_telp' => '0895337348558',
             'role' => 'Anggota',
-            'anggota_ke' => 2,
             'created_at' => new DateTime,
             'updated_at' => new DateTime,
         ]);
@@ -51,7 +48,6 @@ class UsersTableSeeder extends Seeder
         $result = DB::table('users')->insert([
             'fullname' => 'Anggota2',
             'email' => 'Anggota2@kmipn.com',
-            'password' => \Hash::make('sandiaman'),
             'tim_id' => 1,
             'no_mahasiswa' => 2103171036,
             'jenis_kelamin' => 'Laki-laki',
@@ -61,7 +57,6 @@ class UsersTableSeeder extends Seeder
             'tgl_lahir' => new DateTime,
             'no_telp' => '0895337348558',
             'role' => 'Anggota',
-            'anggota_ke' => 3,
             'created_at' => new DateTime,
             'updated_at' => new DateTime,
         ]);

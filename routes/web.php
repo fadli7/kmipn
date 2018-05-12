@@ -15,9 +15,6 @@ Route::get('/', ['as' => 'home', 'uses' => 'Frontend\PagesController@index'])->n
 Route::get('/login', ['as' => 'login', 'uses' => 'Frontend\PagesController@viewLogin']);
 Route::get('/register', ['as' => 'view.register', 'uses' => 'Frontend\PagesController@viewRegister']);
 Route::get('/forgot', 'Frontend\PagesController@forgot');
-Route::get('/profile/dashboard', ['as' => 'view.profile', 'uses' => 'Frontend\PagesController@viewProfile']);
-Route::get('/profile/tambah-anggota', ['as' => 'view.addanggota', 'uses' => 'Frontend\PagesController@viewAddAnggota']);
-Route::get('/profile/info-tim', ['as' => 'view.info', 'uses' => 'Frontend\PagesController@viewInfoTim']);
 Route::get('/faq', ['as' => 'view.faq', 'uses' => 'Frontend\PagesController@viewFaq']);
 Route::get('/jadwal-pelaksanaan', ['as' => 'view.jadwal', 'uses' => 'Frontend\PagesController@viewJadwal']);
 //Auth::routes();
@@ -61,5 +58,11 @@ Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
-    //Route::get('/', ['as' => 'view.home', 'uses' => 'Frontend\PagesController@index'])->name('home');
+    Route::get('/profile/dashboard', ['as' => 'view.profile', 'uses' => 'Frontend\PagesController@viewProfile']);
+    Route::get('/profile/tambah-anggota', ['as' => 'view.addanggota', 'uses' => 'Frontend\PagesController@viewAddAnggota']);
+    Route::get('/profile/info-tim', ['as' => 'view.info', 'uses' => 'Frontend\PagesController@viewInfoTim']);
+    Route::get('/profile/edit_anggota/{id}', ['as' => 'view.edit_anggota', 'uses' => 'Frontend\PagesController@edit_anggota']);
+    Route::post('/profile/submit_edit_anggota/{id}', ['as' => 'view.submit_edit_anggota', 'uses' => 'Frontend\PagesController@submit_edit_anggota']);
+    Route::post('/profile/submit_add_anggota/', ['as' => 'view.submit_add_anggota', 'uses' => 'Frontend\PagesController@submit_add_anggota']);
+    Route::get('/profile/submit_delete_anggota/{id}', ['as' => 'view.submit_delete_anggota', 'uses' => 'Frontend\PagesController@submit_delete_anggota']);
 });

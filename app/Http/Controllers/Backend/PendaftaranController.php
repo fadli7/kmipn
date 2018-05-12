@@ -52,10 +52,7 @@ class PendaftaranController extends Controller
       $data['data'] = Tim::find($id);
       $data['user_count'] = User::where('tim_id',$id)->count();
 
-      $data['anggota2'] = User::where('tim_id',$id)->where('anggota_ke',2)->first();
-      $data['anggota3'] = User::where('tim_id',$id)->where('anggota_ke',3)->first();
-      $data['anggota4'] = User::where('tim_id',$id)->where('anggota_ke',4)->first();
-      $data['anggota5'] = User::where('tim_id',$id)->where('anggota_ke',5)->first();
+      $data['anggota'] = User::where('tim_id',$id)->where('role','Anggota')->get();
 
       return view('backend.pages.pendaftaran.edit', $data);
     }

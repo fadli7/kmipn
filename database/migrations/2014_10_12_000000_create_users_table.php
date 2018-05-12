@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('fullname');
             $table->string('email');
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->enum('jenis_kelamin', array('Laki-laki', 'Perempuan'))->nullable();
             $table->text('jurusan')->nullable();
             $table->string('no_mahasiswa')->nullable();
@@ -26,8 +26,7 @@ class CreateUsersTable extends Migration
             $table->text('alamat')->nullable();
             $table->string('no_telp')->nullable();
             $table->string('tim_id')->nullable();
-            $table->string('anggota_ke')->nullable();
-            $table->enum('role', array('Ketua', 'Anggota'));
+            $table->enum('role', array('Ketua', 'Anggota'))->default('Anggota');
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();
