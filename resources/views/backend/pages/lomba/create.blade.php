@@ -16,15 +16,10 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="kategori">Kategori Lomba</label>
-                                    <select class="form-control" name="kategori" id="" required>
-                                        <option value="Cipta Inovasi">Cipta Inovasi</option>
-                                        <option value="Bisnis TIK">Bisnis TIK</option>
-                                        <option value="Game Development">Game Development</option>
-                                        <option value="E-Goverment">E-Goverment</option>
-                                        <option value="IoT">IoT</option>
-                                        <option value="Desain Animasi">Desain Animasi</option>
-                                        <option value="Keamanan Jaringan">Keamanan Jaringan</option>
-                                        <option value="Hackathon">Hackathon</option>
+                                    <select class="form-control select2" name="kategori_id" id="" required>
+                                    @foreach($kategori as $item)
+                                        <option value="{{ $item->id }}">{{ $item->kategori }}</option>
+                                    @endforeach
                                     </select>
                                 </div>
                             </div><br>

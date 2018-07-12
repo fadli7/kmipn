@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Lomba;
+use App\Kategori;
 use App\Tim;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -87,7 +88,7 @@ class RegisterController extends Controller
         $input = $request->except('kategori_id','nama_tim','asal_pt');
         $validator = $this->validator($input);
         $userMail = User::where('email',$input['email'])->count();
-  
+
         if($userMail > 0){
           return redirect()->back()->withInput()->with('message', array(
             'title' => 'Oops!',
@@ -97,6 +98,10 @@ class RegisterController extends Controller
         }else{
           if ($validator->passes()){
             $user = $this->create($input)->toArray();
+
+            $link = str_random(30);
+    
+            \DB::table('user_activations')->insert(['users_id'=>$user['id'],'token'=>$link]);
   
             $mail = new PHPMailer(true);
             //Server settings                             // Enable verbose debug output
@@ -115,13 +120,13 @@ class RegisterController extends Controller
             //Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'KMIPN - Success Registered';
-            $mail->Body    = 'Terimakasih telah mendaftar.';
+            $mail->Body    = "Terimakasih telah mendaftar. <br>Link Aktivasi ".url('user/activation', $link);
 
             $mail->send();
 
             $userMail2 = User::where('email',$input['email'])->first();
             $input2 = $request->only('kategori_id','nama_tim','asal_pt');
-            $tim = Lomba::where('id',$input2['kategori_id'])->first();
+            $tim = Kategori::where('id',$input2['kategori_id'])->first();
 
             if($tim->kategori == "Hackathon"){
                 $datatim = Tim::create([
@@ -154,5 +159,35 @@ class RegisterController extends Controller
             ));
           }
         }
+    }
+
+    public function userActivation($token){
+        $check = \DB::table('user_activations')->where('token',$token)->first();
+        if(!is_null($check)){
+          $user = User::find($check->users_id);
+          if ($user->is_activated == 1){
+            return redirect()->to('/')->with('message', array(
+              'title' => 'Oops!',
+              'type' => 'danger',
+              'msg' => 'User are already actived.',
+            ));
+          }
+          $user->is_activated = 1;
+          $user->save();
+          \DB::table('user_activations')->where('token',$token)->delete();
+  
+          return redirect()->to('/')->with('message', array(
+            'title' => 'Yay!',
+            'type' => 'success',
+            'msg' => 'User active successfully. Now you can login with your account.',
+          ));
+        }
+  
+        return redirect()->to('/')->with('message', array(
+          'title' => 'Oops!',
+          'type' => 'danger',
+          'msg' => 'Your token is invalid.',
+        ));
       }
+
 }

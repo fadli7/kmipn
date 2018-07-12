@@ -20,7 +20,7 @@
                   <label>Kategori Lomba</label>
                   <select class="form-control" name="kategori_id" required>
                     <option disabled selected>Pilih Bidang Lomba</option>
-                    @foreach($lomba as $item)
+                    @foreach($kategori as $item)
                       <option value="{{ $item->id }}">{{ $item->kategori }}</option>
                     @endforeach
                   </select>
@@ -57,7 +57,7 @@
                   <label for="">No. Telepon</label>
                   <div class="input-group">
                     <span class="input-group-addon">+62</span>
-                    <input type="telp" name="no_telp" required class="form-control">
+                    <input type="number" name="no_telp" required class="form-control">
                   </div>
                 </div>
                 <div class="form-group">

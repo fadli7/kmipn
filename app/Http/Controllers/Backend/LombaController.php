@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Lomba;
+use App\Kategori;
 
 class LombaController extends Controller
 {
@@ -21,7 +22,8 @@ class LombaController extends Controller
 
   public function create()
   {
-      return view('backend.pages.lomba.create');
+    $data['kategori'] = Kategori::orderBy('id', 'DESC')->get();
+      return view('backend.pages.lomba.create',$data);
   }
 
   public function store(Request $request)
@@ -40,6 +42,7 @@ class LombaController extends Controller
     public function edit($id)
     {
       $data['data'] = Lomba::find($id);
+      $data['kategori'] = Kategori::orderBy('id', 'DESC')->get();
 
       return view('backend.pages.lomba.edit', $data);
     }

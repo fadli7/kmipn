@@ -12,7 +12,7 @@ class LombaTableSeeder extends Seeder
     public function run()
     {
         $result = DB::table('lomba')->insert([
-            'kategori' => 'Cipta Inovasi',
+            'kategori_id' => 1,
             'pengumuman' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus culpa sunt autem voluptate perspiciatis obcaecati itaque, eos porro dolores odio excepturi. Optio deserunt esse a eum, cumque ducimus sed nulla!',
             'deskripsi' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus culpa sunt autem voluptate perspiciatis obcaecati itaque, eos porro dolores odio excepturi. Optio deserunt esse a eum, cumque ducimus sed nulla!',
             'peraturan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus culpa sunt autem voluptate perspiciatis obcaecati itaque, eos porro dolores odio excepturi. Optio deserunt esse a eum, cumque ducimus sed nulla!',

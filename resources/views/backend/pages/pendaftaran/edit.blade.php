@@ -53,30 +53,30 @@
                             <h3>Data Anggota</h3>
                             <table class="table table-bordered">
                                 <?php $index = 2; ?>
-                                @foreach($anggota as $data)
+                                @foreach($anggota as $item)
                                     <tr>
                                         <td>No Mahasiswa</td>
-                                        <td>{{ $data->no_mahasiswa }}</td>
+                                        <td>{{ $item->no_mahasiswa }}</td>
                                     </tr>
                                     <tr>
                                         <td>Nama</td>
-                                        <td>{{ $data->fullname }}</td>
+                                        <td>{{ $item->fullname }}</td>
                                     </tr>
                                     <tr>
                                         <td>Email</td>
-                                        <td>{{ $data->email }}</td>
+                                        <td>{{ $item->email }}</td>
                                     </tr>
                                     <tr>
                                         <td>Jenis Kelamin</td>
-                                        <td>{{ $data->jenis_kelamin }}</td>
+                                        <td>{{ $item->jenis_kelamin }}</td>
                                     </tr>
                                     <tr>
                                         <td>Jurusan</td>
-                                        <td>{{ $data->jurusan }}</td>
+                                        <td>{{ $item->jurusan }}</td>
                                     </tr>
                                     <tr>
                                         <td>Tempat/Tgl Lahir</td>
-                                        <td>{{ $data->tempat_lahir }}/ {{ date('d-m-Y',strtotime($data->tgl_lahir)) }}</td>
+                                        <td>{{ $item->tempat_lahir }}/ {{ date('d-m-Y',strtotime($item->tgl_lahir)) }}</td>
                                     </tr>
                                     <tr>
                                         <td>Anggota Ke</td>

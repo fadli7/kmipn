@@ -32,7 +32,7 @@
                             <td>{{ $item->users->fullname }}</td>
                             <td>{{ $item->asal_pt }}</td>
                             <td>{{ $item->file_proposal }}</td>
-                            <td>{{ $item->lomba->kategori }}</td>
+                            <td>{{ $item->kategori->kategori }}</td>
                             <td>{{ $item->status }}</td>
                             <td width="153">
                                 <form action="{{ url('/ecodeeepis/pendaftaran/'.$item->id) }}" method="post">

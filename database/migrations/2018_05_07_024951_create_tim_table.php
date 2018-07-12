@@ -18,7 +18,7 @@ class CreateTimTable extends Migration
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
             $table->integer('kategori_id')->unsigned();
-            $table->foreign('kategori_id')->references('id')->on('lomba');
+            $table->foreign('kategori_id')->references('id')->on('kategori');
             $table->string('nama_tim')->nullable();
             $table->string('asal_pt')->nullable();
             $table->text('file_proposal')->nullable();

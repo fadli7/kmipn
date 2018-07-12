@@ -24,7 +24,7 @@
                         @foreach($data as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->kategori }}</td>
+                            <td>{{ $item->kategori->kategori }}</td>
                             <td width="153">
                                 <form action="{{ url('/ecodeeepis/lomba/'.$item->id) }}" method="post">
                                     {{ csrf_field() }}

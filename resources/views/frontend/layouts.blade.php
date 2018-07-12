@@ -30,6 +30,7 @@
               text: "<strong>{{ session('message')['title'] }}</strong> {{ session('message')['msg'] }}",
               position: 'top-right',
               showHideTransition: 'slide',
+              hideAfter: 5000,
           })
       });
     </script>

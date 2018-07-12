@@ -26,8 +26,8 @@ class Tim extends Model
         return $this->belongsTo('App\User', 'users_id');
     }
 
-    public function lomba()
+    public function kategori()
     {
-        return $this->belongsTo('App\Lomba', 'kategori_id');
+        return $this->belongsTo('App\Kategori', 'kategori_id');
     }
 }

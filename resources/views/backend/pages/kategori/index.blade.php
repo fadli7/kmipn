@@ -2,25 +2,21 @@
 
 @section('content')
 <div class="page-header">
-    <h2>Tim Yang Lolos</h2>
+    <h2>Kategori</h2>
 </div>
 
 <div class="row">
     <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
+            <a href="{{ url('/ecodeeepis/kategori/create') }}" class="btn btn-success pull-right">Create New</a>
                 <div class="clearfix"></div>
                 <br>
                 <table id="table" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nama Tim</th>
-                            <th>Ketua</th>
-                            <th>Asal PT</th>
-                            <th>Proposal</th>
                             <th>Kategori</th>
-                            <th>Status</th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
@@ -28,17 +24,12 @@
                         @foreach($data as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->nama_tim }}</td>
-                            <td>{{ $item->users->fullname }}</td>
-                            <td>{{ $item->asal_pt }}</td>
-                            <td>{{ $item->file_proposal }}</td>
-                            <td>{{ $item->kategori->kategori }}</td>
-                            <td>{{ $item->status }}</td>
+                            <td>{{ $item->kategori }}</td>
                             <td width="153">
-                                <form action="{{ url('/ecodeeepis/pendaftaran/'.$item->id) }}" method="post">
+                                <form action="{{ url('/ecodeeepis/kategori/'.$item->id) }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <a href="{{ url('/ecodeeepis/pendaftaran/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Detail</a>
+                                    <a href="{{ url('/ecodeeepis/kategori/'.$item->id.'/edit') }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</button>
                                 </form>
                             </td>
@@ -48,12 +39,7 @@
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Nama Tim</th>
-                            <th>Ketua</th>
-                            <th>Asal PT</th>
-                            <th>Proposal</th>
                             <th>Kategori</th>
-                            <th>Status</th>
                             <th>&nbsp;</th>
                         </tr>
                     </tfoot>

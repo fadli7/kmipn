@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLombaTable extends Migration
+class CreateKategoriTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateLombaTable extends Migration
      */
     public function up()
     {
-        Schema::create('lomba', function (Blueprint $table) {
+        Schema::create('kategori', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('kategori_id')->unsigned();
-            $table->foreign('kategori_id')->references('id')->on('kategori');
-            $table->text('pengumuman');
-            $table->text('deskripsi');
-            $table->text('peraturan');
+            $table->string('kategori');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +28,6 @@ class CreateLombaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lomba');
+        Schema::dropIfExists('kategori');
     }
 }

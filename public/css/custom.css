@@ -293,4 +293,6 @@ clip-path: polygon(0 0, 100% 0, 100% 49%, 50% 100%, 0% 50%);
 
 #kmipn-about > .section-body p {
   text-indent: 30px;
+  padding-top:20px;
+  padding-bottom: 20px;
 }

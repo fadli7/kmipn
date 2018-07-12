@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
+use App\Kategori;
 
-class UsersController extends Controller
+class KategoriController extends Controller
 {
   public function __construct()
     {
@@ -14,25 +14,23 @@ class UsersController extends Controller
     }
 
   public function index() {
-	   $data['data'] = User::orderBy('id', 'DESC')->get();
+	   $data['data'] = Kategori::orderBy('id', 'DESC')->get();
 
-      return view('backend.pages.users.index', $data);
+      return view('backend.pages.kategori.index', $data);
   }
 
-	//public function create()
-  //{
-  //    return view('backend.pages.users.create');
-  //}
+	public function create()
+  {
+     return view('backend.pages.kategori.create');
+  }
 
   public function store(Request $request)
   {
       	$req = $request->all();
 
-        $req['password'] = \Hash::make($req['password']);
+        $result = Kategori::create($req);
 
-        $result = User::create($req);
-
-        return redirect('ecodeeepis/admin')->withInput()->with('message', array(
+        return redirect('ecodeeepis/kategori')->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
@@ -41,20 +39,18 @@ class UsersController extends Controller
 
     public function edit($id)
     {
-      $data['data'] = User::find($id);
+      $data['data'] = Kategori::find($id);
 
-      return view('backend.pages.users.edit', $data);
+      return view('backend.pages.kategori.edit', $data);
     }
 
     public function update($id, Request $request)
     {
       	$req = $request->except('_method', '_token', 'submit');
 
-        $req['password'] = \Hash::make($req['password']);
+        $result = Kategori::where('id', $id)->update($req);
 
-        $result = User::where('id', $id)->update($req);
-
-        return redirect('ecodeeepis/users')->withInput()->with('message', array(
+        return redirect('ecodeeepis/kategori')->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
@@ -63,10 +59,10 @@ class UsersController extends Controller
 
     public function destroy($id)
     {
-      $result = User::find($id);
+      $result = Kategori::find($id);
       $result->delete();
 
-      return redirect('ecodeeepis/users')->withInput()->with('message', array(
+      return redirect('ecodeeepis/kategori')->withInput()->with('message', array(
         'title' => 'Yay!',
         'type' => 'success',
         'msg' => 'Deleted data.',

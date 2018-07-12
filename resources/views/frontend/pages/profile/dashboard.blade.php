@@ -31,7 +31,7 @@
                     <i class="label label-success">Tidak Lolos</i>
                   @endif
                 <br>
-                Kategori Lomba : {{ $tim->lomba->kategori }}
+                Kategori Lomba : {{ $tim->kategori->kategori }}
                 <br>
                 <br>
                 <a href="{{url('profile/info-tim')}}" class="btn btn-primary">Lihat/Ubah Informasi Tim </a>

@@ -31,6 +31,7 @@ Route::prefix('ecodeeepis')->group(function() {
     Route::resource('lomba', 'Backend\LombaController');
     Route::resource('artikel', 'Backend\ArtikelController');
     Route::resource('galeri', 'Backend\GaleriController');
+    Route::resource('kategori', 'Backend\KategoriController');
 
     Route::get('/pendaftaran/{id}/edit', ['as' => 'pendaftaran.edit', 'uses' => 'Backend\PendaftaranController@edit']);
     Route::resource('pendaftaran', 'Backend\PendaftaranController', [ 'only' => [
@@ -44,6 +45,7 @@ Route::prefix('ecodeeepis')->group(function() {
 });
 
 // Login Routes...
+Route::get('/user/activation/{token}', 'Auth\RegisterController@userActivation');
 Route::post('/auth/login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
 Route::get('/auth/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 Route::post('/auth/register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
@@ -56,15 +58,16 @@ Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 //Backend Routes
 
 //Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['user_actived']], function() {
+    Route::group(['middleware' => ['auth']], function() {
+        Route::get('/profile/dashboard', ['as' => 'view.profile', 'uses' => 'Frontend\PagesController@viewProfile']);
+        Route::get('/profile/tambah-anggota', ['as' => 'view.addanggota', 'uses' => 'Frontend\PagesController@viewAddAnggota']);
+        Route::get('/profile/info-tim', ['as' => 'view.info', 'uses' => 'Frontend\PagesController@viewInfoTim']);
+        Route::get('/profile/edit_anggota/{id}', ['as' => 'view.edit_anggota', 'uses' => 'Frontend\PagesController@edit_anggota']);
+        Route::post('/profile/submit_edit_anggota/{id}', ['as' => 'view.submit_edit_anggota', 'uses' => 'Frontend\PagesController@submit_edit_anggota']);
+        Route::post('/profile/submit_add_anggota/', ['as' => 'view.submit_add_anggota', 'uses' => 'Frontend\PagesController@submit_add_anggota']);
+        Route::get('/profile/submit_delete_anggota/{id}', ['as' => 'view.submit_delete_anggota', 'uses' => 'Frontend\PagesController@submit_delete_anggota']);
 
-Route::group(['middleware' => ['auth']], function() {
-    Route::get('/profile/dashboard', ['as' => 'view.profile', 'uses' => 'Frontend\PagesController@viewProfile']);
-    Route::get('/profile/tambah-anggota', ['as' => 'view.addanggota', 'uses' => 'Frontend\PagesController@viewAddAnggota']);
-    Route::get('/profile/info-tim', ['as' => 'view.info', 'uses' => 'Frontend\PagesController@viewInfoTim']);
-    Route::get('/profile/edit_anggota/{id}', ['as' => 'view.edit_anggota', 'uses' => 'Frontend\PagesController@edit_anggota']);
-    Route::post('/profile/submit_edit_anggota/{id}', ['as' => 'view.submit_edit_anggota', 'uses' => 'Frontend\PagesController@submit_edit_anggota']);
-    Route::post('/profile/submit_add_anggota/', ['as' => 'view.submit_add_anggota', 'uses' => 'Frontend\PagesController@submit_add_anggota']);
-    Route::get('/profile/submit_delete_anggota/{id}', ['as' => 'view.submit_delete_anggota', 'uses' => 'Frontend\PagesController@submit_delete_anggota']);
-
-    Route::post('/profile/submit_edit_tim/{id}', ['as' => 'view.submit_edit_tim', 'uses' => 'Frontend\PagesController@submit_edit_tim']);
+        Route::post('/profile/submit_edit_tim/{id}', ['as' => 'view.submit_edit_tim', 'uses' => 'Frontend\PagesController@submit_edit_tim']);
+    });
 });

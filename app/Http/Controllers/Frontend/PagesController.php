@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Tim;
 use App\Lomba;
+use App\Kategori;
 use File;
 
 class PagesController extends Controller
@@ -20,7 +21,7 @@ class PagesController extends Controller
     }
 
     public function viewRegister(){
-      $data['lomba'] = Lomba::get();
+      $data['kategori'] = Kategori::get();
       return view('frontend.pages.register',$data);
     }
 
@@ -150,7 +151,7 @@ class PagesController extends Controller
           unset($req['file_proposal']);
         }
 
-        
+        $req['status'] = 'Tahap Seleksi';
 
         $result = Tim::where('id', $id)->update($req);
 

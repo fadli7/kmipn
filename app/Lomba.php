@@ -16,7 +16,7 @@ class Lomba extends Model
      * @var array
      */
     protected $fillable = [
-        'kategori',
+        'kategori_id',
         'pengumuman',
         'deskripsi',
         'peraturan',
@@ -27,5 +27,10 @@ class Lomba extends Model
     public function tim()
     {
         return $this->hasMany('App\Tim', 'kategori_id');
+    }
+
+    public function kategori()
+    {
+        return $this->belongsTo('App\Kategori', 'kategori_id');
     }
 }
