@@ -8,7 +8,7 @@
     </div>
   </div>
 </div>
-<div class="main-slider">
+<div class="main-slider hidden-xs">
   <div class="slider-items">
     <img src="{{url('img/DSC_4856.jpg')}}" alt="">
     <div class="slider-caption">
@@ -73,69 +73,36 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
         <p>Kompetisi Mahasiswa Bidang Informatika Politeknik Nasional 2018</p>
       </div>
       <div class="section-body">
-        <div class="col-sm-4 col-xs-12">
-          <div class="category">
-            <img src="{{url('img/lamp.svg')}}" alt="Cipta Inovasi">
-            <div class="category-title">
-              Cipta Inovasi
+        <div class="row justify-content-center">
+          @foreach($lomba as $lom)  
+          <div class="cola-4" data-toggle="modal" data-target="#ModalLomba-{{$lom->id}}">
+              <div class="category">
+                <img src="{{url('img/'.$lom->icon)}}" alt="Cipta Inovasi">
+                <div class="category-title">
+                  {{$lom->kategori->kategori}}
+                </div>
+              </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="ModalLomba-{{$lom->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="ModalLombaTitle-{{$lom->id}}">{{$lom->kategori->kategori}}</h3>
+                </div>
+                <div class="modal-body">
+                  <p align="justify">
+                    {{$lom->deskripsi}}
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-          <div class="category">
-            <img src="{{url('img/briefcase.svg')}}" alt="Cipta Inovasi">
-            <div class="category-title">
-              Bisnis TIK
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-          <div class="category">
-            <img src="{{url('img/console.svg')}}" alt="Cipta Inovasi">
-            <div class="category-title">
-              Game Development
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-          <div class="category">
-            <img src="{{url('img/city-hall.svg')}}" alt="Cipta Inovasi">
-            <div class="category-title">
-              E-Goverment
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-          <div class="category">
-            <img src="{{url('img/cpu.svg')}}" alt="Cipta Inovasi">
-            <div class="category-title">
-              IoT (Internet of Things)
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-          <div class="category">
-            <img src="{{url('img/video-player.svg')}}" alt="Cipta Inovasi">
-            <div class="category-title">
-              Desain Animasi
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-offset-2 col-sm-4 col-xs-12">
-          <div class="category">
-            <img src="{{url('img/shield.svg')}}" alt="Cipta Inovasi">
-            <div class="category-title">
-              Keamanan Jaringan
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-          <div class="category">
-            <img src="{{url('img/programmer.svg')}}" alt="Cipta Inovasi">
-            <div class="category-title">
-              Hackathon
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -145,11 +112,16 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
       </div>
       <div class="section-body">
         <div class="col-sm-6 col-xs-12">
-          <p>
-            KMIPN adalah sebuah
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <p align="justify">
+          KMIPN atau Kompetisi Mahasiswa bidangInformatika Politeknik Nasional Tahun 2018, 
+          merupakan program Bakorma Politeknik se - Indonesia, sebagai upaya untuk meningkatkan kualitas peserta 
+          didik sehingga mampu mengambil peran sebagai agen 
+          perubahan dalam memajukan TIK dan pemanfaatannya di Indonesia.
+
+          KMIPN diselenggarakan  sebagai upaya pemerintah 
+          melalui Kemenristekdikti untuk  peningkatan mutu perguruan tinggi khusunya politeknik. Kegiatan ini diharapkan menjadi ajang untuk menyalurkan kreativitas mahasiswa dalam pengembangan Teknologi Informasi dan Komunikasi di tingkat nasional. Mahasiswa sebagai pilar penting dalam pembangunan negara diharapkan dapat meningkatkan kemampuan dalam penguasaan TIK, dan dapat mengembangkan potensinya sebagai agen perubahan melalui pengembangan IPTEK di masa kini dan masa akan datang. 
+
+          Untuk pertama kalinya KMIPN akan  diselenggarakan pada Tahun 2018 dengan tema “Tantangan TIK dalam Era Revolusi Industri 4.0”. Kegiatan KMIPN 2018 ini terdiri dari perlombaan di bidang TIK yang akan memunculkan inovasi - inovasi yang diharapkan berdampak besar baik di bidang TIK maupun sektor-sektor lainnya secara umum di Indonesia, pameran hasil karya peserta dan finalis KMIPN  serta produk TIK dari sponsor untuk memperkenalkan perkembangan TIK  kepada masyarakat luas, serta seminar tentang topik-topik terkini di bidang TIK
           </p>
         </div>
         <div class="col-sm-6 col-xs-12">
@@ -171,7 +143,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
         <p>Berita dan Pengumuman terkait KMIPN 2018</p>
       </div>
       <div class="section-body">
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="thumbnail">
             <div class="caption">
               <h3>Seminar KMIPN</h3>
@@ -183,7 +155,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="thumbnail">
             <div class="caption">
               <h3>Seminar KMIPN</h3>
@@ -195,7 +167,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="thumbnail">
             <div class="caption">
               <h3>Seminar KMIPN</h3>
@@ -207,7 +179,8 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
-        <center>
+        <br>
+        <center class="clear">
           <a href="#" class="btn btn-default">Show More</a>
         </center>
       </div>
@@ -217,47 +190,64 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
         <h2>Galeri KMIPN</h2>
       </div>
       <div class="section-body">
-        <div class="col-xs-6 col-sm-3">
-          <a href="#" class="thumbnail">
+        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
+          <div  class="thumbnail">
             <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </a>
+          </div>
         </div>
-        <div class="col-xs-6 col-sm-3">
-          <a href="#" class="thumbnail">
+        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
+          <div  class="thumbnail">
             <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </a>
+          </div>
         </div>
-        <div class="col-xs-6 col-sm-3">
-          <a href="#" class="thumbnail">
+        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
+          <div  class="thumbnail">
             <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </a>
+          </div>
         </div>
-        <div class="col-xs-6 col-sm-3">
-          <a href="#" class="thumbnail">
+        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
+          <div  class="thumbnail">
             <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </a>
+          </div>
         </div>
-        <div class="col-xs-6 col-sm-3">
-          <a href="#" class="thumbnail">
+        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
+          <div  class="thumbnail">
             <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </a>
+          </div>
         </div>
-        <div class="col-xs-6 col-sm-3">
-          <a href="#" class="thumbnail">
+        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
+          <div  class="thumbnail">
             <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </a>
+          </div>
         </div>
-        <div class="col-xs-6 col-sm-3">
-          <a href="#" class="thumbnail">
+        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
+          <div  class="thumbnail">
             <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </a>
+          </div>
         </div>
-        <div class="col-xs-6 col-sm-3">
-          <a href="#" class="thumbnail">
+        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
+          <div  class="thumbnail">
             <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </a>
+          </div>
         </div>
-        <center>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">Pembukaan KMIPN</h3>
+              </div>
+              <div class="modal-body">
+                <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="" class="img-responsive">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <center class="clear">
           <a href="#" class="btn btn-default">Show More</a>
         </center>
       </div>

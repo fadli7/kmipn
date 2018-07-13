@@ -13,7 +13,8 @@ class PagesController extends Controller
 {
 
     public function index(){
-      return view('frontend.pages.dashboard');
+      $data['lomba'] = Lomba::with('kategori')->get();
+      return view('frontend.pages.dashboard', $data);
     }
 
     public function viewLogin(){

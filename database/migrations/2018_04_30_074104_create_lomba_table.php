@@ -17,9 +17,10 @@ class CreateLombaTable extends Migration
             $table->increments('id');
             $table->integer('kategori_id')->unsigned();
             $table->foreign('kategori_id')->references('id')->on('kategori');
-            $table->text('pengumuman');
+            $table->text('pengumuman')->nullable();
             $table->text('deskripsi');
-            $table->text('peraturan');
+            $table->text('peraturan')->nullable();
+            $table->string('icon')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
