@@ -22,7 +22,7 @@ class LombaTableSeeder extends Seeder
                                 di bidang TIK (Teknologi Informasi dan Komunikasi) 
                                 masyarakat Indonesia. Ide yang diajukan diharapkan 
                                 bersifat unik, kreatif, visioner, futuristik dan bermanfaat.',
-                'peraturan' => '',
+                'peraturan' => 'Cipta_Inovasi.pdf',
                 'icon' => 'lamp.svg',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
@@ -35,7 +35,7 @@ class LombaTableSeeder extends Seeder
                                 kesempatan kepada peserta yang memiliki ide bisnis, 
                                 startup dan pengembangan usaha yang berorientasi pada 
                                 produk TIK, berupa jasa atau produk.',
-                'peraturan' => '',
+                'peraturan' => 'LOMBA_BISNIS_TIK.pdf',
                 'icon' => 'briefcase.svg',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
@@ -49,7 +49,7 @@ class LombaTableSeeder extends Seeder
                                 Indonesia. Game Development KMIPN tidak membatasi 
                                 tema sehingga para peserta dapat berkreasi sekreatif 
                                 mungkin dalam permainan mereka.',
-                'peraturan' => '',
+                'peraturan' => 'Game_Development.pdf',
                 'icon' => 'console.svg',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
@@ -63,7 +63,7 @@ class LombaTableSeeder extends Seeder
                                 bisnis, pegawai, atau pemerintah lainnya, atau sebaliknya 
                                 masyarakat atau bisnis dapat berinteraksi, atau 
                                 memberikan informasi kepada pemerintah.',
-                'peraturan' => '',
+                'peraturan' => 'KATEGORI_LOMBA_E-Gov.pdf',
                 'icon' => 'city-hall.svg',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
@@ -90,7 +90,7 @@ class LombaTableSeeder extends Seeder
                                 tentang revolusi industri di Indonesia, untuk memberikan 
                                 kesadaran terhadap masyarakat luas tentang 
                                 perkembangan teknologi di industri Indonesia.',
-                'peraturan' => '',
+                'peraturan' => 'Rancangan_Desain_Animasi.pdf',
                 'icon' => 'video-player.svg',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
@@ -105,7 +105,7 @@ class LombaTableSeeder extends Seeder
                                 melakukan identikasi potensi celahkeamanan dari sistem 
                                 komputer yang ada kemudian memberikan solusi 
                                 keamanannya.',
-                'peraturan' => '',
+                'peraturan' => 'KEAMANAN_JARINGAN_Today.pdf',
                 'icon' => 'shield.svg',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
@@ -119,7 +119,7 @@ class LombaTableSeeder extends Seeder
                                 berkumpul untuk menyelesaikan masalah. Kebanyakan 
                                 hackathon yang dilakukan juga memiliki trek parallel untuk 
                                 karya hackathon (banyak karya yang dihasilkan).',
-                'peraturan' => '',
+                'peraturan' => 'Hackathon.pdf',
                 'icon' => 'programmer.svg',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime

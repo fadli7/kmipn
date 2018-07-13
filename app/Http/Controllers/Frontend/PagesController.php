@@ -7,6 +7,8 @@ use App\User;
 use App\Tim;
 use App\Lomba;
 use App\Kategori;
+use App\Artikel;
+use App\Galeri;
 use File;
 
 class PagesController extends Controller
@@ -14,6 +16,8 @@ class PagesController extends Controller
 
     public function index(){
       $data['lomba'] = Lomba::with('kategori')->get();
+      $data['artikel'] = Artikel::where('status', 'Publish')->get();
+      $data['galeri'] = Galeri::get();
       return view('frontend.pages.dashboard', $data);
     }
 
@@ -161,5 +165,10 @@ class PagesController extends Controller
           'type' => 'success',
           'msg' => 'Saved Success.',
         ));
+    }
+
+    public function viewArtikel($slug){
+      $data['artikel'] = Artikel::where('slug', $slug)->first();
+      return view('frontend.pages.artikel', $data);
     }
 }

@@ -95,6 +95,10 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
                   <p align="justify">
                     {{$lom->deskripsi}}
                   </p>
+                  <br>
+                  <a href="{{url('panduan/'.$lom->peraturan)}}" class="btn btn-info">
+                    <i class="fa fa-file"></i> Panduan Lomba
+                  </a>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -143,42 +147,20 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
         <p>Berita dan Pengumuman terkait KMIPN 2018</p>
       </div>
       <div class="section-body">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Seminar KMIPN</h3>
-              <i>25 Agustus 1990</i>
-              <br><br>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+        @foreach($artikel as $art)
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <a href="{{url('artikel/'.$art->slug)}}">
+              <div class="caption">
+                <h3>{{$art->title}}</h3>
+                <i>{{$art->created_at}}</i>
+                <br><br>
+                <p>{{substr($art->content, 0, 500)}}</p>
+              </div>
+              </a>
             </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Seminar KMIPN</h3>
-              <i>25 Agustus 1990</i>
-              <br><br>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Seminar KMIPN</h3>
-              <i>25 Agustus 1990</i>
-              <br><br>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </div>
-        </div>
+          @endforeach
         <br>
         <center class="clear">
           <a href="#" class="btn btn-default">Show More</a>
@@ -190,56 +172,22 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
         <h2>Galeri KMIPN</h2>
       </div>
       <div class="section-body">
-        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
-          <div  class="thumbnail">
-            <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
-          <div  class="thumbnail">
-            <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
-          <div  class="thumbnail">
-            <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
-          <div  class="thumbnail">
-            <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
-          <div  class="thumbnail">
-            <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
-          <div  class="thumbnail">
-            <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
-          <div  class="thumbnail">
-            <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3" data-toggle="modal" data-target="#exampleModalCenter">
-          <div  class="thumbnail">
-            <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="">
+        @foreach($galeri as $gal)
+        <div class="col-xs-6 col-sm-4" data-toggle="modal" data-target="#galeriModal-{{$gal->id}}">
+          <div  class="thumbnail thumb-galeri">
+            <img src="{{url('galeri/'.$gal->photo)}}" alt="">
           </div>
         </div>
         
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="galeriModal-{{$gal->id}}">
+          <div class="modal-dialog modal-lg">
             <div class="modal-content">
-              <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLongTitle">Pembukaan KMIPN</h3>
+            <div class="modal-header">
+                <h3 class="modal-title" id="galerimodaltitle">{{$gal->title}}</h3>
               </div>
               <div class="modal-body">
-                <img src="{{url('img/Logo_Kemenristekdikti.png')}}" alt="" class="img-responsive">
+                <img src="{{url('galeri/'.$gal->photo)}}" style="width:100%;">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -247,6 +195,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             </div>
           </div>
         </div>
+        @endforeach
         <center class="clear">
           <a href="#" class="btn btn-default">Show More</a>
         </center>

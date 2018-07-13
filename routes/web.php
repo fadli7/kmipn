@@ -17,6 +17,7 @@ Route::get('/register', ['as' => 'view.register', 'uses' => 'Frontend\PagesContr
 Route::get('/forgot', 'Frontend\PagesController@forgot');
 Route::get('/faq', ['as' => 'view.faq', 'uses' => 'Frontend\PagesController@viewFaq']);
 Route::get('/jadwal-pelaksanaan', ['as' => 'view.jadwal', 'uses' => 'Frontend\PagesController@viewJadwal']);
+Route::get('/artikel/{slug}', ['as' => 'view.artikel', 'uses' => 'Frontend\PagesController@viewArtikel']);
 //Auth::routes();
 
 Route::prefix('ecodeeepis')->group(function() {

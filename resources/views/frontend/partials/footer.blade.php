@@ -1,8 +1,10 @@
 <div class="footer">
   <div class="container">
+    <br>
     <div class="row">
       <div class="col-md-4">
         Sekretariat
+      <br>
       <br> 
       Ruang Kemahasiswaan Gedung D3 Lantai 1 
       Politeknik Elektronika Negeri Surabaya 
@@ -10,8 +12,8 @@
       <br>
       Tlp : +62-31-5947280 (hunting) <br>
       Fax : +62-31-5946114 <br>
-      e-mail : kmipn@pens.ac.id <br>
-      URL : http://www.kmipn.pens.ac.id 
+      e-mail : <a href="mailto:kmipn@pens.ac.id" style="color:#fff">kmipn@pens.ac.id</a> <br>
+      URL : <a href="http://www.kmipn.pens.ac.id" style="color:#fff">http://www.kmipn.pens.ac.id</a> 
       
       </div>
       <div class="col-md-4">
