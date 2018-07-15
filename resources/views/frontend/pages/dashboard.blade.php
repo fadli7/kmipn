@@ -162,9 +162,6 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
           </div>
           @endforeach
         <br>
-        <center class="clear">
-          <a href="#" class="btn btn-default">Show More</a>
-        </center>
       </div>
     </div>
     <div class="container section-content" id="kmipn-galery">
@@ -196,9 +193,6 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
           </div>
         </div>
         @endforeach
-        <center class="clear">
-          <a href="#" class="btn btn-default">Show More</a>
-        </center>
       </div>
     </div>
     <div class="section-content">
