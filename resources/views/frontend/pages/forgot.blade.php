@@ -4,6 +4,7 @@
 @endsection
 @section('content')
   <div class="container-fluid bg-container">
+  <br><br>
     <div class="col-sm-offset-4 col-sm-4 col-xs-12">
         <div class="panel panel-default panel-login">
             <div class="panel-heading login-heading">

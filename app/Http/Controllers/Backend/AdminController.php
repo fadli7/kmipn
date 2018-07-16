@@ -1,5 +1,8 @@
 <?php
-namespace App\Http\Controllers;
+
+namespace App\Http\Controllers\Backend;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Tim;
 use App\Admin;
@@ -61,7 +64,9 @@ class AdminController extends Controller
 
   public function store(Request $request)
   {
-      	$req = $request->all();
+        $req = $request->all();
+        
+        $req['is_activated'] = 1;
 
         $req['password'] = \Hash::make($req['password']);
 
@@ -86,6 +91,8 @@ class AdminController extends Controller
       	$req = $request->except('_method', '_token', 'submit');
 
         $req['password'] = \Hash::make($req['password']);
+
+        $req['is_activated'] = 1;
 
         $result = Admin::where('id', $id)->update($req);
 
