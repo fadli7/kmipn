@@ -23,7 +23,7 @@ Route::get('/artikel/{slug}', ['as' => 'view.artikel', 'uses' => 'Frontend\Pages
 Route::prefix('ecodeeepis')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('ecodeeepis.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('ecodeeepis.login.submit');
-    Route::get('/', 'AdminController@admin')->name('ecodeeepis.dashboard');
+    Route::get('/', 'Backend\AdminController@admin')->name('ecodeeepis.dashboard');
     Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\AdminLoginController@logout']);
 
     //Route::get('/', array('as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index'));
