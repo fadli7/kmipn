@@ -8,9 +8,18 @@
             <br>
             <br>
             <div class="panel panel-default">
-                <div class="panel-heading">{{$artikel->title}}</div>
+                <div class="panel-heading">
+                    <h2>{{$artikel->title}}</h2>
+                    Pada {{$artikel->created_at}}
+                </div>
                 <div class="panel-body">
-                    <p>{{$artikel->content}}</p>
+                    @if($artikel->photo != null)
+                        <div align="center">
+                        <img src="{{url('artikel/'.$artikel->photo)}}" class="img-responsive">
+                        </div>
+                    @endif
+                    <br>
+                    <p><?= $artikel->content?></p>
                 </div>
             </div>
         </div>

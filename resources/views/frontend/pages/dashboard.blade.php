@@ -1,21 +1,24 @@
 <div class="top-nav-content hidden-xs">
   <div class="container">
     <div class="lembaga">
-        <img src="{{url('img/ristekdikti.png')}}" alt="">
+        <img src="{{url('img/master/ristekdikti.png')}}" alt="">
     </div>
     <div class="lembaga clip-shield">
-        <img src="{{url('img/Logo_PENS.png')}}" alt="">
+        <img src="{{url('img/master/Logo_PENS.png')}}" alt="">
+    </div>
+    <div class="lembaga kmipn">
+      <img src="{{url('img/master/logoHD.png')}}">
     </div>
   </div>
 </div>
 <div class="main-slider hidden-xs">
   <div class="slider-items">
-    <img src="{{url('img/DSC_4856.jpg')}}" alt="">
+    <img src="{{url('img/banner/DSC_4856.jpg')}}" alt="">
     <div class="slider-caption">
       <div class="container">
         <h2>KMIPN</h2>
         <p>
-          Kompetisi Mahasiswa Bidang Informatika Politeknik Nasional 2018
+          Kompetisi Mahasiswa Informatika Politeknik Nasional 2018
           <br>
           Politeknik Elektronika Negeri Surabaya
         </p>
@@ -27,12 +30,12 @@
     </div>
   </div>
   <div class="slider-items">
-    <img src="{{url('img/DSC_4856.jpg')}}" alt="">
+    <img src="{{url('img/banner/DSC_4856.jpg')}}" alt="">
     <div class="slider-caption">
       <div class="container">
         <h2>KMIPN</h2>
         <p>
-          Kompetisi Mahasiswa Bidang Informatika Politeknik Nasional 2018
+          Kompetisi Mahasiswa Informatika Politeknik Nasional 2018
           <br>
           Politeknik Elektronika Negeri Surabaya
         </p>
@@ -44,12 +47,12 @@
     </div>
   </div>
   <div class="slider-items">
-    <img src="{{url('img/DSC_4856.jpg')}}" alt="">
+    <img src="{{url('img/banner/DSC_4856.jpg')}}" alt="">
     <div class="slider-caption">
       <div class="container">
         <h2>KMIPN</h2>
         <p>
-          Kompetisi Mahasiswa Bidang Informatika Politeknik Nasional 2018
+          Kompetisi Mahasiswa Informatika Politeknik Nasional 2018
           <br>
           Politeknik Elektronika Negeri Surabaya
         </p>
@@ -63,61 +66,90 @@
 </div>
 @extends('frontend.layouts')
 @section('title')
-KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Informatika Politeknik Nasional
+KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Informatika Politeknik Nasional
 @endsection
 @section('content')
-  <div class="main-container">
+  <div class="main-container dashboard">
     <div class="container section-content" id="kmipn-category">
       <div class="section-header">
-        <h2>Kategori Lomba</h2>
-        <p>Kompetisi Mahasiswa Bidang Informatika Politeknik Nasional 2018</p>
+        <h1>LOMBA</h1>
+        <p>Kompetisi Mahasiswa Informatika Politeknik Nasional 2018</p>
       </div>
       <div class="section-body">
-        <div class="row justify-content-center">
-          @foreach($lomba as $lom)  
-          <div class="cola-4" data-toggle="modal" data-target="#ModalLomba-{{$lom->id}}">
-              <div class="category">
-                <img src="{{url('img/'.$lom->icon)}}" alt="Cipta Inovasi">
-                <div class="category-title">
-                  {{$lom->kategori->kategori}}
-                </div>
-              </div>
-          </div>
+        <div class="row">
+          <div class="col-md-5 col-sm-6 col-xs-12 category-left">
+            <ul>
+              @foreach($lomba1 as $lom)
+                <li>
+                  <a href="#" class="modal-button" data-id="{{$lom->id}}">{{$lom->kategori->kategori}}</a>
+                </li> 
 
-          <!-- Modal -->
-          <div class="modal fade" id="ModalLomba-{{$lom->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h3 class="modal-title" id="ModalLombaTitle-{{$lom->id}}">{{$lom->kategori->kategori}}</h3>
+                <div id="category-{{$lom->id}}" class="modal modal-category" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3>{{$lom->kategori->kategori}}</h3>
+                        </div>
+                        <div class="modal-body">
+                          <p>{{$lom->deskripsi}}</p>
+                          <a href="{{url('panduan/'.$lom->peraturan)}}" class="btn btn-outline btn-info">
+                            <i class="fa fa-file"></i> Panduan
+                          </a>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-outline btn-danger" onclick="Custombox.modal.close();">Close</button>
+                        </div>
+                      </div>
+                  </div>
                 </div>
-                <div class="modal-body">
-                  <p align="justify">
-                    {{$lom->deskripsi}}
-                  </p>
-                  <br>
-                  <a href="{{url('panduan/'.$lom->peraturan)}}" class="btn btn-info">
-                    <i class="fa fa-file"></i> Panduan Lomba
-                  </a>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
+              @endforeach
+            </ul>
           </div>
-          @endforeach
+          <div class="tugu-category col-md-2 col-sm-6 hidden-sm hidden-xs">
+            <img src="{{url('img/master/tugu.png')}}" alt="">
+          </div>
+          <div class="col-md-5 col-sm-6 col-xs-12 category-right">
+            <ul>
+              @foreach($lomba2 as $lom)
+                <li>
+                  <a href="#" class="modal-button" data-id="{{$lom->id}}">{{$lom->kategori->kategori}}</a>
+                </li> 
+
+                <div id="category-{{$lom->id}}" class="modal modal-category" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3>{{$lom->kategori->kategori}}</h3>
+                        </div>
+                        <div class="modal-body">
+                          <p>{{$lom->deskripsi}}</p>
+                          <a href="{{url('panduan/'.$lom->peraturan)}}" class="btn btn-outline btn-info">
+                            <i class="fa fa-file"></i> Panduan
+                          </a>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-outline btn-danger" onclick="Custombox.modal.close();">Close</button>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              @endforeach
+            </ul>
+          </div>
         </div>
+        
       </div>
     </div>
     <div class="section-content" id="kmipn-about">
       <div class="section-header">
-        <h2>Tentang KMIPN</h2>
+        <h1>Tentang KMIPN</h1>
       </div>
       <div class="section-body">
+        <div class="container"> 
+        <div class="row">
         <div class="col-sm-6 col-xs-12">
           <p align="justify">
-          KMIPN atau Kompetisi Mahasiswa bidangInformatika Politeknik Nasional Tahun 2018, 
+          KMIPN atau Kompetisi Mahasiswa Informatika Politeknik Nasional Tahun 2018, 
           merupakan program Bakorma Politeknik se - Indonesia, sebagai upaya untuk meningkatkan kualitas peserta 
           didik sehingga mampu mengambil peran sebagai agen 
           perubahan dalam memajukan TIK dan pemanfaatannya di Indonesia.
@@ -139,6 +171,8 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</li>
           </ul>
         </div>
+        </div>
+        </div>
       </div>
     </div>
     <div class="container section-content" id="kmipn-info">
@@ -147,6 +181,7 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
         <p>Berita dan Pengumuman terkait KMIPN 2018</p>
       </div>
       <div class="section-body">
+        <div class="row">
         @foreach($artikel as $art)
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="thumbnail">
@@ -155,16 +190,14 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
                 <h3>{{$art->title}}</h3>
                 <i>{{$art->created_at}}</i>
                 <br><br>
-                <p>{{substr($art->content, 0, 500)}}</p>
+                <p><?= substr($art->content, 0, 500)?></p>
               </div>
               </a>
             </div>
           </div>
           @endforeach
+        </div>
         <br>
-        <center class="clear">
-          <a href="#" class="btn btn-default">Show More</a>
-        </center>
       </div>
     </div>
     <div class="container section-content" id="kmipn-galery">
@@ -172,8 +205,9 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
         <h2>Galeri KMIPN</h2>
       </div>
       <div class="section-body">
+        <div class="row">
         @foreach($galeri as $gal)
-        <div class="col-xs-6 col-sm-4" data-toggle="modal" data-target="#galeriModal-{{$gal->id}}">
+        <div class="col-xs-12 col-sm-6 col-md-4" data-toggle="modal" data-target="#galeriModal-{{$gal->id}}">
           <div  class="thumbnail thumb-galeri">
             <img src="{{url('galeri/'.$gal->photo)}}" alt="">
           </div>
@@ -181,24 +215,22 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
         
         <!-- Modal -->
           <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="galeriModal-{{$gal->id}}">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="galerimodaltitle">{{$gal->title}}</h3>
-              </div>
-              <div class="modal-body">
-                <img src="{{url('galeri/'.$gal->photo)}}" style="width:100%;">
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="galerimodaltitle">{{$gal->title}}</h3>
+                </div>
+                <div class="modal-body">
+                  <img src="{{url('galeri/'.$gal->photo)}}" style="width:100%;">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         @endforeach
-        <center class="clear">
-          <a href="#" class="btn btn-default">Show More</a>
-        </center>
+        </div>
       </div>
     </div>
     <div class="section-content">
@@ -223,14 +255,5 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Bidang Info
     </div>
   </div>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('.main-slider').slick({
-        infinite : true,
-        speed : 500,
-        fade : true,
-        cssEase : 'linear'
-      });
-    });
-  </script>
+ 
 @endsection

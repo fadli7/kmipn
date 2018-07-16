@@ -6,15 +6,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{url('/')}}">KMIPN</a>
+      <a class="navbar-brand" href="{{url('/')}}">
+        <img src="{{url('img/master/logoHD.png')}}" alt="KMIPN">
+      </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        @if (Request::route()->getName() == 'view.home')
+        <!-- @if (Request::route()->getName() == 'view.home')
           <li class="active"><a href="{{url('/#')}}">beranda</a></li>
         @else
           <li class=""><a href="{{url('/#')}}">beranda</a></li>
-        @endif
+        @endif -->
         <li><a href="{{url('/#kmipn-category')}}">kategori lomba</a></li>
         <li><a href="{{url('/#kmipn-about')}}">tentang kmipn</a></li>
         <li><a href="{{url('/#kmipn-info')}}">informasi</a></li>

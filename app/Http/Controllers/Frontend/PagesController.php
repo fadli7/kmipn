@@ -15,7 +15,8 @@ class PagesController extends Controller
 {
 
     public function index(){
-      $data['lomba'] = Lomba::with('kategori')->get();
+      $data['lomba1'] = Lomba::with('kategori')->offset(0)->take(4)->get();
+      $data['lomba2'] = Lomba::with('kategori')->offset(4)->take(8)->get();
       $data['artikel'] = Artikel::where('status', 'Publish')->get();
       $data['galeri'] = Galeri::get();
       return view('frontend.pages.dashboard', $data);
