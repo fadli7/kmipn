@@ -163,12 +163,13 @@ KMIPN - Politeknik Elektronika Negeri Surabaya | Kompetisi Mahasiswa Informatika
         <div class="col-sm-6 col-xs-12">
           <h3>Persyaratan Umum</h3>
           <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</li>
+            <li>Peserta adalah mahasiswa perguruan tinggi politeknik negeri dan swasta di Indonesia yang berstatus aktif, dengan di buktikan dengan Kartu Tanda Mahasiswa (KTM) yang masih berlaku atau surat keterangan resmi dari  perguruan tinggi politeknik.</li>
+            <li>Mahasiswa peserta dan dosen pembimbing harus terdaftar di PD-DIKTI. </li>
+            <li>Peserta berkelompok terdiri dari maksimal 3 (tiga) orang mahasiswa, salah satu anggota bertindak sebagai ketua tim.</li>
+            <li>Setiap kelompok harus berasal dari perguruan tinggi politeknik yang sama dan boleh terdiri dari anggota tim dari program studi / departemen / jurusan yang berbeda.</li>
+            <li>Peserta diperbolehkan mengikuti maksimal 2 (dua) kategori lomba yang berbeda, tetapi hanya boleh menjadi ketua tim di 1 (satu) kategori lomba yang diikuti.</li>
+            <li>Peserta yang tidak memenuhi syarat (butir 1 s/d 5) dianggap gugur.</li>
+            <li>Peserta yang terpilih sebagai finalis lomba wajib menghadiri babak final KMIPN 2018 di Politeknik Elektronika Negeri Surabaya.</li>
           </ul>
         </div>
         </div>
