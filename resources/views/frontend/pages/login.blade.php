@@ -15,7 +15,7 @@
             </div>
             <div class="panel-body">
               <form role="form" action="{{ url('auth/login') }}" method="post">
-              @csrf
+                {{ csrf_field()}}
                 <div class="form-group">
                   <label for="email">Email address</label>
                   <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="email">

@@ -17,7 +17,16 @@
           </div>
           <div class="form-group">
             <label>Asal Politeknik</label>
-            <input type="text" name="asal_pt" value="{{ $tim->asal_pt }}" class="form-control" required>
+            <select class="form-control select2" name="politeknik_id" required>
+              <option disabled selected>Pilih Politeknik</option>
+                @foreach($politeknik as $item)
+                  @if($tim->politeknik_id == $item->id)
+                    <option value="{{ $item->id }}" selected>{{ $item->politeknik }}</option>
+                  @else
+                    <option value="{{ $item->id }}">{{ $item->politeknik }}</option>
+                  @endif
+                @endforeach
+            </select>
           </div>
           <div class="form-group">
             <label>File Proposal</label>

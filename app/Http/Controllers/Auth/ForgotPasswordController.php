@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-use Illuminate\Http\Request;
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use Illuminate\Support\Facades\Validator;
 use App\User;
 use DateTime;
-use Auth;
-use DB;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
 {
@@ -38,7 +34,8 @@ class ForgotPasswordController extends Controller
         $this->middleware('guest');
     }
 
-    public function sendResetLinkEmail(){
+    public function sendResetLinkEmail()
+    {
         $validator = Validator::make(request()->all(), [
             'email' => 'required'
         ]);
@@ -63,27 +60,16 @@ class ForgotPasswordController extends Controller
                 'token' => $reset_code,
                 'created_at' => new DateTime
             ]);
-
-            $mail = new PHPMailer(true);
-            //Server settings                             // Enable verbose debug output
-            $mail->isSMTP();                                      // Set mailer to use SMTP
-            $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-            $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'iervanfirdiansyah1998@gmail.com';                 // SMTP username
-            $mail->Password = 'Firdiansyahiervan1998';                           // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 587;                                    // TCP port to connect to
-
-            //Recipients
-            $mail->setFrom('admin@kmipn.com', 'KMIPN');
-            $mail->addAddress(request('email'));
             
-            //Content
-            $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'KMIPN - Reset Code';
-            $mail->Body    = url('/password/reset/'.$reset_code);
-
-            $mail->send();
+            $data = [
+                'link' => url('password/reset/'.$reset_code),
+                'fullname' => $check->fullname
+            ];
+            \Mail::send('frontend._email-reset', $data,
+                function ($message) use ($check){
+                    $message->to($check->email)->subject('KMIPN - Reset Password');
+                }
+            );
 
             return redirect()->to('/')->with('message', array(
                 'title' => 'Yay!',

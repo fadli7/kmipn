@@ -30,7 +30,13 @@
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->nama_tim }}</td>
                             <td>{{ $item->users->fullname }}</td>
-                            <td>{{ $item->asal_pt }}</td>
+                            <td>
+                                @foreach($politeknik as $item2)
+                                    @if($item2->id == $item->politeknik_id)
+                                        {{ $item2->politeknik }}
+                                    @endif
+                                @endforeach
+                            </td>
                             <td>{{ $item->file_proposal }}</td>
                             <td>{{ $item->kategori->kategori }}</td>
                             <td>{{ $item->status }}</td>

@@ -58,6 +58,14 @@ class RegisterController extends Controller
             'fullname' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'jurusan' => 'required',
+            'no_mahasiswa' => 'required',
+            'no_telp' => 'required',
+            'jenis_kelamin' => 'required',
+            'tempat_lahir' => 'required',
+            'tgl_lahir' => 'required',
+            'fullname' => 'required',
+            'alamat' => 'required'
         ]);
     }
 
@@ -85,7 +93,7 @@ class RegisterController extends Controller
     }
 
     public function register(Request $request) {
-        $input = $request->except('kategori_id','nama_tim','asal_pt');
+        $input = $request->except('kategori_id','nama_tim','politeknik_id');
         $validator = $this->validator($input);
         $userMail = User::where('email',$input['email'])->count();
 
@@ -97,42 +105,29 @@ class RegisterController extends Controller
           ));
         }else{
           if ($validator->passes()){
+            \DB::beginTransaction();
             $user = $this->create($input)->toArray();
-
             $link = str_random(30);
-    
             \DB::table('user_activations')->insert(['users_id'=>$user['id'],'token'=>$link]);
-  
-            $mail = new PHPMailer(true);
-            //Server settings                             // Enable verbose debug output
-            $mail->isSMTP();                                      // Set mailer to use SMTP
-            $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-            $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'iervanfirdiansyah1998@gmail.com';                 // SMTP username
-            $mail->Password = 'Firdiansyahiervan1998';                           // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 587;                                    // TCP port to connect to
-
-            //Recipients
-            $mail->setFrom('admin@kmipn.com', 'KMIPN-POLITEKNIK');
-            $mail->addAddress(request('email'), request('fullname'));
-
-            //Content
-            $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'KMIPN - Success Registered';
-            $mail->Body    = "Terimakasih telah mendaftar. <br>Link Aktivasi ".url('user/activation', $link);
-
-            $mail->send();
-
+            $data = [
+                'link' => url('user/activation/'. $link),
+                'fullname' => $user['fullname']
+            ];
+            \Mail::send('frontend._email-verification', $data,
+                function ($message) use ($user){
+                    $message->to($user['email'])->subject('KMIPN - Success Registered');
+                }
+            );
+            
             $userMail2 = User::where('email',$input['email'])->first();
-            $input2 = $request->only('kategori_id','nama_tim','asal_pt');
+            $input2 = $request->only('kategori_id','nama_tim','politeknik_id');
             $tim = Kategori::where('id',$input2['kategori_id'])->first();
 
             if($tim->kategori == "Hackathon"){
                 $datatim = Tim::create([
                     'users_id' => $userMail2->id,
                     'kategori_id' => $input2['kategori_id'],
-                    'asal_pt' => $input2['asal_pt'],
+                    'politeknik_id' => $input2['politeknik_id'],
                     'nama_tim' => $input2['nama_tim'],
                     'total_anggota' => 4
                 ]);
@@ -143,7 +138,7 @@ class RegisterController extends Controller
                 $datatim = Tim::create([
                     'users_id' => $userMail2->id,
                     'kategori_id' => $input2['kategori_id'],
-                    'asal_pt' => $input2['asal_pt'],
+                    'politeknik_id' => $input2['politeknik_id'],
                     'nama_tim' => $input2['nama_tim'],
                     'total_anggota' => 2
                 ]);
@@ -151,6 +146,8 @@ class RegisterController extends Controller
                     'tim_id' => $datatim->id
                 ));
             }
+
+            \DB::commit();
   
             return redirect()->to('/')->with('message', array(
               'title' => 'Yay!',

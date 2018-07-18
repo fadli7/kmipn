@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Exceptions;
+
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -18,6 +21,7 @@ class Handler extends ExceptionHandler
         \Illuminate\Session\TokenMismatchException::class,
         \Illuminate\Validation\ValidationException::class,
     ];
+
     /**
      * Report or log an exception.
      *
@@ -28,8 +32,13 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        if ($exception->getCode() === 404 or $exception->getCode() === 500) {
+            return response()->view('errors.503', ['message' => $exception->getMessage(), 'code' => $exception->getCode()]);
+        }
+
         parent::report($exception);
     }
+
     /**
      * Render an exception into an HTTP response.
      *
@@ -41,6 +50,7 @@ class Handler extends ExceptionHandler
     {
         return parent::render($request, $exception);
     }
+
     /**
      * Convert an authentication exception into an unauthenticated response.
      *
@@ -53,15 +63,7 @@ class Handler extends ExceptionHandler
         if ($request->expectsJson()) {
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
-        $guard = array_get($exception->guards(), 0);
-        switch ($guard) {
-          case 'admin':
-            $login = 'ecodeeepis.login';
-            break;
-          default:
-            $login = 'login';
-            break;
-        }
-        return redirect()->guest(route($login));
+
+        return redirect()->guest('login');
     }
 }

@@ -20,7 +20,7 @@ class CreateTimTable extends Migration
             $table->integer('kategori_id')->unsigned();
             $table->foreign('kategori_id')->references('id')->on('kategori');
             $table->string('nama_tim')->nullable();
-            $table->string('asal_pt')->nullable();
+            $table->string('politeknik_id')->nullable();
             $table->text('file_proposal')->nullable();
             $table->integer('total_anggota')->nullable();
             $table->enum('status', array('Daftar', 'Tahap Seleksi', 'Lolos', 'Tidak Lolos'))->default('Daftar');

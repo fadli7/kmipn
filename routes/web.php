@@ -20,19 +20,22 @@ Route::get('/jadwal-pelaksanaan', ['as' => 'view.jadwal', 'uses' => 'Frontend\Pa
 Route::get('/artikel/{slug}', ['as' => 'view.artikel', 'uses' => 'Frontend\PagesController@viewArtikel']);
 //Auth::routes();
 
-Route::prefix('ecodeeepis')->group(function() {
+// Route::get('/ecodeeepis', 'Auth\AdminLoginController@showLoginForm')->name('ecodeeepis.login');
+// Route::post('ecodeeepis/login', 'Auth\AdminLoginController@login')->name('ecodeeepis.login.submit');
+Route::group(['prefix' => 'ecodeeepis'], function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('ecodeeepis.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('ecodeeepis.login.submit');
     Route::get('/', 'Backend\AdminController@admin')->name('ecodeeepis.dashboard');
     Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\AdminLoginController@logout']);
 
-    //Route::get('/', array('as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index'));
+    //Route::get('/', array('as' => 'backend.dashboard.index', 'uses' => 'Backend\DashboardController@index'));
     Route::resource('users', 'Backend\UsersController');
     Route::resource('admin', 'Backend\AdminController');
     Route::resource('lomba', 'Backend\LombaController');
     Route::resource('artikel', 'Backend\ArtikelController');
     Route::resource('galeri', 'Backend\GaleriController');
     Route::resource('kategori', 'Backend\KategoriController');
+    Route::resource('politeknik', 'Backend\PoliteknikController');
 
     Route::get('/pendaftaran/{id}/edit', ['as' => 'pendaftaran.edit', 'uses' => 'Backend\PendaftaranController@edit']);
     Route::resource('pendaftaran', 'Backend\PendaftaranController', [ 'only' => [
@@ -53,7 +56,7 @@ Route::post('/auth/register', ['as' => 'register.post', 'uses' => 'Auth\Register
 
 //Forgot Reset Password
 Route::post('/auth/forgot', ['as' => 'password.reset', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
-Route::get('/password/reset/{token}', ['as' => 'password.reset', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
+Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
 //Backend Routes

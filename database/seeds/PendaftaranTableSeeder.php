@@ -15,7 +15,7 @@ class PendaftaranTableSeeder extends Seeder
             'users_id' => 1,
             'kategori_id' => 1,
             'nama_tim' => 'TIM',
-            'asal_pt' => 'PENS',
+            'politeknik_id' => 1,
             'total_anggota' => 0,
             'file_proposal'=> 'operasi linux word.docx',
             'status' => 'Tahap Seleksi',

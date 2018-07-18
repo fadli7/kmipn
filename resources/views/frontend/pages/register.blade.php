@@ -15,7 +15,7 @@
             </div>
             <div class="panel-body">
               <form role="form" action="{{ url('auth/register') }}" method="post">
-              @csrf
+                {{ csrf_field()}}
                 <div class="form-group">
                   <label>Kategori Lomba</label>
                   <select class="form-control" name="kategori_id" required>
@@ -31,7 +31,12 @@
                 </div>
                 <div class="form-group">
                   <label for="">Asal Politeknik</label>
-                  <input type="text" name="asal_pt" required class="form-control">
+                  <select class="form-control select2" name="politeknik_id" required>
+                    <option disabled selected>Pilih Politeknik</option>
+                    @foreach($politeknik as $item)
+                      <option value="{{ $item->id }}">{{ $item->politeknik }}</option>
+                    @endforeach
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="">Jurusan</label>

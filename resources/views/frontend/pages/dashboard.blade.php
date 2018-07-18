@@ -23,9 +23,9 @@
           Politeknik Elektronika Negeri Surabaya
         </p>
         <br>
-        @guest
+        @if(!auth()->user())
           <a href="{{url('login')}}" class="btn-bordered">Login</a>
-        @endguest
+        @endif
       </div>
     </div>
   </div>
@@ -40,9 +40,9 @@
           Politeknik Elektronika Negeri Surabaya
         </p>
         <br>
-        @guest
+        @if(!auth()->user())
           <a href="{{url('login')}}" class="btn-bordered">Login</a>
-        @endguest
+        @endif
       </div>
     </div>
   </div>
@@ -57,9 +57,9 @@
           Politeknik Elektronika Negeri Surabaya
         </p>
         <br>
-        @guest
+        @if(!auth()->user())
           <a href="{{url('login')}}" class="btn-bordered">Login</a>
-        @endguest
+        @endif
       </div>
     </div>
   </div>

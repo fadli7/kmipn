@@ -1,18 +1,23 @@
 <?php
 namespace App\Http\Controllers\Auth;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 class AdminLoginController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest:admin')->except('logout');
-    }
+
+    // public function __construct()
+    // {
+    //     $this->middleware('guest:admin')->except('logout');
+    // }
+
     public function showLoginForm()
     {
-      return view('auth.login');
+        return view('auth.login');
     }
+
     public function login(Request $request)
     {
       // Validate the form data

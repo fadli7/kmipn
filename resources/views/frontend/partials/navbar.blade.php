@@ -12,32 +12,31 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <!-- @if (Request::route()->getName() == 'view.home')
-          <li class="active"><a href="{{url('/#')}}">beranda</a></li>
-        @else
-          <li class=""><a href="{{url('/#')}}">beranda</a></li>
-        @endif -->
-        <li><a href="{{url('/#kmipn-category')}}">kategori lomba</a></li>
-        <li><a href="{{url('/#kmipn-about')}}">tentang kmipn</a></li>
-        <li><a href="{{url('/#kmipn-info')}}">informasi</a></li>
-        <li><a href="{{url('/#kmipn-galery')}}">galeri</a></li>
+        
+        <li class="active"><a href="{{url('/')}}/#">beranda</a></li>
+        <li><a href="{{url('/')}}">kategori lomba</a></li>
+        <li><a href="{{url('/')}}">tentang kmipn</a></li>
+        <li><a href="{{url('/')}}">informasi</a></li>
+        <li><a href="{{url('/')}}">galeri</a></li>
         <li><a href="{{url('/jadwal-pelaksanaan')}}">jadwal</a></li>
         <li><a href="{{url('/faq')}}">faq</a></li>
-        @guest
-          @if (Request::route()->getName() == 'view.login')
+        @if(!auth()->user())  
+          @if (Request::segment('1') == 'login')
             <li class="active"><a href="{{url('login')}}">Login</a></li>
           @else
             <li><a href="{{url('login')}}">Login</a></li>
           @endif
-          @if (Request::route()->getName() == 'view.register')
+
+          @if (Request::segment('1') == 'register')
             <li class="active"><a href="{{url('register')}}">Register</a></li>
           @else
             <li><a href="{{url('register')}}">Register</a></li>
           @endif
-        @else
+        @endif
+        @if(auth()->user())
           <li><a href="{{url('profile/dashboard')}}">Info TIM</a></li>
           <li><a href="{{url('auth/logout')}}">Logout</a></li>
-        @endguest
+        @endif
       </ul>
     </div>
   </div>

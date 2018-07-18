@@ -3,6 +3,7 @@
   Reset | KMIPN 2018
 @endsection
 @section('content')
+<br><br>
   <div class="container-fluid bg-container">
     <div class="col-sm-offset-4 col-sm-4 col-xs-12">
         <div class="panel panel-default panel-login">
@@ -15,7 +16,7 @@
             </div>
             <div class="panel-body">
               <form role="form" action="{{ url('password/reset') }}" method="post">
-              @csrf
+               {{ csrf_field()}}
               <input type="hidden" name="token" value="{{ $token }}">
                 <div class="form-group">
                   <label for="email">Email address</label>

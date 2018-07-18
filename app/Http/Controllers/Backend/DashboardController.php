@@ -8,6 +8,10 @@ use App\User;
 
 class DashboardController extends Controller
 {
+	public function __construct()
+    {
+         $this->middleware('auth:admin');
+    }
 
 	public function index() {
 		// $data['ck'] = User::where('kategori','Cipta Inovasi')->count();

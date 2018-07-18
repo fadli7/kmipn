@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Http\Middleware;
+
 use Closure;
 use Illuminate\Support\Facades\Auth;
+
 class RedirectIfAuthenticated
 {
     /**
@@ -14,7 +17,7 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-      switch ($guard) {
+        switch ($guard) {
         case 'admin':
           if (Auth::guard($guard)->check()) {
             return redirect()->route('ecodeeepis.dashboard');
@@ -26,6 +29,7 @@ class RedirectIfAuthenticated
           }
           break;
       }
-      return $next($request);
+
+        return $next($request);
     }
 }

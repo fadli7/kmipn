@@ -46,6 +46,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/ecodeeepis/politeknik') }}">
+                        <i class="fa fa-building"></i> <span class="toggle-none">Politeknik</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url('/ecodeeepis/artikel') }}">
                         <i class="fa fa-book"></i> <span class="toggle-none">Artikel</span>
                     </a>

@@ -16,7 +16,7 @@ class Tim extends Model
      * @var array
      */
     protected $fillable = [
-        'users_id','kategori_id', 'nama_tim', 'asal_pt','file_proposal', 'total_anggota','status'
+        'users_id','kategori_id', 'nama_tim', 'politeknik_id','file_proposal', 'total_anggota','status'
     ];
 
     protected $dates = ['deleted_at'];

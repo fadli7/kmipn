@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{url('vendor/slick/slick-theme.css')}}">
     <link rel="stylesheet" href="{{url('css/custombox.min.css')}}">
     <link href="{{ url('fixed-admin/lib/toast/jquery.toast.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{url('css/custom.css')}}">
     <link rel="stylesheet" href="{{url('css/responsive.css')}}">
     <script src="{{url('js/jquery.min.js')}}" charset="utf-8"></script>
@@ -38,6 +39,14 @@
     @endif
     <script type="text/javascript" async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBWk5NCWnufYNz0XE0uULJ2iphnWY6YESI&callback=initMap'></script>
     <script src="{{url('js/custombox.legacy.min.js')}}" charset="utf-8"></script>
+    <script src="{{ url('vendor/adminlte/plugins/select2/select2.min.js') }}"></script>
     <script src="{{url('js/custom.js')}}" charset="utf-8"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        //Initialize Select2 Elements
+        $(".select2").select2();
+    });
+    </script>
   </body>
 </html>

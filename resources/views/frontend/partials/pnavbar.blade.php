@@ -19,7 +19,7 @@
         @endif -->
         <li><a href="{{url('/jadwal-pelaksanaan')}}">jadwal</a></li>
         <li><a href="{{url('/faq')}}">faq</a></li>
-        @guest
+        @if(!auth()->user())
           @if (Request::route()->getName() == 'view.login')
             <li class="active"><a href="{{url('login')}}">Login</a></li>
           @else
@@ -33,7 +33,7 @@
         @else
           <li><a href="{{url('profile/dashboard')}}">Info TIM</a></li>
           <li><a href="{{url('auth/logout')}}">Logout</a></li>
-        @endguest
+        @endif
       </ul>
     </div>
   </div>

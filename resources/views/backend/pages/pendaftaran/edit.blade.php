@@ -45,7 +45,13 @@
                         </tr>
                         <tr>
                             <td>Asal Poltek</td>
-                            <td>{{ $data->asal_pt }}</td>
+                            <td>
+                                @foreach($politeknik as $item2)
+                                    @if($item2->politeknik == $data->politeknik_id)
+                                        {{ $item2->politeknik }}
+                                    @endif
+                                @endforeach
+                            </td>
                         </tr>
                     </table>
 

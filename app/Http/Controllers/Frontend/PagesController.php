@@ -9,6 +9,7 @@ use App\Lomba;
 use App\Kategori;
 use App\Artikel;
 use App\Galeri;
+use App\Politeknik;
 use File;
 
 class PagesController extends Controller
@@ -28,6 +29,7 @@ class PagesController extends Controller
 
     public function viewRegister(){
       $data['kategori'] = Kategori::get();
+      $data['politeknik'] = Politeknik::get();
       return view('frontend.pages.register',$data);
     }
 
@@ -44,6 +46,7 @@ class PagesController extends Controller
 
     public function viewInfoTim(){
       $data['tim'] = Tim::where('users_id',\Auth::user()->id)->first();
+      $data['politeknik'] = Politeknik::get();
       return view('frontend.pages.profile.info',$data);
     }
 
@@ -76,7 +79,7 @@ class PagesController extends Controller
 
         $result = User::where('id', $id)->update($req);
 
-        return redirect('/profile/dashboard/#anggota')->withInput()->with('message', array(
+        return redirect(url('profile/dashboard'))->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
@@ -89,7 +92,7 @@ class PagesController extends Controller
           $data['tim'] = Tim::where('users_id',\Auth::user()->id)->first();
 
           if($data['tim']->total_anggota == '0'){
-            return redirect('/profile/dashboard/#anggota')->withInput()->with('message', array(
+            return redirect(url('profile/dashboard'))->withInput()->with('message', array(
               'title' => 'Oops!',
               'type' => 'danger',
               'msg' => 'Failed.',
@@ -101,7 +104,7 @@ class PagesController extends Controller
             ));
             $result = User::create($req);
 
-            return redirect('/profile/dashboard/#anggota')->withInput()->with('message', array(
+            return redirect(url('/profile/dashboard/#anggota'))->withInput()->with('message', array(
               'title' => 'Yay!',
               'type' => 'success',
               'msg' => 'Saved Success.',
@@ -117,7 +120,7 @@ class PagesController extends Controller
         'total_anggota' => $tim1->total_anggota + 1
       ));
       if($result->role == 'Ketua'){
-        return redirect('/profile/dashboard/#anggota')->withInput()->with('message', array(
+        return redirect(url('profile/dashboard/#anggota'))->withInput()->with('message', array(
           'title' => 'Oops!',
           'type' => 'danger',
           'msg' => 'Tidak bisa menghapus ketua',
@@ -125,7 +128,7 @@ class PagesController extends Controller
       }else{
         $result->delete();
 
-        return redirect('/profile/dashboard/#anggota')->withInput()->with('message', array(
+        return redirect(uel('profile/dashboard/#anggota'))->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Deleted data.',
@@ -161,7 +164,7 @@ class PagesController extends Controller
 
         $result = Tim::where('id', $id)->update($req);
 
-        return redirect('/profile/dashboard/')->withInput()->with('message', array(
+        return redirect(url('profile/dashboard/'))->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Saved Success.',
