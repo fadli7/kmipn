@@ -29,8 +29,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label>File Proposal</label>
-            <input type="file" name="file_proposal" class="form-control">
+            <label>File Proposal (Maximum File Upload 3 Mb)</label>
+            <input type="file" name="file_proposal" id="file_proposal" class="form-control">
             <a href="{{ url('proposal/'.$tim->file_proposal) }}">{{ $tim->file_proposal }}</a>
           </div>
           <div class="form-group">
@@ -40,4 +40,15 @@
       </div>
     </div>
   </div>
+  <script>
+    $('#file_proposal').on('change', function() {
+
+    if(this.files[0].size > 3072000){
+      alert('File tidak boleh lebih dari 3 MB');
+      $('#file_proposal').val('');
+      return false;
+    }
+
+    });
+  </script>
 @endsection

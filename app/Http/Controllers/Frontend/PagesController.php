@@ -10,6 +10,8 @@ use App\Kategori;
 use App\Artikel;
 use App\Galeri;
 use App\Politeknik;
+use Illuminate\Support\Facades\Storage;
+use Image;
 use File;
 
 class PagesController extends Controller
@@ -77,6 +79,30 @@ class PagesController extends Controller
           unset($req['password']);
         }
 
+        if ($request->hasFile('image')) {
+          if ($request->file('image')->isValid()) {
+            $destinationPath = 'ktm/'; // upload path
+            $extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
+            $fileName = rand(11111,99999).'.'.$extension; // renaming image
+            $request->file('image')->move($destinationPath, $fileName); // uploading file to given path
+            Image::make($destinationPath.$fileName)->resize(500, null, function($constraint) {
+              $constraint->aspectRatio();
+              $constraint->upsize();
+            })->save($destinationPath.$fileName);
+            $req['photo'] = $fileName;
+            unset($req['image']);
+  
+            $result = User::find($id);
+            if (!empty($result->photo)) {
+              File::delete('ktm/'.$result->photo);
+            }
+          }else {
+            unset($req['photo']);
+          }
+        }else {
+          unset($req['photo']);
+        }
+
         $result = User::where('id', $id)->update($req);
 
         return redirect(url('profile/dashboard'))->withInput()->with('message', array(
@@ -102,6 +128,21 @@ class PagesController extends Controller
             Tim::where('users_id',\Auth::user()->id)->update(array(
               'total_anggota' => $data['tim']->total_anggota - 1
             ));
+
+            if ($request->hasFile('image')) {
+              if ($request->file('image')->isValid()) {
+                  $destinationPath = 'ktm/'; // upload path
+                  $extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
+                  $fileName = rand(11111,99999).'.'.$extension; // renaming image
+                  $request->file('image')->move($destinationPath, $fileName); // uploading file to given path
+                  Image::make($destinationPath.$fileName)->resize(500, null, function($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                  })->save($destinationPath.$fileName);
+                  $req['photo'] = $fileName;
+                  unset($req['image']);
+              }
+            }
             $result = User::create($req);
 
             return redirect(url('/profile/dashboard/#anggota'))->withInput()->with('message', array(
@@ -128,7 +169,7 @@ class PagesController extends Controller
       }else{
         $result->delete();
 
-        return redirect(uel('profile/dashboard/#anggota'))->withInput()->with('message', array(
+        return redirect(url('profile/dashboard/#anggota'))->withInput()->with('message', array(
           'title' => 'Yay!',
           'type' => 'success',
           'msg' => 'Deleted data.',

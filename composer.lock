@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80730ad83bc8276f4f1ee8ed35c706e0",
+    "content-hash": "a063612985a6cf9648798f8d6999aeb3",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -227,7 +227,7 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.4.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
@@ -3655,7 +3655,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "intervention/image": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -59,6 +59,7 @@
                 <th>Nama</th>
                 <th>E-mail</th>
                 <th>No. Telepon</th>
+                <th>Foto KTM</th>
                 <th>Sebagai</th>
               </thead>
               <tbody>
@@ -68,6 +69,13 @@
                   <td>{{ $item->fullname }}</td>
                   <td>{{ $item->email }}</td>
                   <td>{{ $item->no_telp }}</td>
+                  <td>
+                    @if($item->photo == NULL)
+                      Belum Upload
+                    @else
+                      Terupload
+                    @endif
+                  </td>
                   <td>{{ $item->role }}</td>
                   <td width="153">
                         <input type="hidden" name="_method" value="DELETE">
