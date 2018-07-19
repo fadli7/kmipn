@@ -47,10 +47,22 @@
                             <td>Asal Poltek</td>
                             <td>
                                 @foreach($politeknik as $item2)
-                                    @if($item2->politeknik == $data->politeknik_id)
+                                    @if($item2->id == $data->politeknik_id)
                                         {{ $item2->politeknik }}
                                     @endif
                                 @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Foto KTM Ketua</td>
+                            <td>
+                            @if (empty($data->users->photo))
+                                Belum Upload Foto KTM
+                            @else 
+                                @if (file_exists(public_path('ktm/'.$data->users->photo)))
+                                    <img src="{{ url('ktm/'.$data->users->photo) }}" id="preview-image" width="500">
+                                @endif 
+                            @endif
                             </td>
                         </tr>
                     </table>
@@ -83,6 +95,18 @@
                                     <tr>
                                         <td>Tempat/Tgl Lahir</td>
                                         <td>{{ $item->tempat_lahir }}/ {{ date('d-m-Y',strtotime($item->tgl_lahir)) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Foto KTM</td>
+                                        <td>
+                                        @if (empty($item->photo))
+                                            Belum Upload Foto KTM
+                                        @else 
+                                            @if (file_exists(public_path('ktm/'.$item->photo)))
+                                                <img src="{{ url('ktm/'.$item->photo) }}" id="preview-image" width="500">
+                                            @endif 
+                                        @endif
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Anggota Ke</td>
