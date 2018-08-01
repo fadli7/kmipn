@@ -1,8 +1,15 @@
 @extends('frontend.layouts')
+
+<section class="hero is-transparent is-fullwidth awalan">
+    @include('frontend.partials.navbar')
+    <div class="hero-body"></div>
+</section>
+
 @section('title')
   Forgot Password | KMIPN 2018
 @endsection
-@section('content')
+{{--@section('content')--}}
+
   <div class="container-fluid bg-container">
   <br><br>
     <div class="col-sm-offset-4 col-sm-4 col-xs-12">
@@ -33,4 +40,5 @@
         </div>
     </div>
   </div>
-@endsection
+
+{{--@endsection--}}

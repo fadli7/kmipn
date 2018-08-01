@@ -25,6 +25,20 @@ class PagesController extends Controller
       return view('frontend.pages.dashboard', $data);
     }
 
+    public function tentang() {
+        return view('frontend.pages.tentang');
+    }
+
+    public function lomba() {
+        return view('frontend.pages.lomba');
+    }
+
+    public function info() {
+        $data['artikel'] = Artikel::get();
+
+        return view('frontend.pages.info', $data);
+    }
+
     public function viewLogin(){
       return view('frontend.pages.login');
     }

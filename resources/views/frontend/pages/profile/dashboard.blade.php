@@ -1,8 +1,14 @@
 @extends('frontend.playouts')
+
+<section class="hero is-transparent is-fullwidth awalan">
+    @include('frontend.partials.navbar')
+    <div class="hero-body"></div>
+</section>
+
 @section('title')
   Dashboard Tim | KMIPN 2018
 @endsection
-@section('content')
+{{--@section('content')--}}
   <div class="container default-container">
     <div class="panel panel-default panel-custom">
       <div class="panel-body">
@@ -105,4 +111,4 @@
       </div>
     </div>
   </div>
-@endsection
+{{--@endsection--}}
