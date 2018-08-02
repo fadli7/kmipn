@@ -4,10 +4,10 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/">
-                        <img src="{{ url('img/logo/ristekdikti.png') }}" alt="Logo" width="100" height="300">
+                        <img src="{{ url('img/logo/ristekdikti.png') }}" alt="Logo" width="60">
                     </a>
                     <a class="navbar-item" href="/">
-                        <img src="{{ url('img/logo/logoHD.png') }}" alt="Logo" width="100" height="300">
+                        <img src="{{ url('img/logo/logoHD.png') }}" alt="Logo" width="60">
                     </a>
 
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -24,7 +24,7 @@
                         <a href="{{ url('info') }}" class="navbar-item has-text-weight-bold has-text-light">INFO</a>
                         @if(!auth()->user())
                         <a href="{{ url('login') }}" class="navbar-item has-text-weight-bold has-text-light">
-                            <span class="button is-danger">
+                            <span class="button is-danger is-rounded is-inverted is-outlined">
                                 LOGIN
                             </span>
                         </a>
@@ -32,7 +32,7 @@
                         @if(auth()->user())
                             <a href="{{ url('profile/dashboard') }}" class="navbar-item has-text-weight-bold has-text-light">DASHBOARD</a>
                             <a href="{{ url('auth/logout') }}" class="navbar-item has-text-weight-bold has-text-light">
-                            <span class="button is-danger">
+                            <span class="button is-danger is-rounded is-inverted is-outlined">
                                 LOGOUT
                             </span>
                             </a>
