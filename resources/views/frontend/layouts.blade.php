@@ -22,11 +22,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{{url('style/bulma-extension/timeline.css')}}" media="all">
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-  </head>
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
     {{--@include('frontend.partials.navbar')--}}
     {{--@yield('content')--}}
-    @include('frontend.partials.footer')
+{{--    @include('frontend.partials.footer')--}}
     <script src="{{url('vendor/slick/slick.min.js')}}" charset="utf-8"></script>
     <script src="{{url('vendor/bootstrap/js/bootstrap.min.js')}}" charset="utf-8"></script>
     <script src="{{ url('fixed-admin/lib/toast/jquery.toast.min.js') }}"></script>

@@ -1,9 +1,16 @@
-@extends('frontend.playouts')
+@extends('frontend.layouts')
+
+<section class="hero is-transparent is-fullwidth awalan">
+  @include('frontend.partials.navbar')
+  <div class="hero-body"></div>
+</section>
+
 @section('title')
   Dashboard Tim | KMIPN 2018
 @endsection
-@section('content')
-  <div class="container default-container">
+{{--@section('content')--}}
+<section class="hero tengah is-fullheight is-transparent is-fullwidth">
+  <div class="box">
     <div class="panel panel-default panel-custom">
       <div class="panel-heading">
         <h4>Informasi Tim</h4>
@@ -51,4 +58,5 @@
 
     });
   </script>
-@endsection
+</section>
+{{--@endsection--}}

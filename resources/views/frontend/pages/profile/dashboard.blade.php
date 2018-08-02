@@ -9,7 +9,8 @@
   Dashboard Tim | KMIPN 2018
 @endsection
 {{--@section('content')--}}
-  <div class="container default-container">
+<section class="hero tengah is-transparent is-fullwidth">
+  <div class="container">
     <div class="panel panel-default panel-custom">
       <div class="panel-body">
         <ul class="nav nav-tabs">
@@ -18,23 +19,23 @@
           <li><a data-toggle="tab" href="#proposal">Proposal</a></li>
         </ul>
         <br>
-        <div class="tab-content">
+        <div class="has-text-centered">
           <div id="dashboard" class="tab-pane fade in active">
-              <h3 class="centered has-text-black-bis">Logo KMIPN</h3>
-              <p class="centered lh-30 has-text-black-bis">
+              {{--<img style="width: 150px" src="{{ url('img/logoHD.png') }}">--}}
+              <p class="centered lh-30 has-text-black">
                 Selamat datang {{ Auth::user()->fullname }}
                 <br>
-                Anda mendaftar sebagai : <b>Ketua Tim</b>
+                Anda mendaftar sebagai : <b class="has-text-black">Ketua Tim</b>
                 <br>
                   Status Lomba : 
                   @if($tim->status == "Daftar")
-                    <i class="label label-info">Daftar</i>
+                    <i class="tag is-warning">Daftar</i>
                   @elseif($tim->status == "Tahap Seleksi")
-                    <i class="label label-warning">Tahap Seleksi</i>
+                    <i class="tag is-info">Tahap Seleksi</i>
                   @elseif($tim->status == "Lolos")
-                    <i class="label label-success">Lolos</i>
+                    <i class="tag is-success">Lolos</i>
                   @elseif($tim->status == "Tidak Lolos")
-                    <i class="label label-success">Tidak Lolos</i>
+                    <i class="tag is-danger">Tidak Lolos</i>
                   @endif
                 <br>
                 Kategori Lomba : {{ $tim->kategori->kategori }}
@@ -111,4 +112,5 @@
       </div>
     </div>
   </div>
+</section>
  {{--@endsection--}}

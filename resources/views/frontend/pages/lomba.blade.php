@@ -96,3 +96,5 @@
         </header>
     </div>
 </section>
+
+@include('frontend.partials.footer')
