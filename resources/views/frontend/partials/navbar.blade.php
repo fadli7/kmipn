@@ -30,6 +30,7 @@
                         </a>
                         @endif
                         @if(auth()->user())
+                            <a href="{{ url('profile/dashboard') }}" class="navbar-item has-text-weight-bold has-text-light">DASHBOARD</a>
                             <a href="{{ url('logout') }}" class="navbar-item has-text-weight-bold has-text-light">
                             <span class="button is-danger">
                                 LOGOUT

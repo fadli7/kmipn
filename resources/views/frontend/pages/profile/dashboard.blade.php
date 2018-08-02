@@ -1,4 +1,4 @@
-@extends('frontend.playouts')
+@extends('frontend.layouts')
 
 <section class="hero is-transparent is-fullwidth awalan">
     @include('frontend.partials.navbar')
@@ -20,8 +20,8 @@
         <br>
         <div class="tab-content">
           <div id="dashboard" class="tab-pane fade in active">
-              <h3 class="centered">Logo KMIPN</h3>
-              <p class="centered lh-30">
+              <h3 class="centered has-text-black-bis">Logo KMIPN</h3>
+              <p class="centered lh-30 has-text-black-bis">
                 Selamat datang {{ Auth::user()->fullname }}
                 <br>
                 Anda mendaftar sebagai : <b>Ketua Tim</b>
@@ -43,10 +43,10 @@
                 <a href="{{url('profile/info-tim')}}" class="btn btn-primary">Lihat/Ubah Informasi Tim </a>
               </p>
               <br>
-              <b>Pengumuman</b>
+              <b class="has-text-black-bis">Pengumuman</b>
               <ul>
-                <li>Pastikan email yang Anda gunakan mendaftar adalah email yang sebenarnya dan dapat dihubungi karena apabila ada informasi terkait administrasi dan kompetisi akan dikirimkan ke email tersebut</li>
-                <li>Informasi Tim hanya dapat diubah ketika data belum <b>diapprove/diverifikasi</b> oleh panitia, untuk menghindari kecurangan</li>
+                <li class="has-text-black-bis">Pastikan email yang Anda gunakan mendaftar adalah email yang sebenarnya dan dapat dihubungi karena apabila ada informasi terkait administrasi dan kompetisi akan dikirimkan ke email tersebut Informasi Tim hanya dapat diubah ketika data belum <b class="has-text-black-ter">diapprove/diverifikasi</b> oleh panitia, untuk menghindari kecurangan</li>
+                <li class="has-text-black-bis"></li>
               </ul>
           </div>
           <div id="anggota" class="tab-pane fade">
@@ -71,19 +71,19 @@
               <tbody>
               @foreach($anggota as $item)
                 <tr>
-                  <td>{{ $item->no_mahasiswa }}</td>
-                  <td>{{ $item->fullname }}</td>
-                  <td>{{ $item->email }}</td>
-                  <td>{{ $item->no_telp }}</td>
-                  <td>
+                  <td class="has-text-black">{{ $item->no_mahasiswa }}</td>
+                  <td class="has-text-black">{{ $item->fullname }}</td>
+                  <td class="has-text-black">{{ $item->email }}</td>
+                  <td class="has-text-black">{{ $item->no_telp }}</td>
+                  <td class="has-text-black">
                     @if($item->photo == NULL)
                       Belum Upload
                     @else
                       Terupload
                     @endif
                   </td>
-                  <td>{{ $item->role }}</td>
-                  <td width="153">
+                  <td class="has-text-black">{{ $item->role }}</td>
+                  <td width="153" class="has-text-black">
                         <input type="hidden" name="_method" value="DELETE">
                         <a href="{{ url('/profile/edit_anggota/'.$item->id) }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
                       @if($item->role == 'Anggota')  
@@ -111,4 +111,4 @@
       </div>
     </div>
   </div>
-{{--@endsection--}}
+ {{--@endsection--}}
