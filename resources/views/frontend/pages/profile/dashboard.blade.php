@@ -9,18 +9,18 @@
   Dashboard Tim | KMIPN 2018
 @endsection
 {{--@section('content')--}}
-<section class="hero tengah is-transparent is-fullwidth">
+<section class="hero tengah is-transparent is-fullwidth is-fullheight">
   <div class="container">
     <div class="panel panel-default panel-custom">
       <div class="panel-body">
         <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#dashboard">Dashboard TIM</a></li>
-          <li><a data-toggle="tab" href="#anggota" >Anggota</a></li>
-          <li><a data-toggle="tab" href="#proposal">Proposal</a></li>
+          <li class="active"><a id="toDashboard" data-toggle="tab" href="#dashboard">Dashboard TIM</a></li>
+          <li><a id="toAnggota" data-toggle="tab" href="#anggota" >Anggota</a></li>
+          <li><a id="toProposal" data-toggle="tab" href="#proposal">Proposal</a></li>
         </ul>
         <br>
         <div class="has-text-centered">
-          <div id="dashboard" class="tab-pane fade in active">
+          <div id="dashboard" class="tab-pane fade in active is-fixed-top">
               {{--<img style="width: 150px" src="{{ url('img/logoHD.png') }}">--}}
               <p class="centered lh-30 has-text-black">
                 Selamat datang {{ Auth::user()->fullname }}
@@ -50,7 +50,7 @@
                 <li class="has-text-black-bis"></li>
               </ul>
           </div>
-          <div id="anggota" class="tab-pane fade">
+          <div id="anggota" class="fade is-fixed-top">
             @if($tim->total_anggota == '0')
             @else
               <a href="{{url('profile/tambah-anggota')}}" class="pull-right btn btn-success">
@@ -86,9 +86,9 @@
                   <td class="has-text-black">{{ $item->role }}</td>
                   <td width="153" class="has-text-black">
                         <input type="hidden" name="_method" value="DELETE">
-                        <a href="{{ url('/profile/edit_anggota/'.$item->id) }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
+                        <a href="{{ url('/profile/edit_anggota/'.$item->id) }}" class="btn btn-info"><i class="fa fa-pencil"></i></a>
                       @if($item->role == 'Anggota')  
-                        <a href="{{ url('/profile/submit_delete_anggota/'.$item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</a>
+                        <a href="{{ url('/profile/submit_delete_anggota/'.$item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a>
                       @endif
                   </td>
                 </tr>
@@ -112,5 +112,26 @@
       </div>
     </div>
   </div>
+    {{--<script>--}}
+        {{--$(document).ready(function(){--}}
+            {{--$("#toDashboard").click(function(){--}}
+                {{--$("#dashboard").show();--}}
+                {{--$("#anggota").hide();--}}
+                {{--$("#proposal").hide();--}}
+            {{--});--}}
+
+            {{--$("#toAnggota").click(function(){--}}
+                {{--console.log("ini angota");--}}
+                {{--$("#dashboard").hide();--}}
+                {{--$("#anggota").show();--}}
+                {{--$("#proposal").hide();--}}
+            {{--});--}}
+            {{--$("#toProposal").click(function(){--}}
+                {{--$("#dashboard").hide();--}}
+                {{--$("#anggota").hide();--}}
+                {{--$("#proposal").show();--}}
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
 </section>
  {{--@endsection--}}

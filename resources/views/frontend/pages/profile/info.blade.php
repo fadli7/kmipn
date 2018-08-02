@@ -10,7 +10,7 @@
 @endsection
 {{--@section('content')--}}
 <section class="hero tengah is-fullheight is-transparent is-fullwidth">
-  <div class="box">
+  <div class="container">
     <div class="panel panel-default panel-custom">
       <div class="panel-heading">
         <h4>Informasi Tim</h4>
@@ -20,17 +20,17 @@
         {{ csrf_field() }}
           <div class="form-group">
             <label>Nama Tim</label>
-            <input type="text" name="nama_tim" value="{{ $tim->nama_tim }}" class="form-control" required>
+            <input type="text" name="nama_tim" value="{{ $tim->nama_tim }}" class="form-control input has-text-black" required>
           </div>
           <div class="form-group">
             <label>Asal Politeknik</label>
             <select class="form-control select2" name="politeknik_id" required>
-              <option disabled selected>Pilih Politeknik</option>
+              <option disabled selected class="has-text-black">Pilih Politeknik</option>
                 @foreach($politeknik as $item)
                   @if($tim->politeknik_id == $item->id)
-                    <option value="{{ $item->id }}" selected>{{ $item->politeknik }}</option>
+                    <option class="text-dark" value="{{ $item->id }}" selected>{{ $item->politeknik }}</option>
                   @else
-                    <option value="{{ $item->id }}">{{ $item->politeknik }}</option>
+                    <option class="text-dark" value="{{ $item->id }}">{{ $item->politeknik }}</option>
                   @endif
                 @endforeach
             </select>

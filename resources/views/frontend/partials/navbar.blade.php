@@ -1,6 +1,6 @@
 {{--<section class="hero is-transparent is-fullwidth is-fullheight awalan">--}}
-    <div class="hero-head has-navbar-fixed-top">
-        <nav class="navbar is-fresh is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="hero-head">
+        <nav class="navbar is-fresh is-transparent " role="navigation" aria-label="main navigation">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/">

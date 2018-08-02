@@ -51,6 +51,24 @@
 
         //Initialize Select2 Elements
         $(".select2").select2();
+
+        $("#toDashboard").click(function(){
+            $("#dashboard").show();
+            $("#anggota").hide();
+            $("#proposal").hide();
+        });
+
+        $("#toAnggota").click(function(){
+            console.log("ini angota");
+            $("#dashboard").hide();
+            $("#anggota").show();
+            $("#proposal").hide();
+        });
+        $("#toProposal").click(function(){
+            $("#dashboard").hide();
+            $("#anggota").hide();
+            $("#proposal").show();
+        });
     });
     </script>
 
