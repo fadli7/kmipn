@@ -39,7 +39,7 @@
       <div class="content">
         <div class="content">
           <div class="columns">
-            <div class="column is-3">
+            <div class="column i">
               <img src="{{url('img/logo-lomba/Design_Animasi.png')}}" width="150" height="150">
             </div>
             <div class="column is-3">
