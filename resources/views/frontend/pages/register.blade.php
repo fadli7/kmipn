@@ -142,9 +142,9 @@
               <div class="column is-6">
                 <div class="field">
                   <label class="label has-text-white-bis">Asal Politeknik</label>
-                  <div class="control">
+                  <div class="control form-group">
                     <div class="select is-danger is-medium">
-                      <select name="politeknik_id">
+                      <select class="select2" name="politeknik_id">
                         <option disabled selected>Pilih Politeknik</option>
                         @foreach($politeknik as $item)
                           <option class="has-text-black" value="{{ $item->id }}">{{ $item->politeknik }}</option>

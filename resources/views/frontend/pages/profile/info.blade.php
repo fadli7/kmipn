@@ -25,12 +25,12 @@
           <div class="form-group">
             <label>Asal Politeknik</label>
             <select class="form-control select2" name="politeknik_id" required>
-              <option disabled selected class="has-text-black">Pilih Politeknik</option>
+              <option disabled selected>Pilih Politeknik</option>
                 @foreach($politeknik as $item)
                   @if($tim->politeknik_id == $item->id)
-                    <option class="text-dark" value="{{ $item->id }}" selected>{{ $item->politeknik }}</option>
+                    <option style="color: #0a0a0a" value="{{ $item->id }}" selected>{{ $item->politeknik }}</option>
                   @else
-                    <option class="text-dark" value="{{ $item->id }}">{{ $item->politeknik }}</option>
+                    <option style="color: #0a0a0a" value="{{ $item->id }}">{{ $item->politeknik }}</option>
                   @endif
                 @endforeach
             </select>
