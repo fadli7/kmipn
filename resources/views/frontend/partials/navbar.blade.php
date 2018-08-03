@@ -1,43 +1,45 @@
-<nav class="navbar navbar-default" data-spy="affix" data-offset-top="510">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{url('/')}}">
-        <img src="{{url('img/master/logoHD.png')}}" alt="KMIPN">
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        
-        <li class="active"><a href="{{url('/')}}/#">beranda</a></li>
-        <li><a href="{{url('/')}}">kategori lomba</a></li>
-        <li><a href="{{url('/')}}">tentang kmipn</a></li>
-        <li><a href="{{url('/')}}">informasi</a></li>
-        <li><a href="{{url('/')}}">galeri</a></li>
-        <li><a href="{{url('/jadwal-pelaksanaan')}}">jadwal</a></li>
-        <li><a href="{{url('/faq')}}">faq</a></li>
-        @if(!auth()->user())  
-          @if (Request::segment('1') == 'login')
-            <li class="active"><a href="{{url('login')}}">Login</a></li>
-          @else
-            <li><a href="{{url('login')}}">Login</a></li>
-          @endif
+{{--<section class="hero is-transparent is-fullwidth is-fullheight awalan">--}}
+    <div class="hero-head">
+        <nav class="navbar is-fresh is-transparent " role="navigation" aria-label="main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <img src="{{ url('img/logo/ristekdikti.png') }}" alt="Logo" width="60">
+                    </a>
+                    <a class="navbar-item" href="/">
+                        <img src="{{ url('img/logo/logoHD.png') }}" alt="Logo" width="60">
+                    </a>
 
-          @if (Request::segment('1') == 'register')
-            <li class="active"><a href="{{url('register')}}">Register</a></li>
-          @else
-            <li><a href="{{url('register')}}">Register</a></li>
-          @endif
-        @endif
-        @if(auth()->user())
-          <li><a href="{{url('profile/dashboard')}}">Info TIM</a></li>
-          <li><a href="{{url('auth/logout')}}">Logout</a></li>
-        @endif
-      </ul>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div  id="navbarExampleTransparentExample" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="/" class="navbar-item has-text-weight-bold has-text-light">BERANDA</a>
+                        <a href="{{ url('tentang') }}" class="navbar-item has-text-weight-bold has-text-light">TENTANG</a>
+                        <a href="{{ url('lomba') }}" class="navbar-item has-text-weight-bold has-text-light">LOMBA</a>
+                        <a href="{{ url('info') }}" class="navbar-item has-text-weight-bold has-text-light">INFO</a>
+                        @if(!auth()->user())
+                        <a href="{{ url('login') }}" class="navbar-item has-text-weight-bold has-text-light">
+                            <span class="button is-danger is-rounded is-inverted is-outlined">
+                                LOGIN
+                            </span>
+                        </a>
+                        @endif
+                        @if(auth()->user())
+                            <a href="{{ url('profile/dashboard') }}" class="navbar-item has-text-weight-bold has-text-light">DASHBOARD</a>
+                            <a href="{{ url('auth/logout') }}" class="navbar-item has-text-weight-bold has-text-light">
+                            <span class="button is-danger is-rounded is-inverted is-outlined">
+                                LOGOUT
+                            </span>
+                            </a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
-  </div>
-</nav>
+{{--</section>--}}

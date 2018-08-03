@@ -11,11 +11,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
         $result = DB::table('users')->insert([
             'fullname' => 'ketua',
             'email' => 'ketua@kmipn.com',
-            'password' => \Hash::make('sandiaman'),
+            'password' => Hash::make('sandiaman'),
             'tim_id' => 1,
             'no_mahasiswa' => 2103171036,
             'jenis_kelamin' => 'Laki-laki',

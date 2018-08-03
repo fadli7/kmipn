@@ -12,6 +12,9 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'Frontend\PagesController@index'])->name('home');
+Route::get('/tentang', ['as' => 'tentang', 'uses' => 'Frontend\PagesController@tentang']);
+Route::get('/lomba', ['as' => 'lomba', 'uses' => 'Frontend\PagesController@lomba']);
+Route::get('/info', ['as' => 'info', 'uses' => 'Frontend\PagesController@info']);
 Route::get('/login', ['as' => 'login', 'uses' => 'Frontend\PagesController@viewLogin']);
 Route::get('/register', ['as' => 'view.register', 'uses' => 'Frontend\PagesController@viewRegister']);
 Route::get('/forgot', 'Frontend\PagesController@forgot');
