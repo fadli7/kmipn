@@ -17,7 +17,7 @@ class PoliteknikTableSeeder extends Seeder
         'Politeknik Negeri Bandung', 
         'Politeknik Negeri Semarang', 
         'Politeknik Negeri Sriwijaya', 
-        'Politeknik Negeri Lampung', 
+        'Politeknik Negeri Lampung',
         'Politeknik Negeri Ambon', 
         'Politeknik Negeri Padang', 
         'Politeknik Negeri Bali', 
