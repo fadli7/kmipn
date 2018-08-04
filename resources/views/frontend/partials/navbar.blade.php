@@ -7,6 +7,9 @@
                         <img src="{{ url('img/logo/ristekdikti.png') }}" alt="Logo" width="60">
                     </a>
                     <a class="navbar-item" href="/">
+                        <img src="{{ url('img/logo/pens.png') }}" alt="Logo" width="60">
+                    </a>
+                    <a class="navbar-item" href="/">
                         <img src="{{ url('img/logo/logoHD.png') }}" alt="Logo" width="60">
                     </a>
 
