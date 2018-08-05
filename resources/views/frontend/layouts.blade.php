@@ -22,6 +22,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{{url('style/bulma-extension/timeline.css')}}" media="all">
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+  </head>
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
     {{--@include('frontend.partials.navbar')--}}
     {{--@yield('content')--}}
@@ -70,6 +71,20 @@
             $("#proposal").show();
         });
     });
+
+    (function () {
+        var burger = document.querySelector('.burger');
+        var nav = document.querySelector('#'+burger.dataset.target);
+
+        var beranda = document.querySelector('.beranda');
+
+        burger.addEventListener('click', function () {
+            burger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+            beranda.style.color = "#000000";
+        });
+    })();
+
     </script>
 
     <script src="{{url('js/navbar.js')}}"></script>

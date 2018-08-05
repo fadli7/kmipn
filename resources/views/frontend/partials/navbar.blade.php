@@ -13,27 +13,27 @@
                         <img src="{{ url('img/logo/logoHD.png') }}" alt="Logo" width="60">
                     </a>
 
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
+                    <span class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarExampleTransparentExample">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
                 </div>
                 <div  id="navbarExampleTransparentExample" class="navbar-menu">
                     <div class="navbar-end">
-                        <a href="/" class="navbar-item has-text-weight-bold has-text-light">BERANDA</a>
-                        <a href="{{ url('tentang') }}" class="navbar-item has-text-weight-bold has-text-light">TENTANG</a>
-                        <a href="{{ url('lomba') }}" class="navbar-item has-text-weight-bold has-text-light">LOMBA</a>
-                        <a href="{{ url('info') }}" class="navbar-item has-text-weight-bold has-text-light">INFO</a>
+                        <a id="beranda" href="/" class="navbar-item has-text-weight-bold has-text-light beranda" style="text-decoration-color: #000000">BERANDA</a>
+                        <a id="tentang" href="{{ url('tentang') }}" class="navbar-item has-text-weight-bold has-text-light" style="text-decoration-color: #000000">TENTANG</a>
+                        <a id="lomba" href="{{ url('lomba') }}" class="navbar-item has-text-weight-bold has-text-light" style="text-decoration-color: #000000">LOMBA</a>
+                        <a id="info" href="{{ url('info') }}" class="navbar-item has-text-weight-bold has-text-light" style="text-decoration-color: #000000">INFO</a>
                         @if(!auth()->user())
-                        <a href="{{ url('login') }}" class="navbar-item has-text-weight-bold has-text-light">
-                            <span class="button is-danger is-rounded is-inverted is-outlined">
+                        <a href="{{ url('login') }}" class="navbar-item has-text-weight-bold has-text-light" >
+                            <span id="login" class="button is-danger is-rounded is-inverted is-outlined">
                                 LOGIN
                             </span>
                         </a>
                         @endif
                         @if(auth()->user())
-                            <a href="{{ url('profile/dashboard') }}" class="navbar-item has-text-weight-bold has-text-light">DASHBOARD</a>
+                            <a href="{{ url('profile/dashboard') }}" class="navbar-item has-text-weight-bold has-text-light" style="text-decoration-color: #000000">DASHBOARD</a>
                             <a href="{{ url('auth/logout') }}" class="navbar-item has-text-weight-bold has-text-light">
                             <span class="button is-danger is-rounded is-inverted is-outlined">
                                 LOGOUT
