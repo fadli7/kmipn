@@ -21,6 +21,15 @@ Route::get('/forgot', 'Frontend\PagesController@forgot');
 Route::get('/faq', ['as' => 'view.faq', 'uses' => 'Frontend\PagesController@viewFaq']);
 Route::get('/jadwal-pelaksanaan', ['as' => 'view.jadwal', 'uses' => 'Frontend\PagesController@viewJadwal']);
 Route::get('/artikel/{slug}', ['as' => 'view.artikel', 'uses' => 'Frontend\PagesController@viewArtikel']);
+
+Route::get('/iot', ['as' => 'iot', 'uses' => 'Frontend\PagesController@iot']);
+Route::get('/bistik', ['as' => 'bistik', 'uses' => 'Frontend\PagesController@bistik']);
+Route::get('/hackathon', ['as' => 'iot', 'uses' => 'Frontend\PagesController@hackathon']);
+Route::get('/anim', ['as' => 'anim', 'uses' => 'Frontend\PagesController@anim']);
+Route::get('/game', ['as' => 'game', 'uses' => 'Frontend\PagesController@game']);
+Route::get('/egov', ['as' => 'egov', 'uses' => 'Frontend\PagesController@egov']);
+Route::get('/jaringan', ['as' => 'jaringan', 'uses' => 'Frontend\PagesController@jaringan']);
+Route::get('/cipta', ['as' => 'cipta', 'uses' => 'Frontend\PagesController@cipta']);
 //Auth::routes();
 
 // Route::get('/ecodeeepis', 'Auth\AdminLoginController@showLoginForm')->name('ecodeeepis.login');

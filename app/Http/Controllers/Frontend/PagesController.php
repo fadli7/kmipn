@@ -33,6 +33,38 @@ class PagesController extends Controller
         return view('frontend.pages.lomba');
     }
 
+    public function iot () {
+        return view('frontend.pages.iot');
+    }
+
+    public function bistik () {
+        return view('frontend.pages.bistik');
+    }
+
+    public function hackathon () {
+        return view('frontend.pages.hackathon');
+    }
+
+    public function anim () {
+        return view('frontend.pages.anim');
+    }
+
+    public function game () {
+        return view('frontend.pages.game');
+    }
+
+    public function egov () {
+        return view('frontend.pages.egov');
+    }
+
+    public function jaringan () {
+        return view('frontend.pages.jaringan');
+    }
+
+    public function cipta () {
+        return view('frontend.pages.cipta');
+    }
+
     public function info() {
         $data['artikel'] = Artikel::get();
 

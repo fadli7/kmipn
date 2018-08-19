@@ -1,48 +1,40 @@
-{{--<section class="hero is-transparent is-fullwidth is-fullheight awalan">--}}
-    <div class="hero-head">
-        <nav class="navbar is-fresh is-transparent " role="navigation" aria-label="main navigation">
+<!--================Header Menu Area =================-->
+<header class="header_area">
+    <div class="main_menu" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                        <img src="{{ url('img/logo/ristekdikti.png') }}" alt="Logo" width="60">
-                    </a>
-                    <a class="navbar-item" href="/">
-                        <img src="{{ url('img/logo/pens.png') }}" alt="Logo" width="60">
-                    </a>
-                    <a class="navbar-item" href="/">
-                        <img src="{{ url('img/logo/logoHD.png') }}" alt="Logo" width="60">
-                    </a>
-
-                    <span class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarExampleTransparentExample">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="{{ url('/') }}"><img src="img/tes.png" alt="" width="230"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                @if(Request::is('/'))
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#home">BERANDA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tentang">TENTANG</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#feature">LOMBA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#price">INFORMASI</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('register') }}">DAFTAR</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">MASUK</a></li>
+                    </ul>
                 </div>
-                <div  id="navbarExampleTransparentExample" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a id="beranda" href="/" class="navbar-item has-text-weight-bold has-text-light beranda" style="text-decoration-color: #000000">BERANDA</a>
-                        <a id="tentang" href="{{ url('tentang') }}" class="navbar-item has-text-weight-bold has-text-light" style="text-decoration-color: #000000">TENTANG</a>
-                        <a id="lomba" href="{{ url('lomba') }}" class="navbar-item has-text-weight-bold has-text-light" style="text-decoration-color: #000000">LOMBA</a>
-                        <a id="info" href="{{ url('info') }}" class="navbar-item has-text-weight-bold has-text-light" style="text-decoration-color: #000000">INFO</a>
-                        @if(!auth()->user())
-                        <a href="{{ url('login') }}" class="navbar-item has-text-weight-bold has-text-light" >
-                            <span id="login" class="button is-danger is-rounded is-inverted is-outlined">
-                                LOGIN
-                            </span>
-                        </a>
-                        @endif
-                        @if(auth()->user())
-                            <a href="{{ url('profile/dashboard') }}" class="navbar-item has-text-weight-bold has-text-light" style="text-decoration-color: #000000">DASHBOARD</a>
-                            <a href="{{ url('auth/logout') }}" class="navbar-item has-text-weight-bold has-text-light">
-                            <span class="button is-danger is-rounded is-inverted is-outlined">
-                                LOGOUT
-                            </span>
-                            </a>
-                        @endif
+                @else
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item active"><a class="nav-link" href="{{ url('/') }}">BERANDA</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/#tentang') }}">TENTANG</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/#feature') }}">LOMBA</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/#price') }}">INFORMASI</a>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('register') }}">DAFTAR</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">MASUK</a></li>
+                        </ul>
                     </div>
-                </div>
+                @endif
             </div>
         </nav>
     </div>
-{{--</section>--}}
+</header>

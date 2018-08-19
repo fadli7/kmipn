@@ -1,96 +1,34 @@
-{{--<div class="footer">--}}
-  {{--<div class="container">--}}
-    {{--<br>--}}
-    {{--<div class="row">--}}
-      {{--<div class="col-md-4 col-xs-12 col-footer">--}}
-        {{--<h4>--}}
-        {{--Sekretariat--}}
-        {{--</h4>--}}
-        {{--<p>--}}
-          {{--Ruang Kemahasiswaan Gedung D3 Lantai 1 --}}
-          {{--Politeknik Elektronika Negeri Surabaya --}}
-          {{--Jalan Raya ITS Sukolilo, Surabaya 60111 --}}
-          {{--<br>--}}
-          {{--Tlp : +62-31-5947280 (hunting) <br>--}}
-          {{--Fax : +62-31-5946114 <br>--}}
-          {{--e-mail : <a href="mailto:kmipn@pens.ac.id" style="color:#fff">kmipn@pens.ac.id</a> <br>--}}
-          {{--URL : <a href="http://www.kmipn.pens.ac.id" style="color:#fff">http://www.kmipn.pens.ac.id</a> --}}
-        {{--</p>--}}
-      {{--</div>--}}
-      {{--<div class="col-md-4 col-xs-12 col-footer">--}}
-        {{--<h4>  --}}
-          {{--Sponsorship--}}
-        {{--</h4>--}}
-      {{--</div>--}}
-      {{--<div class="col-md-4 col-xs-12 col-footer">--}}
-        {{--<h4>--}}
-          {{--Supported by--}}
-        {{--</h4>--}}
-      {{--</div>--}}
-    {{--</div>--}}
-    {{--<br>--}}
-    {{--<br>--}}
-    {{--<center>--}}
-        {{--<span class="s18">KMIPN | Kompetisi Mahasiswa Bidang Informatika Politeknik Nasional 2018</span>--}}
-        {{--<br>--}}
-        {{--<span class="s16">--}}
-        {{--Politeknik Elektronika Negeri Surabaya--}}
-        {{--</span>--}}
-    {{--</center>--}}
-  {{--</div>--}}
-{{--</div>--}}
-
-{{-- ------------------------------ --}}
-
-<footer class="footer is-light is-fullwidth">
-  <div class="container has-text-centered-mobile">
-    <div class="columns">
-      <div class="column is-6 has-text-left">
-        <p>
-          <img src="{{url('img/logoHD.png')}}" width="125">
-        </p>
-      </div>
-      <div class="column is-6 has-text-right">
-        <div class="content">
-          <a class="button is-black">
-                        <span class="icon has-text-danger">
-                          <i class="fab fa-facebook-square"></i>
-                        </span>
-          </a>
-          <a class="button is-black">
-                        <span class="icon has-text-danger">
-                          <i class="fab fa-twitter"></i>
-                        </span>
-          </a>
-          <a class="button is-black">
-                        <span class="icon has-text-danger">
-                          <i class="fab fa-instagram"></i>
-                        </span>
-          </a>
-          <a class="button is-black">
-                        <span class="icon has-text-danger">
-                          <i class="fab fa-youtube"></i>
-                        </span>
-          </a>
-          <a class="button is-black">
-                        <span class="icon has-text-danger">
-                          <i class="fab fa-line"></i>
-                        </span>
-          </a>
+<!--================ start footer Area  =================-->
+<footer class="footer-area p_120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <div class="single-footer-widget news_widgets">
+                    <h6 class="footer_title">HUBUNGI KAMI</h6>
+                    <p><strong>Ruang Kemahasiswaan Gedung D3 Lantai 1<br />Politeknik Elektronika Negeri Surabaya (PENS)<br />Jalan Raya ITS Sukolilo, Surabaya 60111</strong></p>
+                    <br />
+                    <p>Aflah : +6281555628485</p>
+                    <p>Fadli : +6282232666431</p>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <div class="single-footer-widget news_widgets">
+                    <h6 class="footer_title">SPONSOR</h6>
+                    <img src="{{ url('img/im3.png') }}" alt="" width="149">
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="row footer-bottom d-flex justify-content-between align-items-center">
+            <p class="col-lg-8 col-md-8 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> KMIPN 2018 - Teknik Informatika Politeknik Elektronika Negeri Surabaya</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <div class="col-lg-4 col-md-4 footer-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-behance"></i></a>
+            </div>
+        </div>
     </div>
-    <div class="columns">
-      <div class="column is-6">
-        <h3 class="title is-3 is-uppercase">Sponsor</h3>
-      </div>
-      <div class="column is-6">
-        <h3 class="title is-3 is-uppercase">Media Partner</h3>
-      </div>
-    </div>
-    <hr class="navbar-divider">
-    <p>
-      <span class="has-text-black is-uppercase">&copy; KMIPN 2018 - Teknik Informatika Politeknik Elektronika Negeri Surabaya</span>
-    </p>
-  </div>
 </footer>
+<!--================ End footer Area  =================-->
