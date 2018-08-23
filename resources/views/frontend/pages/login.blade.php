@@ -20,13 +20,23 @@
                   <!--
                                               <label for="login_email" class="text-white"></label>
                   -->
-                  <input name="email" type="text" id="login_email" class="form-control" placeholder="Your email">
+                  <input name="email" type="email" id="login_email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Your email">
+                  @if ($errors->has('email'))
+                    <span class="invalid-feedback">
+                      <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                  @endif
                 </div>
                 <div class="form-group">
                   <!--
                                               <label for="login_pass" class="text-white">Your password</label>
                   -->
-                  <input name="password" type="password" id="login_pass" class="form-control" placeholder="Your password">
+                  <input name="password" type="password" id="login_pass" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Your password">
+                  @if ($errors->has('password'))
+                    <span class="invalid-feedback">
+                      <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                  @endif
                 </div>
                 <div class="row">
                   <div class="col col-sm-auto">

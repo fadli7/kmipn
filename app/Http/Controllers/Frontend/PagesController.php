@@ -95,11 +95,35 @@ class PagesController extends Controller
     public function viewInfoTim(){
       $data['tim'] = Tim::where('users_id',\Auth::user()->id)->first();
       $data['politeknik'] = Politeknik::get();
+
+//        $data['tim'] = Tim::where('users_id',\Auth::user()->id)->first();
+        $data['anggota'] = User::where('tim_id',$data['tim']->id)->get();
+        $data['nullProposal'] = Tim::where('users_id',\Auth::user()->id)->whereNull('file_proposal')->first();
       return view('frontend.pages.profile.info',$data);
     }
 
     public function viewAddAnggota(){
-      return view('frontend.pages.profile.add_anggota');
+        $data['tim'] = Tim::where('users_id',\Auth::user()->id)->first();
+        $data['anggota'] = User::where('tim_id',$data['tim']->id)->get();
+        $data['nullProposal'] = Tim::where('users_id',\Auth::user()->id)->whereNull('file_proposal')->first();
+
+      return view('frontend.pages.profile.add_anggota', $data);
+    }
+
+    public function viewAnggota(){
+        $data['tim'] = Tim::where('users_id',\Auth::user()->id)->first();
+        $data['anggota'] = User::where('tim_id',$data['tim']->id)->get();
+        $data['nullProposal'] = Tim::where('users_id',\Auth::user()->id)->whereNull('file_proposal')->first();
+
+        return view('frontend.pages.profile.anggota', $data);
+    }
+
+    public function viewProposal(){
+        $data['tim'] = Tim::where('users_id',\Auth::user()->id)->first();
+        $data['anggota'] = User::where('tim_id',$data['tim']->id)->get();
+        $data['nullProposal'] = Tim::where('users_id',\Auth::user()->id)->whereNull('file_proposal')->first();
+
+        return view('frontend.pages.profile.proposal', $data);
     }
 
     public function viewFaq(){
@@ -111,6 +135,9 @@ class PagesController extends Controller
     }
 
     public function edit_anggota($id){
+        $data['tim'] = Tim::where('users_id',\Auth::user()->id)->first();
+        $data['anggota'] = User::where('tim_id',$data['tim']->id)->get();
+        $data['nullProposal'] = Tim::where('users_id',\Auth::user()->id)->whereNull('file_proposal')->first();
       $data['data'] = User::where('id',$id)->first();
       return view('frontend.pages.profile.edit_anggota',$data);
     }

@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h3 class="text-heading title_color">Babak Final</h3>
-                    <p>Peserta yang lolos ke babak final akan mempresentasikan idenya di hadapan jajaran dewan juri KMIPN 2018 yang berlokasi di kampus PENS tanggal (7 - 10 November 2018). Selain itu peserta akan diwajibkan untuk membuat dan membawa poster sebagai bentuk visualisasi dari gagasan.
+                    <p>Peserta yang lolos ke babak final akan mempresentasikan idenya di hadapan jajaran dewan juri KMIPN 2018 yang berlokasi di kampus PENS tanggal (8 - 10 November 2018). Selain itu peserta akan diwajibkan untuk membuat dan membawa poster sebagai bentuk visualisasi dari gagasan.
                         <br/>
                         <br/>Pedoman pembuatan poster adalah sebagai berikut :
                         <br/>
@@ -178,7 +178,7 @@
                     </div>
                     <div class="col-md-2 col-lg-3">
                         <div class="single-defination">
-                            <h4 class="mb-20">7 - 10 November 2018</h4>
+                            <h4 class="mb-20">8 - 10 November 2018</h4>
                             <p>Grand Final KMIPN 2018</p>
                         </div>
                     </div>

@@ -153,7 +153,7 @@
                     </div>
                     <div class="col-md-2 col-lg-3">
                         <div class="single-defination">
-                            <h4 class="mb-20">7 - 10 November 2018</h4>
+                            <h4 class="mb-20">8 - 10 November 2018</h4>
                             <p>Grand Final KMIPN 2018</p>
                         </div>
                     </div>

@@ -597,7 +597,7 @@ button:focus {
   background-image: gradient(linear, left top, right top, color-stop(0, #bc2bff), color-stop(0.15, #bc2bff), color-stop(0.3, #7249fb), color-stop(0.45, #7249fb), color-stop(0.6, #7249fb), color-stop(0.75, #7249fb), color-stop(0.9, #7249fb), color-stop(1, #7249fb));
   color: transparent;
   -webkit-background-clip: text;
-  background-clip: inherit;
+  background-clip: text;
 }
 
 /* End Home latest Blog Area css

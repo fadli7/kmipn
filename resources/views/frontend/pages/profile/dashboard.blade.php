@@ -1,129 +1,75 @@
-<head>
-    <meta charset="utf-8">
-    <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{url('vendor/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url('vendor/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{url('vendor/slick/slick.css')}}">
-    <link rel="stylesheet" href="{{url('vendor/slick/slick-theme.css')}}">
-    <link rel="stylesheet" href="{{url('css/custombox.min.css')}}">
-    <link href="{{ url('fixed-admin/lib/toast/jquery.toast.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{url('css/custom.css')}}">
-    <link rel="stylesheet" href="{{url('css/responsive.css')}}">
-    <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/select2/select2.min.css') }}">
-    <script src="{{url('js/jquery.min.js')}}" charset="utf-8"></script>
-    <script src="{{url('js/jquery.smooth-scroll.js')}}" charset="utf-8"></script>
-    <script src="{{url('js/custombox.min.js')}}" charset="utf-8"></script>
-    <script src="{{url('vendor/locationpicker/locationpicker.jquery.min.js')}}" charset="utf-8"></script>
+@extends('frontend.playouts')
 
-</head>
+@section('title', 'Dashboard | KMIPN 2018')
 
-<body>
-    @include('frontend.partials.pnavbar')
-    <div class="container default-container">
-        <div class="panel panel-default panel-custom">
-            <div class="panel-body">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#dashboard">Dashboard TIM</a></li>
-                    <li><a data-toggle="tab" href="#anggota" >Anggota</a></li>
-                    <li><a data-toggle="tab" href="#proposal">Proposal</a></li>
-                </ul>
-                <br>
-                <div class="tab-content">
-                    <div id="dashboard" class="tab-pane fade in active">
-                        <h3 class="centered">Logo KMIPN</h3>
-                        <p class="centered lh-30">
-                            Selamat datang {{ Auth::user()->fullname }}
-                            <br>
-                            Anda mendaftar sebagai : <b>Ketua Tim</b>
-                            <br>
-                            Status Lomba :
+@section('content')
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Welcome, {{ $anggota[0]->fullname }}</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <p class="hidden-lg hidden-md">Welcome, {{ $anggota[0]->fullname }}</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{{ url('auth/logout') }}">
+                                <p>Log out</p>
+                            </a>
+                        </li>
+                        <li class="separator hidden-lg"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3><strong>Selamat Datang</strong></h3><br/>
+                            <h5>Anda mendaftar sebagai ketua tim</h5>
+
+                            <h5> Status Lomba :
                             @if($tim->status == "Daftar")
-                                <i class="label label-info">Daftar</i>
+                                <i class="label label-warning">Daftar</i>
                             @elseif($tim->status == "Tahap Seleksi")
-                                <i class="label label-warning">Tahap Seleksi</i>
+                                <i class="label label-info">Tahap Seleksi</i>
                             @elseif($tim->status == "Lolos")
                                 <i class="label label-success">Lolos</i>
                             @elseif($tim->status == "Tidak Lolos")
-                                <i class="label label-success">Tidak Lolos</i>
+                                <i class="label label-danger">Tidak Lolos</i>
                             @endif
-                            <br>
-                            Kategori Lomba : {{ $tim->kategori->kategori }}
-                            <br>
-                            <br>
-                            <a href="{{url('profile/info-tim')}}" class="btn btn-primary">Lihat/Ubah Informasi Tim </a>
-                        </p>
-                        <br>
-                        <b>Pengumuman</b>
-                        <ul>
-                            <li>Pastikan email yang Anda gunakan mendaftar adalah email yang sebenarnya dan dapat dihubungi karena apabila ada informasi terkait administrasi dan kompetisi akan dikirimkan ke email tersebut</li>
-                            <li>Informasi Tim hanya dapat diubah ketika data belum <b>diapprove/diverifikasi</b> oleh panitia, untuk menghindari kecurangan</li>
-                        </ul>
-                    </div>
-                    <div id="anggota" class="tab-pane fade">
-                        @if($tim->total_anggota == '0')
-                        @else
-                            <a href="{{url('profile/tambah-anggota')}}" class="pull-right btn btn-success">
-                                <i class="fa fa-plus"></i> Tambah Anggota
-                            </a>
-                        @endif
-                        <br>
-                        <br>
-                        <br>
-                        <table class="table table-striped">
-                            <thead>
-                            <th>NIM</th>
-                            <th>Nama</th>
-                            <th>E-mail</th>
-                            <th>No. Telepon</th>
-                            <th>Foto KTM</th>
-                            <th>Sebagai</th>
-                            </thead>
-                            <tbody>
-                            @foreach($anggota as $item)
-                                <tr>
-                                    <td>{{ $item->no_mahasiswa }}</td>
-                                    <td>{{ $item->fullname }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>{{ $item->no_telp }}</td>
-                                    <td>
-                                        @if($item->photo == NULL)
-                                            Belum Upload
-                                        @else
-                                            Terupload
-                                        @endif
-                                    </td>
-                                    <td>{{ $item->role }}</td>
-                                    <td width="153">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <a href="{{ url('/profile/edit_anggota/'.$item->id) }}" class="btn btn-info"><i class="fa fa-pencil"></i> Edit</a>
-                                        @if($item->role == 'Anggota')
-                                            <a href="{{ url('/profile/submit_delete_anggota/'.$item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</a>
-                                        @endif
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <div id="proposal" class="tab-pane fade">
-                        @if($nullProposal)
-                            <button class="col-md-12 btn btn-danger">Anda Belum Upload Proposal</button>
-                        @else
-                            <p class="centered">
-                                {{ $tim->file_proposal }}
-                                <br>
-                                <br>
-                                <a href="{{ url('proposal/'.$tim->file_proposal) }}" class="btn btn-primary">Lihat Proposal</a>
-                            </p>
-                        @endif
+                            </h5>
+                            <h5>Kategori Lomba : <strong>Desain Animasi</strong></h5><br/>
+                            <div class="alert alert-info">
+                            <span><strong>Pengumuman</strong><br/>
+
+    Pastikan email yang Anda gunakan mendaftar adalah email yang sebenarnya dan dapat dihubungi karena apabila ada informasi terkait administrasi dan kompetisi akan dikirimkan ke email tersebut. Informasi Tim hanya dapat diubah ketika data belum <strong>diapprove/diverifikasi</strong> oleh panitia, untuk menghindari kecurangan
+
+
+</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    {{-- ----- Batas ----- --}}
-    <script src="{{url('vendor/slick/slick.min.js')}}" charset="utf-8"></script>
-    <script src="{{url('vendor/bootstrap/js/bootstrap.min.js')}}" charset="utf-8"></script>
-    <script src="{{ url('fixed-admin/lib/toast/jquery.toast.min.js') }}"></script>
-</body>
+@endsection

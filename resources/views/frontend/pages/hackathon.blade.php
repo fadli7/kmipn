@@ -108,7 +108,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h3 class="text-heading title_color">Babak Final</h3>
-                    <p>Peserta yang lolos akan mengikuti Hackathon KMIPN 2018 yang berlokasi di kampus PENS tanggal 7 - 10 November 2018. Selain itu peserta diharapkan menyiapkan peralatan pengembangannya sendiri (laptop, dll).</p>
+                    <p>Peserta yang lolos akan mengikuti Hackathon KMIPN 2018 yang berlokasi di kampus PENS tanggal 8 - 10 November 2018. Selain itu peserta diharapkan menyiapkan peralatan pengembangannya sendiri (laptop, dll).</p>
                 </div>
             </div>
         </div>
@@ -170,7 +170,7 @@
                     </div>
                     <div class="col-md-2 col-lg-3">
                         <div class="single-defination">
-                            <h4 class="mb-20">7 - 10 November 2018</h4>
+                            <h4 class="mb-20">8 - 10 November 2018</h4>
                             <p>Grand Final KMIPN 2018</p>
                         </div>
                     </div>

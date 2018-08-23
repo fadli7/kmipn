@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
     <link rel="stylesheet" href="{{ url('css/responsive.css') }}">
 
+
+      <link rel="stylesheet" href="{{url('vendor/slick/slick.css')}}">
+      <link rel="stylesheet" href="{{url('vendor/slick/slick-theme.css')}}">
       {{-- select2 --}}
 
       <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/select2/select2.min.css') }}">
@@ -125,6 +128,25 @@
     <script src="{{ url('vendor/adminlte/plugins/select2/select2.min.js') }}"></script>
 
 
+    <script src="{{url('vendor/slick/slick.min.js')}}" charset="utf-8"></script>
+    <script src="{{url('vendor/bootstrap/js/bootstrap.min.js')}}" charset="utf-8"></script>
+    <script src="{{ url('fixed-admin/lib/toast/jquery.toast.min.js') }}"></script>
+    @if (session('message'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $.toast({
+                    text: "<strong>{{ session('message')['title'] }}</strong> {{ session('message')['msg'] }}",
+                    position: 'top-right',
+                    showHideTransition: 'slide',
+                    hideAfter: 5000,
+                })
+            });
+        </script>
+    @endif
+
+    <script src="{{url('js/custombox.legacy.min.js')}}" charset="utf-8"></script>
+    <script src="{{url('js/custom.js')}}" charset="utf-8"></script>
+
     {{--@if (session('message'))--}}
     {{--<script type="text/javascript">--}}
       {{--$(document).ready(function() {--}}
@@ -154,23 +176,6 @@
         //Initialize Select2 Elements
         $(".select2").select2();
 
-        $("#toDashboard").click(function(){
-            $("#dashboard").show();
-            $("#anggota").hide();
-            $("#proposal").hide();
-        });
-
-        $("#toAnggota").click(function(){
-            console.log("ini angota");
-            $("#dashboard").hide();
-            $("#anggota").show();
-            $("#proposal").hide();
-        });
-        $("#toProposal").click(function(){
-            $("#dashboard").hide();
-            $("#anggota").hide();
-            $("#proposal").show();
-        });
     });
 
     {{--(function () {--}}

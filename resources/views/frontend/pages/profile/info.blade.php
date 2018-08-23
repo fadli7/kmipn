@@ -1,18 +1,49 @@
-@extends('frontend.layouts')
-
-<section class="hero is-transparent is-fullwidth awalan">
-  @include('frontend.partials.navbar')
-  <div class="hero-body"></div>
-</section>
+@extends('frontend.playouts')
 
 @section('title')
   Dashboard Tim | KMIPN 2018
 @endsection
-{{--@section('content')--}}
-<section class="hero tengah is-fullheight is-transparent is-fullwidth">
-  <div class="container">
-    <div class="panel panel-default panel-custom">
-      <div class="panel-heading">
+@section('content')
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Welcome, {{ $anggota[0]->fullname }}</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <p class="hidden-lg hidden-md">Welcome, M. Fadli Farham</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{{ url('auth/logout') }}">
+                                <p>Log out</p>
+                            </a>
+                        </li>
+                        <li class="separator hidden-lg"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+  <div class="content">
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+      <div class="card">
+      <div class="header">
         <h4>Informasi Tim</h4>
       </div>
       <div class="panel-body">
@@ -46,6 +77,9 @@
         </form>
       </div>
     </div>
+    </div>
+    </div>
+    </div>
   </div>
   <script>
     $('#file_proposal').on('change', function() {
@@ -58,5 +92,5 @@
 
     });
   </script>
-</section>
-{{--@endsection--}}
+
+@endsection

@@ -78,6 +78,8 @@ Route::group(['middleware' => ['user_actived']], function() {
     Route::group(['middleware' => ['auth']], function() {
         Route::get('/profile/dashboard', ['as' => 'view.profile', 'uses' => 'Frontend\PagesController@viewProfile']);
         Route::get('/profile/tambah-anggota', ['as' => 'view.addanggota', 'uses' => 'Frontend\PagesController@viewAddAnggota']);
+        Route::get('/profile/anggota', ['as' => 'view.anggota', 'uses' => 'Frontend\PagesController@viewAnggota']);
+        Route::get('/profile/proposal', ['as' => 'view.proposal', 'uses' => 'Frontend\PagesController@viewProposal']);
         Route::get('/profile/info-tim', ['as' => 'view.info', 'uses' => 'Frontend\PagesController@viewInfoTim']);
         Route::get('/profile/edit_anggota/{id}', ['as' => 'view.edit_anggota', 'uses' => 'Frontend\PagesController@edit_anggota']);
         Route::post('/profile/submit_edit_anggota/{id}', ['as' => 'view.submit_edit_anggota', 'uses' => 'Frontend\PagesController@submit_edit_anggota']);
