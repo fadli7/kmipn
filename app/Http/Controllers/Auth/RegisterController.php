@@ -152,7 +152,7 @@ class RegisterController extends Controller
             return redirect()->to('/')->with('message', array(
               'title' => 'Yay!',
               'type' => 'success',
-              'msg' => 'Success Registered',
+              'msg' => 'Success Registered, Check Your Email',
             ));
           }
         }
@@ -173,7 +173,7 @@ class RegisterController extends Controller
           $user->save();
           \DB::table('user_activations')->where('token',$token)->delete();
   
-          return redirect()->to('/')->with('message', array(
+          return redirect()->to('/login')->with('message', array(
             'title' => 'Yay!',
             'type' => 'success',
             'msg' => 'User active successfully. Now you can login with your account.',

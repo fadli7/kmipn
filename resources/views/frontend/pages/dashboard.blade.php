@@ -1,6 +1,6 @@
 @extends('frontend.layouts')
 
-@section('title', 'KMIPN 2018')
+@section('title', 'KMIPN 2018 | Politeknik ELektronika Negeri Surabaya')
 
 @section('content')
 
@@ -12,7 +12,7 @@
           <div class="col-lg-9">
             <h2><font size="10">Kompetisi Mahasiswa <br />bidang Informatika Politeknik Nasional 2018</font></h2>
             <h3>Politeknik Elektronika Negeri Surabaya, 7 - 10 November 2018</h3>
-            <br /><a target="_blank" class="banner_btn" href="https://docs.google.com/viewerng/viewer?url=https://trello-attachments.s3.amazonaws.com/5abb9d7e1f807edcdbdb96e3/5b4d90ab6c288d1ececf3411/33473e9afd4b17543b083e5f562d4231/Desain_Buku_Panduan_Lomba.docx">Unduh Panduan</a>
+            <br /><a target="_blank" class="banner_btn" href="https://drive.google.com/file/d/1_b7pqVZMO_CDUVzp54mKbaiLvU9-XpLj/view?usp=sharing">Unduh Panduan</a>
           </div>
           <div class="col-lg-3">
             <div class="banner_map_img">
@@ -34,7 +34,8 @@
         <div class="col-lg-5 offset-lg-1">
           <div class="interior_text">
             <h4>Tentang KMIPN</h4>
-            <p>KMIPN atau Kompetisi Mahasiswa Informatika Politeknik Nasional Tahun 2018, merupakan program Bakorma Politeknik se - Indonesia, sebagai upaya untuk meningkatkan kualitas peserta didik sehingga mampu mengambil peran sebagai agen perubahan dalam memajukan TIK dan pemanfaatannya di Indonesia. KMIPN diselenggarakan sebagai upaya pemerintah melalui Kemenristekdikti untuk peningkatan mutu perguruan tinggi khusunya politeknik. Kegiatan ini diharapkan menjadi ajang untuk menyalurkan kreativitas mahasiswa dalam pengembangan Teknologi Informasi dan Komunikasi di tingkat nasional. Untuk pertama kalinya KMIPN akan diselenggarakan pada Tahun 2018 dengan tema <br /><strong>“Tantangan TIK dalam Era Revolusi Industri 4.0”</strong></p>                   <a class="main_btn" href="#">Lihat Timeline</a>
+            <p>KMIPN atau Kompetisi Mahasiswa Informatika Politeknik Nasional Tahun 2018, merupakan program Bakorma Politeknik se - Indonesia, sebagai upaya untuk meningkatkan kualitas peserta didik sehingga mampu mengambil peran sebagai agen perubahan dalam memajukan TIK dan pemanfaatannya di Indonesia. KMIPN diselenggarakan sebagai upaya pemerintah melalui Kemenristekdikti untuk peningkatan mutu perguruan tinggi khusunya politeknik. Kegiatan ini diharapkan menjadi ajang untuk menyalurkan kreativitas mahasiswa dalam pengembangan Teknologi Informasi dan Komunikasi di tingkat nasional. Untuk pertama kalinya KMIPN akan diselenggarakan pada Tahun 2018 dengan tema <br /><strong>“Tantangan TIK dalam Era Revolusi Industri 4.0”</strong></p>
+            <button class="main_btn" data-toggle="modal" data-target=".tl">Lihat Timeline</button>
           </div>
         </div>
       </div>
@@ -42,11 +43,125 @@
   </section>
   <!--================End Interior Area =================-->
 
+  {{-- Timeline --}}
+  <div class="modal fade tl" tabindex="-1" role="dialog" aria-labelledby="myModal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header home_content">
+          {{--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--}}
+          <h4 class="modal-title" id="myModal">Timeline Lomba</h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="table-responsive-lg">
+              <table class="table table-hover">
+                <thead class="thead" align="center">
+                  <tr>
+                    <th>Kategori</th>
+                    <th>Batas Pendaftaran</th>
+                    <th>Batas Babak Penyisihan 1</th>
+                    <th>Pengumuman Lolos ke Babak Penyisihan 2</th>
+                    <th>Batas Babak Penyisihan 2</th>
+                    <th>Pengumuman Lolos ke Babak Final</th>
+                    <th>Babak Final</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Internet of Things</td>
+                    <td>1 - 30 September 2018</td>
+                    <td>30 September 2018</td>
+                    <td>7 Oktober 2018</td>
+                    <td>7 - 21 Oktober 2018</td>
+                    <td>24 Oktober 2018</td>
+                    <td>8 - 10 November</td>
+                  </tr>
+                  <tr>
+                    <td>Bisnis TIK</td>
+                    <td>1 - 30 September 2018</td>
+                    <td>30 September 2018</td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td>24 Oktober 2018</td>
+                    <td>8 - 10 November</td>
+                  </tr>
+                  <tr>
+                    <td>Hackathon</td>
+                    <td>1 - 30 September 2018</td>
+                    <td>30 September 2018</td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td>24 Oktober 2018</td>
+                    <td>8 - 10 November</td>
+                  </tr>
+                  <tr>
+                    <td>Desain Animasi</td>
+                    <td>1 - 30 September 2018</td>
+                    <td>30 September 2018</td>
+                    <td>7 Oktober 2018</td>
+                    <td>7 - 21 Oktober 2018</td>
+                    <td>24 Oktober 2018</td>
+                    <td>8 - 10 November</td>
+                  </tr>
+                  <tr>
+                    <td>Game Development</td>
+                    <td>1 - 30 September 2018</td>
+                    <td>30 September 2018</td>
+                    <td>7 Oktober 2018</td>
+                    <td>7 - 21 Oktober 2018</td>
+                    <td>24 Oktober 2018</td>
+                    <td>8 - 10 November</td>
+                  </tr>
+                  <tr>
+                    <td>e-Government</td>
+                    <td>1 - 30 September 2018</td>
+                    <td>30 September 2018</td>
+                    <td>7 Oktober 2018</td>
+                    <td>7 - 21 Oktober 2018</td>
+                    <td>24 Oktober 2018</td>
+                    <td>8 - 10 November</td>
+                  </tr>
+                  <tr>
+                    <td>Keamanan Jaringan</td>
+                    <td>1 - 30 September 2018</td>
+                    <td>30 September 2018</td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td>24 Oktober 2018</td>
+                    <td>8 - 10 November</td>
+                  </tr>
+                  <tr>
+                    <td>Cipta Inovasi</td>
+                    <td>1 - 30 September 2018</td>
+                    <td>30 September 2018</td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td>24 Oktober 2018</td>
+                    <td>8 - 10 November</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <button class="basic_close btn main_btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+        $('#basic').popup();
+    });
+  </script>
+
   <!--================Feature Area =================-->
   <section class="feature_area p_120" id="feature">
     <div class="container">
       <div class="main_title">
-        <h2>LOMBA</h2>
+        <h2>Lomba</h2>
       </div>
       <div class="feature_inner row">
         <div class="col-lg-3 col-md-6">

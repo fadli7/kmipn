@@ -23,10 +23,10 @@
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script> KMIPN 2018 - Teknik Informatika Politeknik Elektronika Negeri Surabaya</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             <div class="col-lg-4 col-md-4 footer-social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-behance"></i></a>
+                <a href="https://www.facebook.com/kmipn2018" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/kmipn2018" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.instagram.com/kmipn2018/" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fa fa-linkedin"></i></a>
             </div>
         </div>
     </div>

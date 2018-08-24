@@ -1,6 +1,6 @@
 @extends('frontend.layouts')
 
-@section('title', 'DAFTAR | KMIPN 2018')
+@section('title', 'Daftar | KMIPN 2018')
 
 @section('content')
   <!--================Home Banner Area =================-->
@@ -41,7 +41,7 @@
                         <select class="select2" name="politeknik_id" required>
                           <option disabled selected>Asal Politeknik</option>
                           @foreach($politeknik as $item)
-                          <option value="{{ $item->id }}">{{ $item->politeknik }}</option>
+                            <option id="hapus" value="{{ $item->id }}">{{ $item->politeknik }}</option>
                           @endforeach
                         </select>
                       </div>

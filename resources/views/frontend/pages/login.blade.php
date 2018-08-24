@@ -23,7 +23,7 @@
                   <input name="email" type="email" id="login_email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Your email">
                   @if ($errors->has('email'))
                     <span class="invalid-feedback">
-                      <strong>{{ $errors->first('email') }}</strong>
+                      <strong class="text-white">{{ $errors->first('email') }}</strong>
                     </span>
                   @endif
                 </div>
@@ -40,7 +40,8 @@
                 </div>
                 <div class="row">
                   <div class="col col-sm-auto">
-                    <p class="text-white">Don't have an account? <a href="#">Create your account</a></p>
+                    <p class="text-white">Belum punya akun? <a href="{{ url('register') }}">Daftar sekarang</a><br>
+                    Atau <a href="{{ url('forgot') }}">lupa password</a></p>
                   </div>
                   <div class="col text-right">
                     <button type="submit" class="genric-btn primary circle">MASUK</button>

@@ -18,7 +18,7 @@
     {{--<script src="{{url('vendor/locationpicker/locationpicker.jquery.min.js')}}" charset="utf-8"></script>--}}
 
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="{{ url('assets/img/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ url('img/favicon.png') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>@yield('title')</title>
@@ -48,12 +48,14 @@
 
   </head>
 
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <div data-spy="scroll" data-target=".navbar" data-offset="50">
 
     @include('frontend.partials.pnavbar')
     @yield('content')
 
     @include('frontend.partials.pfooter')
+    </div>
+    </div>
 
     <!--   Core JS Files   -->
     <script src="{{ url('assets/js/jquery.3.2.1.min.js') }}" type="text/javascript"></script>

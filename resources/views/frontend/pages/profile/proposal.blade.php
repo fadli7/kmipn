@@ -53,7 +53,7 @@
                             </p>
                         </div>
                         <div class="content" style="float: none; margin: 0 auto;">
-                            <button class="btn btn-info"><a href="{{ url('profile/info-tim') }}">INFO TEAM</a></button>
+                            <a class="btn btn-info" href="{{ url('profile/info-tim') }}">INFO TEAM</a>
                         </div>
                     </div>
                 </div>

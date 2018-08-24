@@ -80,7 +80,7 @@ class ResetPasswordController extends Controller
 
                 DB::table('password_resets')->where('email', $user->email)->delete();
 
-                return redirect()->to('/')->with('message', array(
+                return redirect()->to('/login')->with('message', array(
                     'title' => 'Yay!',
                     'type' => 'success',
                     'msg' => 'Your password has been reset.',

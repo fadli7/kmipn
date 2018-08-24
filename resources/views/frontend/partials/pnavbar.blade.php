@@ -1,4 +1,5 @@
-<div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+<div class="wrapper">
+<div class="sidebar" data-color="purple" data-image="{{ url('img/sidebar-5.jpg') }}">
 
   <!--
 

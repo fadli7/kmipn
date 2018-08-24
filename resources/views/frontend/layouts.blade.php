@@ -21,11 +21,13 @@
     <link rel="stylesheet" href="{{ url('css/responsive.css') }}">
 
 
-      <link rel="stylesheet" href="{{url('vendor/slick/slick.css')}}">
-      <link rel="stylesheet" href="{{url('vendor/slick/slick-theme.css')}}">
-      {{-- select2 --}}
+    <link rel="stylesheet" href="{{url('vendor/slick/slick.css')}}">
+    <link rel="stylesheet" href="{{url('vendor/slick/slick-theme.css')}}">
+    {{-- select2 --}}
 
-      <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/select2/select2.min.css') }}">
+    <link href="{{ url('fixed-admin/lib/toast/jquery.toast.min.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/select2/select2.min.css') }}">
     @yield('style')
       {{--<link rel="stylesheet" href="{{url('vendor/bootstrap/css/bootstrap.min.css')}}">--}}
 
@@ -109,6 +111,8 @@
 
         {{--<script src="{{url('js/jquery.min.js')}}" charset="utf-8"></script>--}}
 
+    <script src="{{ url('js/jquery.popupoverlay.js') }}"></script>
+
     <script src="{{ url('js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ url('js/popper.js') }}"></script>
     <script src="{{ url('js/bootstrap.min.js') }}"></script>
@@ -131,6 +135,7 @@
     <script src="{{url('vendor/slick/slick.min.js')}}" charset="utf-8"></script>
     <script src="{{url('vendor/bootstrap/js/bootstrap.min.js')}}" charset="utf-8"></script>
     <script src="{{ url('fixed-admin/lib/toast/jquery.toast.min.js') }}"></script>
+
     @if (session('message'))
         <script type="text/javascript">
             $(document).ready(function() {
@@ -147,56 +152,19 @@
     <script src="{{url('js/custombox.legacy.min.js')}}" charset="utf-8"></script>
     <script src="{{url('js/custom.js')}}" charset="utf-8"></script>
 
-    {{--@if (session('message'))--}}
-    {{--<script type="text/javascript">--}}
-      {{--$(document).ready(function() {--}}
-          {{--$.toast({--}}
-              {{--text: "<strong>{{ session('message')['title'] }}</strong> {{ session('message')['msg'] }}",--}}
-              {{--position: 'top-right',--}}
-              {{--showHideTransition: 'slide',--}}
-              {{--hideAfter: 5000,--}}
-          {{--})--}}
-      {{--});--}}
-    {{--</script>--}}
-    {{--@endif--}}
-    {{--<script type="text/javascript" async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBWk5NCWnufYNz0XE0uULJ2iphnWY6YESI&callback=initMap'></script>--}}
-{{--    <script src="{{ url('vendor/adminlte/plugins/select2/select2.min.js') }}"></script>--}}
-
-    {{--<script type="text/javascript">--}}
-        {{--$(document).ready(function () {--}}
-            {{--$(".select2").select2();--}}
-        {{--});--}}
-    {{--</script>--}}
-    {{--<script src="{{url('js/custombox.legacy.min.js')}}" charset="utf-8"></script>--}}
-    {{--<script src="{{url('js/custom.js')}}" charset="utf-8"></script>--}}
-
     <script type="text/javascript">
     $(document).ready(function(){
 
         //Initialize Select2 Elements
         $(".select2").select2();
 
+        console.log($('.select2-selection--single')[1]);
+
+        $('.select2-selection--single')[1].remove();
+
     });
-
-    {{--(function () {--}}
-        {{--var burger = document.querySelector('.burger');--}}
-        {{--var nav = document.querySelector('#'+burger.dataset.target);--}}
-
-        {{--var beranda = document.querySelector('.beranda');--}}
-
-        {{--burger.addEventListener('click', function () {--}}
-            {{--burger.classList.toggle('is-active');--}}
-            {{--nav.classList.toggle('is-active');--}}
-            {{--beranda.style.color = "#000000";--}}
-        {{--});--}}
-    {{--})();--}}
 
     </script>
 
-    {{--<script src="{{url('js/navbar.js')}}"></script>--}}
-    {{--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>--}}
-    {{--<script>--}}
-        {{--AOS.init();--}}
-    {{--</script>--}}
   </body>
 </html>
