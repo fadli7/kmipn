@@ -93,7 +93,7 @@ class RegisterController extends Controller
     }
 
     public function register(Request $request) {
-        $input = $request->except('kategori_id','nama_tim','politeknik_id');
+        $input = $request->except('kategori_id','nama_tim','politeknik_id', 'tgl_lahir');
         $validator = $this->validator($input);
         $userMail = User::where('email',$input['email'])->count();
 
