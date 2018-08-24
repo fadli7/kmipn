@@ -5,29 +5,29 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{{ url('img/favicon.png') }}" type="image/png">
+    <link rel="icon" href="{{ secure_url('img/favicon.png') }}" type="image/png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url('img/favicon.png') }}">
-    <link rel="stylesheet" href="{{ url('vendors/linericon/style.css') }}">
-    <link rel="stylesheet" href="{{ url('css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url('vendors/owl-carousel/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ url('vendors/lightbox/simpleLightbox.css') }}">
-    <link rel="stylesheet" href="{{ url('vendors/nice-select/css/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ url('vendors/animate-css/animate.css') }}">
-    <link rel="stylesheet" href="{{ url('vendors/popup/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ secure_url('vendors/linericon/style.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('vendors/owl-carousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('vendors/lightbox/simpleLightbox.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('vendors/nice-select/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('vendors/animate-css/animate.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('vendors/popup/magnific-popup.css') }}">
     <!-- main css -->
-    <link rel="stylesheet" href="{{ url('css/style.css') }}">
-    <link rel="stylesheet" href="{{ url('css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('css/style.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('css/responsive.css') }}">
 
 
-    <link rel="stylesheet" href="{{url('vendor/slick/slick.css')}}">
-    <link rel="stylesheet" href="{{url('vendor/slick/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{ secure_url('vendor/slick/slick.css')}}">
+    <link rel="stylesheet" href="{{ secure_url('vendor/slick/slick-theme.css')}}">
     {{-- select2 --}}
 
-    <link href="{{ url('fixed-admin/lib/toast/jquery.toast.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_url('fixed-admin/lib/toast/jquery.toast.min.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ url('vendor/adminlte/plugins/select2/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_url('vendor/adminlte/plugins/select2/select2.min.css') }}">
     @yield('style')
       {{--<link rel="stylesheet" href="{{url('vendor/bootstrap/css/bootstrap.min.css')}}">--}}
 
@@ -111,30 +111,30 @@
 
         {{--<script src="{{url('js/jquery.min.js')}}" charset="utf-8"></script>--}}
 
-    <script src="{{ url('js/jquery.popupoverlay.js') }}"></script>
+    <script src="{{ secure_url('js/jquery.popupoverlay.js') }}"></script>
 
-    <script src="{{ url('js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ url('js/popper.js') }}"></script>
-    <script src="{{ url('js/bootstrap.min.js') }}"></script>
-    <script src="{{ url('js/stellar.js') }}"></script>
-    <script src="{{ url('vendors/lightbox/simpleLightbox.min.js') }}"></script>
-    <script src="{{ url('vendors/nice-select/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ url('vendors/isotope/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ url('vendors/isotope/isotope-min.js') }}"></script>
-    <script src="{{ url('vendors/owl-carousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ url('js/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ url('vendors/counter-up/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ url('vendors/counter-up/jquery.counterup.js') }}"></script>
-    <script src="{{ url('js/mail-script.js') }}"></script>
-    <script src="{{ url('vendors/popup/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ url('js/theme.js') }}"></script>
+    <script src="{{ secure_url('js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ secure_url('js/popper.js') }}"></script>
+    <script src="{{ secure_url('js/bootstrap.min.js') }}"></script>
+    <script src="{{ secure_url('js/stellar.js') }}"></script>
+    <script src="{{ secure_url('vendors/lightbox/simpleLightbox.min.js') }}"></script>
+    <script src="{{ secure_url('vendors/nice-select/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ secure_url('vendors/isotope/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ secure_url('vendors/isotope/isotope-min.js') }}"></script>
+    <script src="{{ secure_url('vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ secure_url('js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ secure_url('vendors/counter-up/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ secure_url('vendors/counter-up/jquery.counterup.js') }}"></script>
+    <script src="{{ secure_url('js/mail-script.js') }}"></script>
+    <script src="{{ secure_url('vendors/popup/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ secure_url('js/theme.js') }}"></script>
 
-    <script src="{{ url('vendor/adminlte/plugins/select2/select2.min.js') }}"></script>
+    <script src="{{ secure_url('vendor/adminlte/plugins/select2/select2.min.js') }}"></script>
 
 
-    <script src="{{url('vendor/slick/slick.min.js')}}" charset="utf-8"></script>
-    <script src="{{url('vendor/bootstrap/js/bootstrap.min.js')}}" charset="utf-8"></script>
-    <script src="{{ url('fixed-admin/lib/toast/jquery.toast.min.js') }}"></script>
+    <script src="{{ secure_url('vendor/slick/slick.min.js')}}" charset="utf-8"></script>
+    <script src="{{ secure_url('vendor/bootstrap/js/bootstrap.min.js')}}" charset="utf-8"></script>
+    <script src="{{ secure_url('fixed-admin/lib/toast/jquery.toast.min.js') }}"></script>
 
     @if (session('message'))
         <script type="text/javascript">
@@ -149,8 +149,8 @@
         </script>
     @endif
 
-    <script src="{{url('js/custombox.legacy.min.js')}}" charset="utf-8"></script>
-    <script src="{{url('js/custom.js')}}" charset="utf-8"></script>
+    <script src="{{secure_url('js/custombox.legacy.min.js')}}" charset="utf-8"></script>
+    <script src="{{secure_url('js/custom.js')}}" charset="utf-8"></script>
 
     <script type="text/javascript">
     $(document).ready(function(){
