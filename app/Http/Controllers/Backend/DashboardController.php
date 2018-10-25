@@ -22,6 +22,7 @@ class DashboardController extends Controller
 		// $data['animasi'] = User::where('kategori','Desain Animasi')->count();
 		// $data['jaringan'] = User::where('kategori','Keamanan Jaringan')->count();
 		// $data['hack'] = User::where('kategori','Hackathon')->count();
+
 		return view('backend.pages.dashboard.index');
 	}
 }

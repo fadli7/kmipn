@@ -9,6 +9,7 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
+
                         {{ csrf_field()}}
 
                         <div class="form-group row">

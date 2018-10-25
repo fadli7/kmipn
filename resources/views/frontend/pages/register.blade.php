@@ -84,7 +84,7 @@
                   <div class="row">
                     <div class="col">
                       <div class="form-group">
-                        <input type="text" name="email" class="form-control" placeholder="Email" required>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
                       </div>
                     </div>
                     <div class="col">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Tim;
 use App\Admin;
+use App\Lomba;
 class AdminController extends Controller
 {
     /**
@@ -24,31 +25,32 @@ class AdminController extends Controller
      */
     public function admin()
     {
-      // $data['ck'] = Tim::whereHas('lomba', function ($query) {
-      //   $query->where('kategori', '=', 'Cipta Inovasi');
-      // })->count();
-      // $data['tik'] = Tim::whereHas('lomba', function ($query) {
-      //   $query->where('kategori','Bisnis TIK');
-      // })->count();
-      // $data['game'] = Tim::whereHas('lomba', function ($query) {
-      //   $query->where('kategori','Game Development');
-      // })->count();
-      // $data['gov'] = Tim::whereHas('lomba', function ($query) {
-      //   $query->where('kategori','E-Goverment');
-      // })->count();
-      // $data['iot'] = Tim::whereHas('lomba', function ($query) {
-      //   $query->where('kategori','IoT');
-      // })->count();
-      // $data['animasi'] = Tim::whereHas('lomba', function ($query) {
-      //   $query->where('kategori','Desain Animasi');
-      // })->count();
-      // $data['jaringan'] = Tim::whereHas('lomba', function ($query) {
-      //   $query->where('kategori','Keamanan Jaringan');
-      // })->count();
-      // $data['hack'] = Tim::whereHas('lomba', function ($query) {
-      //   $query->where('kategori','Hackathon');
-      // })->count();
-      return view('backend.pages.dashboard.index');
+      $data['ck'] = Tim::whereHas('lomba', function ($query) {
+        $query->where('kategori', '=', 'Cipta Inovasi');
+      })->count();
+      $data['tik'] = Tim::whereHas('lomba', function ($query) {
+        $query->where('kategori','Bisnis TIK');
+      })->count();
+      $data['game'] = Tim::whereHas('lomba', function ($query) {
+        $query->where('kategori','Game Development');
+      })->count();
+      $data['gov'] = Tim::whereHas('lomba', function ($query) {
+        $query->where('kategori','E-Goverment');
+      })->count();
+      $data['iot'] = Tim::whereHas('lomba', function ($query) {
+        $query->where('kategori','IoT');
+      })->count();
+      $data['animasi'] = Tim::whereHas('lomba', function ($query) {
+        $query->where('kategori','Desain Animasi');
+      })->count();
+      $data['jaringan'] = Tim::whereHas('lomba', function ($query) {
+        $query->where('kategori','Keamanan Jaringan');
+      })->count();
+      $data['hack'] = Tim::whereHas('lomba', function ($query) {
+        $query->where('kategori','Hackathon');
+      })->count();
+
+      return view('backend.pages.dashboard.index', $data);
     }
 
     public function index() {

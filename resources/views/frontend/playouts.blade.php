@@ -18,7 +18,7 @@
     {{--<script src="{{url('vendor/locationpicker/locationpicker.jquery.min.js')}}" charset="utf-8"></script>--}}
 
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="{{ secure_url('img/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ url('img/favicon.png') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>@yield('title')</title>
@@ -28,23 +28,23 @@
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="{{ secure_url('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <!-- Animation library for notifications   -->
-    <link href="{{ secure_url('assets/css/animate.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('assets/css/animate.min.css') }}" rel="stylesheet"/>
 
     <!--  Light Bootstrap Table core CSS    -->
-    <link href="{{ secure_url('assets/css/light-bootstrap-dashboard.css?v=1.4.0') }}" rel="stylesheet"/>
+    <link href="{{ url('assets/css/light-bootstrap-dashboard.css?v=1.4.0') }}" rel="stylesheet"/>
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="{{ secure_url('assets/css/demo.css') }}" rel="stylesheet" />
+    <link href="{{ url('assets/css/demo.css') }}" rel="stylesheet" />
 
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="{{ secure_url('assets/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
+    <link href="{{ url('assets/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
 
   </head>
 
@@ -58,23 +58,23 @@
     </div>
 
     <!--   Core JS Files   -->
-    <script src="{{ secure_url('assets/js/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
-    <script src="{{ secure_url('assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url('assets/js/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url('assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
     <!--  Charts Plugin -->
-    <script src="{{ secure_url('assets/js/chartist.min.js') }}"></script>
+    <script src="{{ url('assets/js/chartist.min.js') }}"></script>
 
     <!--  Notifications Plugin    -->
-    <script src="{{ secure_url('assets/js/bootstrap-notify.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap-notify.js') }}"></script>
 
     <!--  Google Maps Plugin    -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-    <script src="{{ secure_url('assets/js/light-bootstrap-dashboard.js?v=1.4.0') }}"></script>
+    <script src="{{ url('assets/js/light-bootstrap-dashboard.js?v=1.4.0') }}"></script>
 
     <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-    <script src="{{ secure_url('assets/js/demo.js') }}"></script>
+    <script src="{{ url('assets/js/demo.js') }}"></script>
 
     {{--<script src="{{url('vendor/slick/slick.min.js')}}" charset="utf-8"></script>--}}
     {{--<script src="{{url('vendor/bootstrap/js/bootstrap.min.js')}}" charset="utf-8"></script>--}}

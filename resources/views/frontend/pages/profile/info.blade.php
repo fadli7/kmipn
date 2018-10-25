@@ -21,7 +21,7 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <p class="hidden-lg hidden-md">Welcome, M. Fadli Farham</p>
+                                <p class="hidden-lg hidden-md">Welcome, {{ $anggota[0]->fullname }}</p>
                             </a>
                         </li>
                     </ul>
